@@ -1,0 +1,117 @@
+:root {
+  --field-height: 7rem;
+  --field-margin-bottom: 2rem;
+  --option-height: calc(var(--field-height) + var(--field-margin-bottom));
+  --form-color: #000;
+  --active-color: black;
+  --error-color: theme(colors.red);
+}
+
+.form{
+   width: 100%;
+
+  .field{position: relative}
+
+  & input:not([type="submit"]), & textarea{
+    color: var(--form-color);
+    border-bottom: 2px solid #000; 
+    min-height: var(--field-height);
+    height: var(--field-height);
+    line-height: 1;
+    margin-bottom: var(--field-margin-bottom);
+    outline: none !important;
+    /* @apply debe ir abajo de las reglas normales */
+    @apply text-body w-full bg-transparent py-[1.5rem] pr-1 shadow-none placeholder-opacity-100;
+    
+    &:focus{
+      color: var(--active-color);
+      border-color: var(--active-color);
+      outline: none !important;
+
+      &::placeholder{
+        color: var(--active-color) !important;
+        opacity: 1;
+      }
+
+      & + .valid-msg{
+        @apply hidden !important;
+      }
+
+    }
+
+    &.invalid{
+
+      border-color: var(--error-color) !important;
+
+      &:not(:focus){
+        @apply text-transparent !important;
+      }
+
+      & + .valid-msg{
+        @apply block;
+        border-color: var(--error-color) !important;
+      }
+
+      &::placeholder{
+        @apply opacity-0 !important;
+      }
+
+    }
+
+  }
+
+  textarea {
+    resize: none;
+    overflow: hidden;
+    box-sizing: padding-box;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    @apply w-auto;
+  }
+
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  }
+
+  [type="submit"] {
+    @apply disabled:opacity-50;
+  }
+
+  /* El placeholder solo lo agarra aca */
+  input::placeholder, textarea::placeholder{
+    color: var(--form-color) !important;
+    opacity: 1 !important;
+  }
+
+} /* Form */
+
+.valid-msg{
+  @apply hidden absolute top-[2.2rem] left-0 font-[400] text-black text-right pointer-events-none;
+}
+
+/* El placeholder solo lo agarra aca */
+input::placeholder, textarea::placeholder{
+  color: var(--form-color) !important;
+  opacity: 1 !important;
+}
+
+
+/* Loader */
+.loader {
+  display: none;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  border: 0.38rem solid;
+  border-color: rgba(255, 255, 255, 0.5);
+  border-right-color: rgba(0, 0, 0, 0.5);
+  animation: s2 1s infinite linear;
+}
+
+@keyframes s2 {
+  to {
+    transform: rotate(1turn);
+  }
+}

@@ -1,0 +1,31 @@
+:root{
+  --brand-width: 15rem
+}
+
+.brand{
+  
+  width: var(--brand-width);
+
+  img,svg{
+    @apply w-full;
+  }
+
+}
+
+
+
+@media (min-width: theme("screens.xg")) {
+
+  :root{
+    --brand-width: 10rem
+  }
+
+}
+
+@media (min-width:1064px){
+
+  :root{
+    --brand-width: 14.5rem
+  }
+
+}

@@ -1,0 +1,61 @@
+#menu{
+
+  padding-left: var(--container-gap);
+  padding-right: var(--container-gap);
+
+  @apply 
+    fixed 
+    xg:relative 
+    w-100%
+    h-screen
+    xg:h-auto
+    top-0 
+    right-0 
+    xg:left-0
+    flex 
+    flex-col
+    xg:flex-row
+    py-2 xg:py-0
+    gap-2
+    xg:gap-4
+    justify-start
+    xg:justify-between 
+    translate-x-[100%]	
+    xg:translate-x-[0%]
+    z-[999]
+    transition-all
+    ease-in-out
+    duration-[.4s];
+
+    a, div{
+      @apply text-h1 xg:text-body font-light cursor-pointer;
+      
+      &:nth-child(2){
+        @apply mt-5 xg:mt-0;
+      }
+
+    }
+    
+
+}
+
+.menu-in{
+
+  #menu{
+    @apply translate-x-[0%];
+  }
+
+}
+
+/*//////////////////////////////////////////////////////////*/
+/*//////////////////////// 992px ///////////////////////////*/
+/*//////////////////////////////////////////////////////////*/
+
+@media (min-width: theme("screens.xg")) {
+
+  #menu{
+    padding: 0;
+    background: transparent ;
+  }
+
+}

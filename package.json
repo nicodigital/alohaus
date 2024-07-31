@@ -1,0 +1,20 @@
+{
+  "name": "prepros-project",
+  "version": "1.0.0",
+  "description": "This is a dummy package.json file created by Prepros to manage packages with NPM. You can edit this file to add your own information.",
+  "scripts": {},
+  "dependencies": {
+    "@barba/core": "^2.10.0",
+    "@barba/prefetch": "^2.2.0",
+    "@studio-freight/lenis": "^1.0.42",
+    "@tailwindcss/nesting": "0.0.0-insiders.565cd3e",
+    "gsap": "^3.12.5",
+    "htmx.org": "^2.0.1",
+    "nesting": "^0.1.0",
+    "swiper": "^11.0.5"
+  },
+  "devDependencies": {
+    "postcss-import": "^16.0.0",
+    "postcss-nesting": "^12.1.5"
+  }
+}

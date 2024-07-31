@@ -1,0 +1,46 @@
+.txt-animation span {
+  display: inline-block;
+  opacity: 0
+}
+
+.txt-animation span.anim-up {
+  animation-name: txtAnimUp;
+  animation-duration: .6s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.txt-animation span.anim-down {
+  animation-name: txtAnimDown;
+  animation-duration: .6s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes txtAnimUp {
+
+  0% {
+    opacity: 0;
+    transform: translateY(2.75rem);
+ }
+
+ 100% {
+    opacity: 1;
+    transform: translateY(0);
+ }
+
+}
+
+@keyframes txtAnimDown {
+
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+ }
+
+ 100% {
+    opacity: 0;
+    transform: translateY(-2.75rem);
+ }
+
+}

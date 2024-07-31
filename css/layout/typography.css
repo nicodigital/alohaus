@@ -1,0 +1,169 @@
+@font-face {
+  font-family: 'Apercu Mono';
+  src: url('Apercu-Mono.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* @font-face {
+  font-family: 'Space Mono';
+  src: url('fonts/SpaceMono-Regular') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+} */
+/* 
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('fonts/hinted-HelveticaNeueLTStd-Roman.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+/* @font-face {
+  font-family: 'Helvetica Neue';
+  src: url('fonts/hinted-HelveticaNeueLTPro-It.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('fonts/HelveticaNeueLTStd-Md.woff2') format('woff2'),
+      url('fonts/HelveticaNeueLTStd-Md.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+} */
+
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('fonts/hinted-Helvetica75-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+:root {
+  --html: 10px;
+  --big: 10rem;
+  --h1: 2.8rem;
+  --h2: 2.2rem;
+  --h3: 2rem;
+  --body: 1.8rem;
+  --small: 1.4rem;
+}
+
+html {
+  font-size: var(--html);
+}
+
+p {
+  @apply text-pretty tracking-[-0.02em];
+}
+
+.text-big,
+.text-h1,
+.text-h2,
+.text-h3 {
+  @apply text-balance;
+}
+
+.big-title{
+   @apply text-big font-title text-orange font-[500] uppercase tracking-[-0.04em] leading-[0.95];
+}
+
+/* .text-body {
+    
+  }
+  
+  .text-big {
+    
+  } */
+
+/*//////////////////////////////////////////////////////////*/
+/*///////////////////////// 640px //////////////////////////*/
+/*//////////////////////////////////////////////////////////*/
+
+@media (min-width: theme("screens.xs")) {
+  :root {
+    --html: 10px;
+  }
+}
+
+/*//////////////////////////////////////////////////////////*/
+/*//////////////////////// 768px ///////////////////////////*/
+/*//////////////////////////////////////////////////////////*/
+
+@media (min-width: theme("screens.sm")) {
+  :root {
+    --html: 11px;
+  }
+}
+
+/*//////////////////////////////////////////////////////////*/
+/*//////////////////////// 992px ///////////////////////////*/
+/*//////////////////////////////////////////////////////////*/
+
+@media (min-width: theme("screens.xg")) {
+  :root {
+    --html: 11px;
+    --big: 10vw;
+    --body: 1.35rem;
+    --h1: 3.2rem;
+    --h2: 2.9rem;
+    --h3: 2.5rem;
+    --small: 1.6rem;
+  }
+}
+
+/*//////////////////////////////////////////////////////////*/
+/*///////////////////////// 1064px /////////////////////////*/
+/*//////////////////////////////////////////////////////////*/
+
+@media (min-width: theme("screens.xl")) {
+  :root {
+    --html: 9px;
+  }
+}
+
+/*//////////////////////////////////////////////////////////*/
+/*///////////////////////// 1280px /////////////////////////*/
+/*//////////////////////////////////////////////////////////*/
+
+@media (min-width: theme("screens.2xl")) {
+  :root {
+    --html: 10px;
+  }
+}
+
+/*//////////////////////////////////////////////////////////*/
+/*///////////////////////// 1536px /////////////////////////*/
+/*//////////////////////////////////////////////////////////*/
+
+@media (min-width: theme("screens.3xl")) {
+  :root {
+    --html: 11px;
+  }
+}
+
+/*//////////////////////////////////////////////////////////*/
+/*///////////////////////// 1920 ///////////////////////////*/
+/*//////////////////////////////////////////////////////////*/
+
+@media (min-width: theme("screens.4xl")) {
+  :root {
+    --html: 12px;
+  }
+}
+
+/*//////////////////////////////////////////////////////////*/
+/*////////////////////////// 2560 //////////////////////////*/
+/*//////////////////////////////////////////////////////////*/
+
+@media (min-width: theme("screens.5xl")) {
+  :root {
+    --html: 15px;
+  }
+}

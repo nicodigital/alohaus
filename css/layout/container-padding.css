@@ -1,0 +1,24 @@
+
+.ctr-p{padding: var(--container-gap) var(--container-gap)}
+.ctr-px{padding: 0 var(--container-gap)}
+.ctr-py{padding: var(--container-gap) 0}
+.ctr-pl{padding-left: var(--container-gap)}
+.ctr-pr{padding-right: var(--container-gap)}
+.ctr-pt{padding-top: var(--container-gap)}
+.ctr-pb{padding-bottom: var(--container-gap)}
+
+  /*//////////////////////////////////////////////////////////*/
+  /*//////////////////////// 992px ///////////////////////////*/
+  /*//////////////////////////////////////////////////////////*/
+  
+  @media (min-width: theme("screens.xg")) {
+
+    .ctr-xg-p{padding: var(--container-gap) var(--container-gap)}
+    .ctr-xg-px{padding: 0 var(--container-gap)}
+    .ctr-xg-py{padding: var(--container-gap) 0}
+    .ctr-xg-pl{padding-left: var(--container-gap)}
+    .ctr-xg-pr{padding-right: var(--container-gap)}
+    .ctr-xg-pt{padding-top: var(--container-gap)}
+    .ctr-xg-pb{padding-bottom: var(--container-gap)}
+
+  }
