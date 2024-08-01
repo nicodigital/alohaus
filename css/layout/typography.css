@@ -74,6 +74,11 @@ p {
    @apply text-big font-title text-orange font-[500] uppercase tracking-[-0.04em] leading-[0.95];
 }
 
+hr{
+  border: none;
+  border-bottom: 1.5px solid currentColor;
+}
+
 /* .text-body {
     
   }
@@ -110,7 +115,7 @@ p {
   :root {
     --html: 11px;
     --big: 10vw;
-    --body: 1.35rem;
+    --body: 1.3rem;
     --h1: 3.2rem;
     --h2: 2.9rem;
     --h3: 2.5rem;

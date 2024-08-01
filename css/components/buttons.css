@@ -3,9 +3,9 @@
   @apply inline-flex items-center py-[1.5rem] px-4 bg-red text-white rounded-full cursor-pointer transition-all;
   width: fit-content;
 
-  &:hover{
-    @apply bg-red-light 
-  }
+  /* &:hover{
+   
+  } */
 
 }
 

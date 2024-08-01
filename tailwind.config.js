@@ -17,11 +17,10 @@ export default {
 			},
 			colors: {
 				'orange': '#EB671C',
-				'red': '#ff522f',
-				'red-light': '#ff7a60',
-				'blue': 'blue',
-				'invalid': '#f00',
-				'grey': '#999',
+				'grey': '#1d1d1b',
+				'white': '#f1f1f1',
+				'ivory': '#ddd',
+				'red': '#f00',
 			},
 			fontSize: {
 				'big': 'var(--big)',
