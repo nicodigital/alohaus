@@ -17,7 +17,7 @@
 
   <div class="absolute left-0 bottom-0 row w-full ctr-px">
     <div class="col-1-13 relative">
-      <h2 class="big-title pb-1">
+      <h2 class="big-title text-orange pb-1">
         Interpretamos, <br>
         evaluamos <br>
         y creamos.

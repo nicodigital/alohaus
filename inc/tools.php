@@ -45,9 +45,13 @@ function miniTitle($text, $link, $arrow = "down")
       <?= $text ?>
     </span>
     <span>
+      <?php if ($arrow == "down") { ?>
       <svg class="w-[1.2vw] h-auto translate-y-[.8rem]" width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M4.64116 0.28968L26.5669 22.2155L26.567 0.131369L32.4766 0.131348L32.4766 32.3038H0.304133V26.3942L22.3882 26.3942L0.462447 4.46839L4.64116 0.28968Z" fill="currentColor" />
       </svg>
+      <?php } else { ?>
+        <svg class="w-[1.2vw] h-auto translate-y-[.8rem]" width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.64074 32.7103L26.5665 10.7845L26.5666 32.8686L32.4762 32.8687V0.696201H0.303711V6.6058H22.3878L0.462025 28.5316L4.64074 32.7103Z" fill="currentColor"/></svg>
+      <?php } ?>
     </span>
   </a>
 
