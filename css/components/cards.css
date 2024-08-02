@@ -1,18 +1,71 @@
-.card{
+.projects{
 
-    @apply p-2 bg-neutral-300/50 rounded-lg;
+    .card{
+        position: relative;
+        aspect-ratio: 1/1;
 
-    .h3{
-        @apply py-1;
-        font-size: theme(fontSize.h2);
+        & .info{
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            padding: 2rem;
+            background-color: theme(colors.orange);
+            color: theme(colors.grey-dark);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            & > span{
+                
+                position: relative;
+
+                &:first-child{
+                    font-family: theme(fontFamily.title);
+                    font-size: 6rem;
+                    letter-spacing: -0.05em;
+                    line-height: 1;
+                    width: 66%;
+                }
+
+                &.dots{
+                    position: absolute;
+                    top: 2rem;
+                    right: 2rem;
+                    width: 4.6rem;
+                    height: 1.5rem;
+                    background-image: url("img/icons/dots-black.svg");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+
+                &:last-child{
+                    display: flex;
+                    justify-content: space-between;
+                    letter-spacing: var(--letter-track-2);
+                }
+
+            }
+
+        }
+
+        & img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &:hover{
+            .info{
+                background: transparent;
+                color: #fff;
+            }
+        }
+
     }
 
-    p{
-        font-size: theme(fontSize.small);
-    }
 
 }
 
-.card img{
-    @apply w-full aspect-[9/12] object-cover rounded-lg;
-}

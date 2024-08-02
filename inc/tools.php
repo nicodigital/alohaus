@@ -2,15 +2,56 @@
 
 /*/////////////////////////// GET LOGO ///////////////////////////*/
 
-if ( !function_exists('get_logo') ) {
+if (!function_exists('get_logo')) {
 
-  function get_logo( $path, $color = 'white', $class = '' ) {
-      ob_start();
-      require( $path );
-      echo ob_get_clean();
+  function get_logo($path, $color = 'white', $class = '')
+  {
+    ob_start();
+    require($path);
+    echo ob_get_clean();
   }
-
 }
+
+/*////////////////////////////// CARDS /////////////////////////////////*/
+
+function card($title,$img) { ?>
+  <a class="card">
+    <figure>
+      <picture-item img="<?= $img ?>" title="<?= $title ?>"></picture-item>
+      <figcaption class="info">
+        <span><?= $title ?></span>
+        <span class="dots"></span>
+        <span>
+          <span>
+            Cliente: Larnaudie
+          </span>
+          <span>
+            Pieza: Etiqueta
+          </span>
+        </span>
+      </figcaption>
+    </figure>
+  </a>
+
+<?php }
+
+/*//////////////////////////// MINI-TITLE ///////////////////////////////*/
+
+function miniTitle($text, $link, $arrow = "down")
+{ ?>
+
+  <a href="<?= $link ?>" class="font-title text-h3 mb-[1.5rem] flex gap-1">
+    <span>
+      <?= $text ?>
+    </span>
+    <span>
+      <svg class="w-[1.2vw] h-auto translate-y-[.8rem]" width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.64116 0.28968L26.5669 22.2155L26.567 0.131369L32.4766 0.131348L32.4766 32.3038H0.304133V26.3942L22.3882 26.3942L0.462447 4.46839L4.64116 0.28968Z" fill="currentColor" />
+      </svg>
+    </span>
+  </a>
+
+<?php }
 
 /*/////////////////////////////// POSTER ////////////////////////////////*/
 
@@ -181,26 +222,25 @@ if (!function_exists('webp')) {
 
 /*///////////////////////////// PICTURE ///////////////////////////////*/
 
-if ( !function_exists('picture') ) {
+if (!function_exists('picture')) {
 
-  function picture( $url, $alt = "", $lazy = true ){
+  function picture($url, $alt = "", $lazy = true)
+  {
 
-    $path_noext = substr( $url, 0, -3 );
+    $path_noext = substr($url, 0, -3);
 
-    if( $lazy == 'true' ){
+    if ($lazy == 'true') {
       $dataLazy = "loading='lazy' decoding='async'";
-    }else{
+    } else {
       $dataLazy = "decoding='async'";
     }
 
-   echo "<picture>
-      <source srcset='".$path_noext."webp' type='image/webp'></source>
-      <source srcset='".$url."' type='image/jpeg'></source>
-      <img src='".$url."' alt='".$alt."' ".img_size( $url, false )." $dataLazy  >
+    echo "<picture>
+      <source srcset='" . $path_noext . "webp' type='image/webp'></source>
+      <source srcset='" . $url . "' type='image/jpeg'></source>
+      <img src='" . $url . "' alt='" . $alt . "' " . img_size($url, false) . " $dataLazy  >
     </picture>";
-
   }
-
 }
 
 /* /////////////////////////// IMG ORIENTATION  ///////////////////////////*/
@@ -388,7 +428,6 @@ if (!function_exists('anchor_class')) {
       } else {
         return $anchor;
       }
-      
     }
   }
 }

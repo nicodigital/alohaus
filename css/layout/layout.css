@@ -1,5 +1,7 @@
 :root {
   --container-gap: 1rem;
+  --letter-track-1: -0.02em;
+  --letter-track-2: -0.05em;
 }
 
 html {
@@ -14,7 +16,7 @@ html {
 } */
 
 body{
-  @apply text-body bg-neutral-900 text-ivory;
+  @apply text-body bg-grey-dark text-ivory;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   word-wrap: break-word;

@@ -60,7 +60,8 @@ html {
 }
 
 p {
-  @apply text-pretty tracking-[-0.02em];
+  @apply text-pretty;
+  letter-spacing: var(--letter-track-1);
 }
 
 .text-big,

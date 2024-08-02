@@ -1,6 +1,7 @@
 import htmx from "htmx.org";
 
 /* ////////////////////////COMPONENTS ///////////////////////// */
+import PictureItem from './components/PictureItem.js';
 import accordionItem from './components/accordionItem.js';
 import modalItem from './components/modalItem.js';
 
@@ -77,6 +78,7 @@ window.addEventListener("orientationchange", getDevice);
 /*/////////////////////////////////////////////////////////////////////*/
 
 // 1ero. Cargamos los componentes antes de cargar el DOM
+PictureItem();
 accordionItem();
 modalItem();
 
