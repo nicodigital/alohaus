@@ -27,8 +27,8 @@
     ease-in-out
     duration-[.4s];
 
-    a, div{
-      @apply text-h1 xg:text-body font-light cursor-pointer;
+    & > a, & > div{
+      @apply text-h1 xg:text-body font-title cursor-pointer;
       
       &:nth-child(2){
         @apply mt-5 xg:mt-0;

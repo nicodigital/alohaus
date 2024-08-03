@@ -7,10 +7,10 @@ header {
       @apply w-full items-center;
    }
 
-   &:before {
+   /* &:before {
       content: '';
       @apply absolute h-[1px] bottom-0 left-0 bg-orange;
       width: calc(100% - var(--container-gap) * 2);
       left: var(--container-gap);
-   }
+   } */
 }

@@ -13,15 +13,21 @@
 }
 
 .swiper-slide {
-  @apply flex justify-center items-center 
-  h-[66vh]
-  bg-white text-center;
-}
-
-.swiper-slide img {
-  @apply block w-full h-full object-cover;
+  @apply flex justify-center items-center;
 }
 
 .swiper {
   @apply mx-auto text-black;
+}
+
+#clients{
+
+  & .swiper-slide {
+    @apply px-4;
+  }
+
+  & img{
+    mix-blend-mode: color;
+  }
+
 }

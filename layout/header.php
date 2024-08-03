@@ -40,10 +40,10 @@
 
   <header class="container">
     <div class="row items-center">
-      <div class="sm:col-[1/3] md:col-[1/3] flex align-middle">
+      <div class="sm:col-1-3 flex align-middle">
         <?php include 'layout/components/brand.php'; ?>
       </div>
-      <div class="xg:col-7-11">
+      <div class="xg:col-5-10">
         <?php include 'layout/components/menu.php'; ?>
       </div>
       <div class="xg:col-12-13 flex justify-end">

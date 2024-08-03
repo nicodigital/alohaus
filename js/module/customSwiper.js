@@ -1,9 +1,9 @@
 import Swiper from 'swiper';
-import { EffectFade, Autoplay, Navigation, Pagination } from 'swiper/modules';
+import {  Autoplay, Pagination } from 'swiper/modules';
 
 function customSwiper() {
-  var swiper = new Swiper(".swiper", {
-    modules: [EffectFade, Autoplay, Navigation, Pagination],
+  var swiper = new Swiper("#clients", {
+    modules: [ Autoplay , Pagination ],
     spaceBetween: 0,
     // centeredSlides: true,
     loop: true,
@@ -14,13 +14,21 @@ function customSwiper() {
     speed: 750,
     // effect: "fade",
     // allowTouchMove: false
-    // pagination: {
-    // 	el: '.swiper-pagination',
-    // 	clickable: true,
-    // },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+    pagination: {
+    	el: '.custom-pagination',
+      type: "fraction",
+    	clickable: true,
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      1024: {
+        slidesPerView: 6,
+      },
     },
   });
 }

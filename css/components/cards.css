@@ -1,4 +1,4 @@
-.projects{
+#proyectos{
 
     .card{
         position: relative;
@@ -24,10 +24,10 @@
 
                 &:first-child{
                     font-family: theme(fontFamily.title);
-                    font-size: 5rem;
+                    font-size: var(--h3);
                     letter-spacing: -0.05em;
                     line-height: 1;
-                    width: 66%;
+                    width: 50%;
                 }
 
                 &.dots{
@@ -69,3 +69,80 @@
 
 }
 
+#servicios{
+
+    .card{ 
+
+        position: relative;
+        @apply min-h-[30vh];
+        border-top: 1px solid theme(colors.white);
+
+        & p{
+            @apply w-70% mt-1;
+            opacity: 0;
+        }
+
+        & span{
+            font-family: theme(fontFamily.title);
+            font-size: 1.8rem;
+        }
+
+        /* &:not(:last-child){
+            border-right: 1px solid white;
+        } */
+
+        &:hover{
+
+            p{
+                opacity: 1;
+            }
+
+        }
+
+    }
+
+}
+
+#team{
+
+    .card{
+
+        display: flex;
+        flex-direction: column-reverse;
+        color: theme(colors.grey-dark);
+
+        img{
+            filter: grayscale(100);
+        }
+
+        & figcaption{
+
+            @apply min-h-[15rem] flex flex-col items-end text-right;
+
+            & h3{
+                font-family: theme(fontFamily.title);
+                font-size: var(--h3);
+                color: theme(colors.grey-dark);
+                line-height: 1;
+                letter-spacing: var(--letter-track-1);
+            }
+
+            & div{
+                @apply mt-1;
+                display: flex;
+                gap: 1rem;
+
+                a{
+                    @apply underline;
+                }
+
+            }
+
+        }
+
+        &:first-child img{
+            width: calc(100% + var(--container-gap)*2);
+        }
+
+    }
+}

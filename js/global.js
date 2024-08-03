@@ -14,6 +14,7 @@ import customSwiper from './module/customSwiper.js';
 import modal from './module/modal.js';
 import accordion from './module/accordion.js';
 import cookies from './module/cookies.js';
+import servicios from './module/servicios.js';
 // import filters from './module/filters.js';
 
 /*Animations*/
@@ -89,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	scrollMarkers(body, platform, isMobile, isDesktop, isTablet);
 	
 	menuMobile();
+	servicios();
 	customSwiper();
 	cookies();
 	modal();

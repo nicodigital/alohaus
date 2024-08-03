@@ -26,9 +26,6 @@ body{
 
 [id]{scroll-margin-top: 10ex}
 
-main {
-  @apply overflow-hidden min-h-screen;
-}
 
 .row {
   @apply grid gap-1 grid-cols-12 md:gap-2;

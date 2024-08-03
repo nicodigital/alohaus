@@ -121,6 +121,9 @@ include 'inc/data.php';
 include 'inc/meta-tags.php';
 include_once 'inc/template.class.php';
 
+/* Data */
+include 'data/servicios.php';
+
 $recaptcha_key = "123";
 /*//////////////////////// CHECK FUNCTION MAIL ////////////////////////////*/
 // if ( function_exists( 'mail' ) ){

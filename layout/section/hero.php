@@ -1,4 +1,6 @@
-<section class='container hero relative h-screen w-full flex items-end overflow-hidden pb-2'>
+<section class='container hero relative h-screen w-full flex items-end overflow-hidden pb-2 z-10'>
+  
+  <!-- <img class="hero-back" src='<?= ASSETS_PATH ?>img/works/alohaus-chamal-render01.jpg' alt='' loading='lazy' decoding='async' /> -->
 
     <div class="row">
       <div class="xg:col-10-13 relative">
