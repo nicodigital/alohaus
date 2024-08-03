@@ -1,4 +1,4 @@
-<form id="contact-form" class="form" action="" method="POST" accept-charset="utf-8">
+<form id="contact-form" class="form translate-y-[-2.5rem]" action="" method="POST" accept-charset="utf-8">
 
     <input type="checkbox" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off"/>
 
@@ -12,10 +12,10 @@
         <div class="valid-msg">Debes colocar un correo válido</div>
     </div>
 
-    <div class="field">
+    <!-- <div class="field">
         <input type="tel" name="phone" placeholder="Teléfono" required minlength="9" maxlength="18" />
         <div class="valid-msg">Debes colocar un teléfono válido</div>
-    </div>
+    </div> -->
 
     <div class="field">
         <textarea name="message" placeholder="Mensaje..." minlength="16"></textarea>
@@ -24,14 +24,11 @@
 
     <div class="flex gap-2 md:gap-4">
     
-        <button type="submit" disabled class="mt-2">
+        <button type="submit" disabled class="text-orange mt-2">
             <span class="flex align-center">
                 <span class="loader mr-1"></span>
                 <span class="txt">
                     Enviar
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="m2 21l21-9L2 3v7l15 2l-15 2z" />
-                    </svg>
                 </span>
             </span>
         </button>

@@ -2,8 +2,8 @@
   --field-height: 7rem;
   --field-margin-bottom: 2rem;
   --option-height: calc(var(--field-height) + var(--field-margin-bottom));
-  --form-color: #000;
-  --active-color: black;
+  --form-color: theme(colors.orange);
+  --active-color: theme(colors.white);
   --error-color: theme(colors.red);
 }
 
@@ -14,7 +14,7 @@
 
   & input:not([type="submit"]), & textarea{
     color: var(--form-color);
-    border-bottom: 2px solid #000; 
+    border-bottom: 1.5px solid theme(colors.orange); 
     min-height: var(--field-height);
     height: var(--field-height);
     line-height: 1;

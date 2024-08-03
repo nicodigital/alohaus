@@ -140,7 +140,7 @@
       </div>
       <div class="xg:col-5-8">
         <p>
-        Su satisfacción es nuestra mayor recompensa, y nos enorgullece haber contribuido al éxito de sus proyectos. Juntos, hemos logrado resultados excepcionales, y esperamos seguir colaborando para alcanzar nuevas metas.
+          Su satisfacción es nuestra mayor recompensa, y nos enorgullece haber contribuido al éxito de sus proyectos. Juntos, hemos logrado resultados excepcionales, y esperamos seguir colaborando para alcanzar nuevas metas.
         </p>
       </div>
       <div class="xg:col-11-13 text-right">
@@ -167,7 +167,47 @@
 
 </section>
 
+<!-- CONTACTO -->
+<section class="container">
 
+  <div class="row py-10">
+    <div class="col-1-4 h-full flex flex-col">
+      <?= miniTitle("Contacto", "#") ?>
+
+      <div>
+        <p class="contact-data mt-8 mb-5">
+          <span>España</span>
+          <span>
+            +34 613 45 37 65 <br>
+            camila@alohaus.uy
+          </span>
+        </p>
+        <p class="contact-data">
+          <span>Uruguay</span>
+          <span>
+            +598 91 498 184 <br>
+            hola@alohaus.uy
+          </span>
+        </p>
+      </div>
+
+      <p class="mt-auto mb-0">
+        No existe proyecto pequeño ni desafío que no estemos dispuestos a enfrentar.
+        ¡Conviértete en parte de nuestra visión y hagamos realidad tus ideas!
+      </p>
+
+    </div>
+    <div class="col-7-12">
+      <div class="xg:mt-13">
+        <?php include 'layout/forms/contact-form.php' ?>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="big-title text-orange text-center mb-2">
+    ¡CREEMOS JUNTOS!
+  </h2>
+</section>
 
 <?php //include 'layout/section/contacto.php' 
 ?>
