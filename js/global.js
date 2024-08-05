@@ -8,6 +8,7 @@ import modalItem from './components/modalItem.js';
 /* ///////////////////////// MODULES ///////////////////////// */
 import lenisScroll from './module/lenisScroll.js';
 import getDevice from './module/getDevice.js';
+import cursor from './module/cursor.js';
 import menuMobile from './module/menuMobile.js';
 import scrollMarkers from './module/scrollMarkers.js';
 import customSwiper from './module/customSwiper.js';
@@ -90,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	scrollMarkers(body, platform, isMobile, isDesktop, isTablet);
 	
 	menuMobile();
+	cursor();
 	servicios();
 	customSwiper();
 	cookies();

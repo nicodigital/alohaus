@@ -24,7 +24,7 @@
 
                 &:first-child{
                     font-family: theme(fontFamily.title);
-                    font-size: var(--h3);
+                    font-size: var(--h1);
                     letter-spacing: -0.05em;
                     line-height: 1;
                     width: 50%;
@@ -49,6 +49,11 @@
 
             }
 
+        }
+
+        & figure{
+            width: 100%;
+            height: 100%;
         }
 
         & img{

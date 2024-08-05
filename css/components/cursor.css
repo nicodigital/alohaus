@@ -1,0 +1,60 @@
+
+@media (min-width: theme("screens.xl")) {
+
+    .pointer {
+        display: none;
+        width: 1.8rem;
+        height: 1.8rem;
+        background-color: #000;
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        z-index: 99999999;
+        filter: invert(100%) grayscale(100%);
+        mix-blend-mode: difference;
+        transform: scale(1) translateZ(0px);
+        -webkit-transform: scale(1) translateZ(0px);
+        transform-origin: 50% 50%;
+        -webkit-transform-origin: 50% 50%;
+        transition-property: transform;
+        -webkit-transition-property: transform;
+        transition-duration: 0.3s; /* Duración de la transición */
+        -webkit-transition-duration: 0.3s; /* Duración de la transición */
+        transition-timing-function: ease; /* Función de temporización (puedes ajustarla según tus necesidades) */
+        -webkit-transition-timing-function: ease; /* Función de temporización (puedes ajustarla según tus necesidades) */
+        transition-delay: 0s; /* Retardo de la transición si es necesario */
+        -webkit-transition-delay: 0s; /* Retardo de la transición si es necesario */
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+
+        &.active{
+            display: block;
+        }
+
+        &.hover-1x {
+             transform: scale(3) translateZ(0px) !important;
+             -webkit-transform: scale(3) translateZ(0px) !important;
+        }
+
+        &.hover-2x {
+             transform: scale(4) translateZ(0px) !important;
+             -webkit-transform: scale(4) translateZ(0px) !important;
+        }
+
+        .menu-active:not(.pointer-hover) &{
+            mix-blend-mode: difference;
+            background: var(--orange);
+            filter: none;
+        }
+
+        .menu-active.pointer-hover &{
+            mix-blend-mode: screen;
+            background: var(--orange);
+            filter: none;
+        }
+
+    }
+
+}
+
+

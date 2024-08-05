@@ -4,7 +4,7 @@
   --option-height: calc(var(--field-height) + var(--field-margin-bottom));
   --form-color: theme(colors.orange);
   --active-color: theme(colors.white);
-  --error-color: theme(colors.red);
+  --error-color: rgba(255,255,255, .2);
 }
 
 .form{
@@ -29,7 +29,7 @@
       outline: none !important;
 
       &::placeholder{
-        color: var(--active-color) !important;
+        color: theme(colors.white)!important;
         opacity: 1;
       }
 
@@ -49,11 +49,13 @@
 
       & + .valid-msg{
         @apply block;
+        color: var(--error-color);
         border-color: var(--error-color) !important;
       }
 
       &::placeholder{
         @apply opacity-0 !important;
+        color: theme(colors.white)!important;
       }
 
     }
@@ -81,7 +83,7 @@
 
   /* El placeholder solo lo agarra aca */
   input::placeholder, textarea::placeholder{
-    color: var(--form-color) !important;
+    color: theme(colors.white)!important;
     opacity: 1 !important;
   }
 

@@ -21,11 +21,15 @@ body{
   -moz-osx-font-smoothing: grayscale;
   word-wrap: break-word;
   height: 100%;
+  cursor: none !important;
 }
 
 
 [id]{scroll-margin-top: 10ex}
 
+a{
+  cursor: none;
+}
 
 .row {
   @apply grid gap-1 grid-cols-12 md:gap-2;

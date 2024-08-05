@@ -4,10 +4,10 @@ $i18n = array(
 
   'menu' => [
     ['Home','/'],
-    ['Nosotros','nosotros'],
-    ['Equipo','equipo'],
+    ['Nosotros','#nosotros'],
+    ['Equipo','#equipo'],
     ['Proyectos','proyectos'],
-    ['Contacto','Contacto'],
+    ['Contacto','#contacto'],
   ],
 
   'words' => [

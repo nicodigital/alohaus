@@ -113,9 +113,10 @@ export default {
 			'xg': '992px',
 			'xl': '1064px',
 			'2xl': '1280px',
-			'3xl': '1536px',
-			'4xl': '1920px',
-			'5xl': '2560px'
+			'3xl': '1420px',
+			'4xl': '1536px',
+			'5xl': '1920px',
+			'6xl': '2560px',
 		},
 		container: {
 			screens: {
@@ -216,6 +217,7 @@ export default {
 		},
 	},
 	plugins: [
+		require('@tailwindcss/nesting'),
 		function ({ addComponents }) {
 			addComponents({
 				'.container': {

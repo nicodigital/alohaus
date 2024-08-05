@@ -10,6 +10,7 @@
 @import "./layout/custom.css";
 
 /* Components */
+@import "./components/cursor.css";
 @import "./components/menu.css";
 @import "./components/burger.css";
 @import "./components/brand.css";
