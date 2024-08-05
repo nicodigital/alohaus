@@ -6,8 +6,8 @@
   
   width: var(--brand-width);
 
-  img,svg{
-    @apply w-full;
+  & svg{
+    @apply w-full h-auto;
   }
 
 }
@@ -25,7 +25,7 @@
 @media (min-width:1064px){
 
   :root{
-    --brand-width: 14.5rem
+    --brand-width: 12.5rem
   }
 
 }

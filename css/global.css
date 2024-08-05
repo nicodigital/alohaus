@@ -11,6 +11,7 @@
 
 /* Components */
 @import "./components/cursor.css";
+@import "./components/hero.css";
 @import "./components/menu.css";
 @import "./components/burger.css";
 @import "./components/brand.css";

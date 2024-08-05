@@ -1,6 +1,22 @@
 import { gsap } from "gsap";
 import SplitType from 'split-type'
 
+export function brandIntro( container ) {
+  
+  return gsap.timeline()
+  .to( "#A", { scale: 1, duration: 1, ease: "power2.out" } )
+  .to( "#A path", { fill: "var(--orange)", duration: .3, ease: "power2.out" }, "-=.6" )
+  .to( "#A", { rotate: 0, scale: 1, duration: .6, ease: "power2.out" }, "=.1" )
+  .to( "#A", {translateX: 0, duration: .5, ease: "power2.out" } )
+  .fromTo( "#L", { translateX: "-5vw", autoAlpha: 0 }, { translateX: "0", autoAlpha: 1, duration: .6, ease: "power2.out" }, "-=.45" )
+  .fromTo( "#O", { translateX: "-5vw", autoAlpha: 0 }, { translateX: "0", autoAlpha: 1, duration: .6, ease: "power2.out" }, "-=.45" )
+  .fromTo( "#H", { translateX: "-5vw", autoAlpha: 0 }, { translateX: "0", autoAlpha: 1, duration: .6, ease: "power2.out" }, "-=.45" )
+  .fromTo( "#A2", { translateX: "-5vw", autoAlpha: 0 }, { translateX: "0", autoAlpha: 1, duration: .6, ease: "power2.out" }, "-=.45" )
+  .fromTo( "#U", { translateX: "-5vw", autoAlpha: 0 }, { translateX: "0", autoAlpha: 1, duration: .6, ease: "power2.out" }, "-=.45" )
+  .fromTo( "#S", { translateX: "-5vw", autoAlpha: 0 }, { translateX: "0", autoAlpha: 1, duration: .6, ease: "power2.out" }, "-=.45" )
+  // .to( "#A", {translateY: 0, duration: .75, ease: "power2.out" } )
+
+}
 
 export function heroTitle( container ) {
   

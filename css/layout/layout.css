@@ -2,6 +2,8 @@
   --container-gap: 1rem;
   --letter-track-1: -0.02em;
   --letter-track-2: -0.05em;
+  --orange: theme(colors.orange);
+  --white: theme(colors.white);
 }
 
 html {
