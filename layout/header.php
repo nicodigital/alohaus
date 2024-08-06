@@ -34,9 +34,9 @@
 
 </head>
 
-<body id="top" class="<?= $page ?> toggler" data-scroll="top" data-page="<?= $page ?>" data-barba="wrapper" >
+<body id="top" data-scroll="top" data-page="<?= $page ?>" data-barba="wrapper" >
 <div class="pointer"></div>
-<div class="first-load" data-barba="container" data-barba-namespace="<?=$page?>" >
+<div class="first-load <?= $page ?> toggler" data-barba="container" data-barba-namespace="<?=$page?>" >
 
   <header class="container">
     <div class="row items-center">

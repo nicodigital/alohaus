@@ -12,6 +12,9 @@
 
 }
 
+.home header .brand path{
+  transform: translateY(22rem);
+}
 
 
 @media (min-width: theme("screens.xg")) {

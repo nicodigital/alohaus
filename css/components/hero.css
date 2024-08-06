@@ -1,59 +1,75 @@
-.brand-intro{
-  position: relative;
-  /* path{
-    opacity: 0;
-  } */
+.brand-intro {
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 151rem;
+   height: 19rem;
+   transform: translateY(30rem) scale(0.25);
+   transform-origin: left;
+   overflow: hidden;
 
-  svg{
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-  }
+   svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+   }
 
-  #A{
-    transform: rotate(-90deg) translateY(25vw) scale(1.6);
-    opacity: 1;
-    color: currentColor;
-
-    path{
+   #A {
+      transform: rotate(-90deg) translateY(25vw);
       opacity: 1;
       color: currentColor;
-      fill: currentColor;
-      transition: all .3s;
-    }
-  }
 
-  #O,#A2,#U,#S{
-    transform: translateY(13%);
-  }
+      path {
+         opacity: 1;
+         color: currentColor;
+         fill: currentColor;
+         transition: all 0.3s;
+      }
+   }
 
-  #L{
-    left: 11%;
-  }
+   #O,
+   #A2,
+   #U,
+   #S {
+      transform: translateY(13%);
+   }
 
-  #O{
-    left: 14%;
-  }
+   #L {
+      left: 11%;
+   }
 
-  #H{
-    left: 22.5%;
-  }
+   #O {
+      left: 14%;
+   }
 
-  #A2{
-    left: 32%;
-  }
+   #H {
+      left: 22.5%;
+   }
 
-  #U{
-    left: 40%;
-  }
+   #A2 {
+      left: 32%;
+   }
 
-  #S{
-    left: 48%;
+   #U {
+      left: 40%;
+   }
+
+   #S {
+      left: 48%;
+   }
+}
+
+.line-txt{
+  display: flex;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  overflow: hidden;
+
+  span{
+    transform: translateY(100%);
   }
 
 }
-
 
 .hero-back {
    position: absolute;

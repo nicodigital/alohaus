@@ -58,4 +58,9 @@
     background: transparent;
   }
 
+  .home #menu{
+    transform: translateY(-2rem);
+    opacity: 0;
+  }
+
 }
