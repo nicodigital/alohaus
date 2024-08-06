@@ -1,6 +1,6 @@
 import barba from '@barba/core';
 import barbaPrefetch from '@barba/prefetch';
-import { brandIntro, animEnter, animLeave } from './gsap.js'
+import { brandIntro, animTitle1 } from './gsap.js'
 
 function motion( page, device_data, animations, accordion, customSwiper, modal, lenisScroll, htmx ) {
 
@@ -33,11 +33,12 @@ function motion( page, device_data, animations, accordion, customSwiper, modal, 
         once( {next} ){
           // console.log(next.container);
           brandIntro()
+          animTitle1( next.container )
         },
         leave: ({current}) => animLeave( current.container ),
         enter: ({next}) => {
           // console.log(next.container);
-          animEnter( next.container );
+          animTitle1( next.container )
           animations();
           accordion();
           modal();

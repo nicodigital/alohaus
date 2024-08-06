@@ -1,7 +1,7 @@
 <?php include 'layout/section/hero.php' ?>
 
 <!-- NOSOTROS-->
-<section class="container">
+<section id="nosotros" class="container">
   <hr class="text-orange mb-2">
 
   <div class="row relative mb-20">
@@ -26,7 +26,7 @@
       <div class="translate-y-[-1rem]">
         <?php miniTitle("Proyectos") ?>
       </div>
-      <h2 class="big-title title-scroll text-orange mb-1">
+      <h2 id="title-nosotros" class="big-title title-scroll text-grey-bold mb-1">
         Nosotros
       </h2>
     </div>
@@ -40,7 +40,7 @@
 
   <div class="row">
     <div class="xg:col-1-10">
-      <h2 class="big-title text-orange mb-1">
+      <h2 id="title-proyectos" class="big-title title-scroll top text-grey-bold mb-1">
         Our pride
       </h2>
     </div>
@@ -78,7 +78,7 @@
 <section id="servicios" class="mt-[33vh] xl:h-[210vh] 2xl:h-[240vh] 3xl:h-[215vh] 4xl:h-[210vh] 5xl:h-[200vh]">
 
   <div class="container sticky flex h-screen items-end top-2 mt-[-25vh]">
-    <h2 class="big-title text-orange mb-2">
+    <h2 id="title-servicios" class="big-title text-grey-bold mb-2">
       Modelado y visualiación 3d
     </h2>
   </div>
@@ -103,13 +103,13 @@
 </section>
 
 <!-- TEAM & CLIENTS-->
-<section id="team" class=" bg-orange min-h-screen ctr-pb text-grey-dark ">
+<section id="team" class=" bg-orange min-h-screen ctr-pb text-grey-dark">
 
   <div class="container flex justify-between items-end mb-20">
     <div class="translate-y-[-2.5rem]">
       <?php miniTitle("Team") ?>
     </div>
-    <h2 class="big-title text-right mb-2">
+    <h2 id="title-team" class="big-title text-right mb-2 opacity-20">
       We handle it!
     </h2>
   </div>
@@ -229,7 +229,7 @@
     </div>
     <div class="xg:col-9-13 flex justify-end items-end">
       <p class="mb-3">
-        © <?= date('Y') ?> AloHaus Estudio de diseño. All rights reserved.
+        © <?= date('Y') ?> AloHaus Estudio de diseño. <br> All rights reserved.
       </p>
     </div>
   </div>

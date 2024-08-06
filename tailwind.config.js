@@ -19,6 +19,7 @@ export default {
 				'orange': '#EB671C',
 				'grey': '#1d1d1b',
 				'black': '#020202',
+				'grey-bold': '#222',
 				'grey-dark': '#181818',
 				'grey-heavy': '#121212',
 				'white': '#f1f1f1',

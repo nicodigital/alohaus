@@ -23,6 +23,7 @@
     translate-x-[100%]	
     xg:translate-x-[0%]
     z-[999]
+    overflow-hidden
     transition-all
     ease-in-out
     duration-[.4s];
@@ -58,7 +59,7 @@
     background: transparent;
   }
 
-  .home #menu{
+  .home header a:not(.brand){
     transform: translateY(-2rem);
     opacity: 0;
   }

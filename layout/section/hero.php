@@ -36,15 +36,9 @@
   <div class="absolute left-0 bottom-0 row w-full ctr-px pointer-events-none">
     <div class="col-1-13 relative xg:min-h-[61.5vh] text-orange">
 
-      <div class="brand-intro">
-        <?php include "layout/components/brand-intro.php"; ?>
-      </div>
-      <h1 id="hero-title-1" class="big-title hero-title pb-1">
-        Hacemos diseño, <br>
-        de comunicación <br>
-        visual.
-      </h1>
-      <h2 id="hero-title-2" class="big-title hero-title pb-1">
+      <?php include "layout/components/brand-intro.php"; ?>
+ 
+      <h2 id="hero-title" class="big-title hero-title pb-1">
         Interpretamos, <br>
         evaluamos <br>
         y creamos.

@@ -1,63 +1,23 @@
 .brand-intro {
    position: absolute;
+   display: flex;
+   justify-content: center;
    left: 0;
-   bottom: 0;
-   width: 151rem;
-   height: 19rem;
-   transform: translateY(30rem) scale(0.25);
-   transform-origin: left;
+   top: 0;
+   width: 100%;
+   transform-origin: center;
    overflow: hidden;
 
-   svg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
+   & svg{
+      transform: scale(.25);
+      height: fit-content;
+      overflow: hidden;
    }
 
-   #A {
-      transform: rotate(-90deg) translateY(25vw);
-      opacity: 1;
-      color: currentColor;
-
-      path {
-         opacity: 1;
-         color: currentColor;
-         fill: currentColor;
-         transition: all 0.3s;
-      }
+   & path{
+      transform: translateY(100%);
    }
 
-   #O,
-   #A2,
-   #U,
-   #S {
-      transform: translateY(13%);
-   }
-
-   #L {
-      left: 11%;
-   }
-
-   #O {
-      left: 14%;
-   }
-
-   #H {
-      left: 22.5%;
-   }
-
-   #A2 {
-      left: 32%;
-   }
-
-   #U {
-      left: 40%;
-   }
-
-   #S {
-      left: 48%;
-   }
 }
 
 .line-txt{
