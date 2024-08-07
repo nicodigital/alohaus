@@ -9,6 +9,7 @@ export function brandIntro( container ) {
   const heroTitle = new SplitType('#hero-title');
   
   return gsap.timeline()
+  .to( "#hero-title", { opacity: 1, duration: .1 })
   .to( ".brand-intro path:nth-child(7)", {translateY: "0", duration: .4, ease: "power2.out" })
   .to( ".brand-intro path:nth-child(6)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
   .to( ".brand-intro path:nth-child(5)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
@@ -23,7 +24,7 @@ export function brandIntro( container ) {
   .to( ".brand-intro path:nth-child(3)", { yPercent: -120, duration: .4, ease: "power2.out" }, "-=.35" )
   .to( ".brand-intro path:nth-child(2)", { yPercent: -120, duration: .4, ease: "power2.out" }, "-=.35" )
   .to( ".brand-intro path:nth-child(1)", { yPercent: -120, duration: .4, ease: "power2.out" }, "-=.35" )
-  .to( ".brand path:nth-child(7)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.55" )
+  .to( ".brand path:nth-child(7)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.4" )
   .to( ".brand path:nth-child(6)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
   .to( ".brand path:nth-child(5)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
   .to( ".brand path:nth-child(4)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
@@ -31,7 +32,7 @@ export function brandIntro( container ) {
   .to( ".brand path:nth-child(2)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
   .to( ".brand path:nth-child(1)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
   .to( "#hero-title .char", { y: 0, stagger: 0.04, duration: .15, ease: "power2.out" }, "-=1.2" )
-  .to( ".line-txt span", { y: 0, stagger: 0.04, duration: .2, ease: "power2.out" }, "=.2" )
+  .to( ".line-txt span", { y: 0, stagger: 0.04, duration: .2, ease: "power4.out" }, "=.2" )
   .to( "header a:not(.brand)", {translateY: "0", autoAlpha: 1, stagger: 0.04, duration: .4, ease: "ease.out" }, "-=.2" )
   .to( ".arrow-intro svg", {translateY: "0", translateX: "0", duration: .4, ease: "power2.out" }, "=.2" )
 
@@ -39,7 +40,6 @@ export function brandIntro( container ) {
 
 export function animTitle1( container ){
 
-  // const SPILT = new SplitType('#title-nosotros');
   const nosotros_title = container.querySelector( "#title-nosotros" );
   const proyectos_title = container.querySelector( "#title-proyectos" );
   const servicios_title = container.querySelector( "#title-servicios" );

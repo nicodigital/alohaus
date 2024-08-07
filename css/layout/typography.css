@@ -137,7 +137,7 @@ hr{
 @media (min-width: theme("screens.xg")) {
   :root {
     --html: 11px;
-    --big: 10vw;
+    --big: 9.6vw;
     --body: 1.3rem;
     --h1: 3rem;
     --h2: 2.9rem;

@@ -7,6 +7,7 @@ function servicios() {
 
     card.addEventListener("mouseover", () => {
       let servTitle = card.dataset.title;
+      TITLE.style.opacity = 1;
       TITLE.innerHTML = servTitle;
     });
 

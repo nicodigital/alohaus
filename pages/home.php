@@ -1,3 +1,8 @@
+<!-- <video class="hero-back" preload autoplay muted playsinline loop  >
+      <source src='public/video/Background.mp4' type='video/mp4'>
+      Your browser does not support the video tag.
+</video> -->
+
 <?php include 'layout/section/hero.php' ?>
 
 <!-- NOSOTROS-->
@@ -78,7 +83,7 @@
 <section id="servicios" class="mt-[33vh] xl:h-[210vh] 2xl:h-[240vh] 3xl:h-[215vh] 4xl:h-[210vh] 5xl:h-[200vh]">
 
   <div class="container sticky flex h-screen items-end top-2 mt-[-25vh]">
-    <h2 id="title-servicios" class="big-title text-grey-bold mb-2">
+    <h2 id="title-servicios" class="big-title text-grey-bold mb-2 opacity-0 transition-all duration-[.6s]">
       Modelado y visualiación 3d
     </h2>
   </div>
