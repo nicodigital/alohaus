@@ -1,7 +1,7 @@
-<!-- <video class="hero-back" preload autoplay muted playsinline loop  >
+<video class="hero-back" preload autoplay muted playsinline loop  >
       <source src='public/video/Background.mp4' type='video/mp4'>
       Your browser does not support the video tag.
-</video> -->
+</video>
 
 <?php include 'layout/section/hero.php' ?>
 

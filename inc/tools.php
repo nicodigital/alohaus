@@ -27,7 +27,7 @@ function cardServ( $num = "01", $slug = '', $title = '', $text = '') { ?>
 
 function cardCase($title, $img, $cliente = '', $pieza = '')
 { ?>
-  <a class="card pointer-1x">
+  <a class="card pointer-arrow black">
     <figure>
       <picture-item img="<?= $img ?>" title="<?= $title ?>"></picture-item>
       <figcaption class="info">

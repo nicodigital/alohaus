@@ -60,4 +60,5 @@
    filter: grayscale();
    opacity: 0.05;
    object-fit: cover;
+   /* opacity: 0; */
 }

@@ -2,7 +2,7 @@
 
     .card{
         position: relative;
-        aspect-ratio: 1/0.9;
+        aspect-ratio: var(--card-aspect);
 
         & .info{
             position: absolute;
@@ -150,4 +150,140 @@
         }
 
     }
+}
+
+#all-works{
+
+    .card{
+        position: relative;
+        display: block;
+
+        &:before{
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            background-color: var(--orange);
+            pointer-events: none;
+            mix-blend-mode: color;
+            filter: grayscale(1);
+            opacity: 0;
+        }
+
+        & figcaption{
+            position:absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 12;
+            color: #fff;
+            opacity: 0;
+            pointer-events: none;
+            @apply py-2 px-3;
+
+            & > span{
+                position: relative;
+                
+                
+                &:first-child{
+                    font-family: theme(fontFamily.title);
+                    font-size: var(--h1);
+                    letter-spacing: -0.05em;
+                    line-height: 1;
+                    width: 50%;
+                    display: none;
+                    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+                    transition: all .4s ease;
+                }
+
+                &:last-child{
+                    display: flex;
+                    justify-content: space-between;
+                    letter-spacing: var(--letter-track-2);
+
+                    span{
+                        display: none;
+                        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+                        transition: all .4s ease;
+                    }
+
+                }
+
+            }
+
+        }
+
+        & img{
+            aspect-ratio: var(--card-aspect);
+            transition: all .4s ease;
+        }
+
+
+        &:hover{
+
+            &:before{
+                opacity: 1;
+            }
+
+            & figcaption{
+                opacity: 1;
+
+                & > span{
+
+                    &:first-child{
+                        display: block;
+                        animation: lineIn .4s ease-in-out forwards;
+                    }
+
+                    &:last-child{
+
+                        & span:first-child{
+                            display: block;
+                            animation: lineIn .4s ease-in-out forwards;
+                            animation-delay: .2s;
+                        }
+
+                        & span:last-child{
+                            display: block;
+                            animation: lineIn .4s ease-in-out forwards;
+                            animation-delay: .4s;
+                        }
+
+                    }
+
+                }
+
+            }
+
+            & img{
+                opacity: .2;
+            }
+
+        }
+
+    }
+
+}
+
+
+
+@keyframes lineIn{
+
+    0%{
+        transform: translateY(1rem);
+        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+    }
+
+    100%{
+        transform: translateY(0);
+        clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+    }
+
 }

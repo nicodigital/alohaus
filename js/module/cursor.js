@@ -4,6 +4,7 @@ function cursor() {
   const all_links = document.querySelectorAll('a');
   const pointer_1x = document.querySelectorAll('.pointer-1x');
   const pointer_2x = document.querySelectorAll('.pointer-2x');
+  const pointer_arrow = document.querySelectorAll('.pointer-arrow');
 
   document.addEventListener("mousemove", (e) => {
     pointer.classList.add('active');
@@ -21,6 +22,10 @@ function cursor() {
 
         if (hover_x == 'hover-2x') {
           body.classList.add('pointer-hover');
+        }
+
+        if (hover_x == 'hover-arrow') {
+          body.classList.add('pointer-arrow');
         }
 
       });
@@ -45,6 +50,10 @@ function cursor() {
 
   if (pointer_2x) {
     hoverItems(pointer_2x, 'hover-2x');
+  }
+
+  if (pointer_arrow) {
+    hoverItems(pointer_arrow, 'hover-arrow');
   }
 
 

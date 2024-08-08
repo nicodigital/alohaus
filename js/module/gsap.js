@@ -24,6 +24,7 @@ export function brandIntro( container ) {
   .to( ".brand-intro path:nth-child(3)", { yPercent: -120, duration: .4, ease: "power2.out" }, "-=.35" )
   .to( ".brand-intro path:nth-child(2)", { yPercent: -120, duration: .4, ease: "power2.out" }, "-=.35" )
   .to( ".brand-intro path:nth-child(1)", { yPercent: -120, duration: .4, ease: "power2.out" }, "-=.35" )
+  // .to( ".hero-back", { opacity: 0.1, duration: 2, ease: "power2.out" }, "-=1" )
   .to( ".brand path:nth-child(7)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.4" )
   .to( ".brand path:nth-child(6)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
   .to( ".brand path:nth-child(5)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )

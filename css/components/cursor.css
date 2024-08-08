@@ -1,7 +1,7 @@
 
 @media (min-width: theme("screens.xl")) {
 
-    .pointer {
+    .pointer:not(.hover-arrow) {
         display: none;
         width: 1.8rem;
         height: 1.8rem;
@@ -54,6 +54,24 @@
         }
 
     }
+
+    .pointer.hover-arrow {
+        display: none;
+        position: fixed;
+        width: 2.1rem;
+        height: 2.1rem;
+        pointer-events: none;
+        z-index: 99999999;
+        background-image: url("data:image/svg+xml,%3Csvg width='33' height='33' viewBox='0 0 33 33' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.64074 32.7103L26.5665 10.7845L26.5666 32.8686L32.4762 32.8687V0.696201H0.303711V6.6058H22.3878L0.462025 28.5316L4.64074 32.7103Z' fill='white'/%3E%3C/svg%3E");
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: 99999;
+
+        &.active{
+            display: block;
+        }
+
+   }
 
 }
 
