@@ -21,6 +21,9 @@
 @import "./components/cards.css";
 @import "./components/accordion.css";
 @import "./components/forms.css";
+@import "./components/filter.css";
+@import "./components/sharebar.css";
+@import "./components/single-columns.css";
 /* @import "./components/view-transitions.css"; */
 /* @import "./components/custom-select.css"; */
 /* @import "./components/checkbox-radio.css"; */

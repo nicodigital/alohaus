@@ -1,8 +1,8 @@
 import barba from '@barba/core';
 import barbaPrefetch from '@barba/prefetch';
-import { brandIntro, animTitle1 } from './gsap.js'
+import { brandIntro, animTitle } from './gsap.js'
 
-function motion( page, device_data, animations, accordion, customSwiper, modal, lenisScroll, htmx ) {
+function motion( page, device_data, animations, accordion, customSwiper, modal, lenisScroll ) {
 
   barba.use(barbaPrefetch);
 
@@ -32,24 +32,26 @@ function motion( page, device_data, animations, accordion, customSwiper, modal, 
       {
         once( {next} ){
           // console.log(next.container);
-          brandIntro()
-          animTitle1( next.container )
+          brandIntro(next.container)
+          animTitle( next.container )
         },
-        leave: ({current}) => animLeave( current.container ),
+        leave: ({current}) => {
+          // animLeave( current.container )
+        },
         enter: ({next}) => {
           // console.log(next.container);
-          animTitle1( next.container )
+          animTitle( next.container )
           animations();
           accordion();
           modal();
           lenisScroll();
           // filters();
 
-          if (htmx) {
-            htmx.process(next.container);
-          } else {
-            console.error('HTMX is not defined');
-          }
+          // if (htmx) {
+          //   htmx.process(next.container);
+          // } else {
+          //   console.error('HTMX is not defined');
+          // }
 
           page === "home" ? customSwiper() : null;
 

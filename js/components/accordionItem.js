@@ -14,7 +14,7 @@ function AccordionItem() {
         `<div class="accordion-item">
             <h2 class="accordion-heading">
               <button class="accordion-trigger" aria-expanded="${expand}" >
-                ${title} <span><span>Más info</span></span>
+                ${title} <span></span>
               </button>
             </h2>
             <div class="accordion-copy ${copyStatus}">${txt}</div>

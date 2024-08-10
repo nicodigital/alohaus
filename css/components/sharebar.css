@@ -1,0 +1,81 @@
+.sharebar{
+  position: relative;
+}
+
+.sharebar svg{
+   @apply text-white w-[1.7rem] h-auto;
+}
+
+.sharebar a{
+  position: relative;
+  display: block;
+  width: fit-content;
+  opacity: 0;
+  transform: translateY(1rem);
+  pointer-events: none;
+  transition: all .6s ease;
+}
+
+.sharebar a:before{
+    position: absolute;
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    bottom: .55rem;
+    left: 0;
+    transform: translateX(calc( -1 * 100% - 1rem ));
+    background-image: url("img/icons/arrow-tilted-right-down-white.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+}
+
+.sharebar  a:hover:before{opacity: 1}
+
+.sharebar:hover a:nth-child(1){
+  animation: itemShow .6s forwards;
+}
+
+.sharebar:hover a:nth-child(2){
+  animation: itemShow .6s forwards;
+  animation-delay: .1s;
+}
+
+.sharebar:hover a:nth-child(3){
+  animation: itemShow .6s forwards;
+  animation-delay: .2s;
+}
+
+.sharebar:hover a:nth-child(4){
+  animation: itemShow .6s forwards;
+  animation-delay: .3s;
+}
+
+.sharebar.top .items{
+  position: absolute;
+  right: 0;
+  top: -3rem;
+  transform: translateY(-100%);
+  justify-content: flex-end;
+}
+
+.sharebar.top .items a{
+  width: 100%;
+  text-align: right;
+}
+
+@keyframes itemShow{
+
+  0%{
+    transform: translateY(1rem);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+}

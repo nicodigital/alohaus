@@ -1,0 +1,29 @@
+.filter-btn{
+   position: relative;
+   width: fit-content;
+   appearance: none;
+   cursor: none;
+   text-align: left;
+   opacity: .3;
+}
+
+.filter-btn:hover {
+   
+   opacity: 1;
+   
+   &:after{
+      position: absolute;
+      content: "";
+      width: 1rem;
+      height: 1rem;
+      bottom: .55rem;
+      right: 0;
+      transform: translateX(calc( 100% + 1rem ));
+      background-image: url("img/icons/arrow-tilted-left-down-white.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+   }
+
+}
+
+.filter-btn.active{opacity: 1}

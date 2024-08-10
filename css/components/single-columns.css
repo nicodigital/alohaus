@@ -1,0 +1,53 @@
+.col-1,.col-2, .socket, .text-content, .togg-col, .togg-col svg{
+  transition: all .45s ease-in-out;
+}
+
+.togg-col{
+  @apply flex size-5 justify-center items-center;
+}
+
+.togg-col svg{
+  @apply size-[1.8rem];
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.columns .text-content{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.columns.toggle-column .col-1{
+  width: 0;
+  overflow: hidden;
+}
+
+.columns.toggle-column .sticky .togg-col{
+  transform: translate(-3rem,3rem);
+}
+
+.columns.toggle-column .sticky .togg-col svg{
+  clip-path: polygon(0 100%, 0 100%, 0 100%, 0% 100%);
+}
+
+/* .columns.toggle-column .col-1 *{opacity: 0} */
+
+.columns.toggle-column .col-1 + .col-2{
+   width: 100%;
+}
+
+.columns.toggle-column > div{
+  gap: 0;
+}
+
+.columns.toggle-column .text-content{
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
+
+.socket{
+  transform: translateY(100%);
+}
+
+.columns.toggle-column .socket{
+  transform: translateY(0);
+}
+
+

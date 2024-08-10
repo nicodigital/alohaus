@@ -23,7 +23,7 @@ function scrollMarkers(body, platform, isMobile, isTablet, isDesktop) {
 					// Por ejemplo, cambiar su estilo, cargar contenido adicional, etc.
 				} else {
 
-					if (scrollPosition < 100) {
+					if (scrollPosition < 75 ) {
 						body.setAttribute('data-scroll', 'top');
 					} else {
 						body.setAttribute('data-scroll', 'down');

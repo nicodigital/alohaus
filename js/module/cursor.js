@@ -1,7 +1,6 @@
-function cursor() {
+function cursor(body) {
 
   const pointer = document.querySelector(".pointer");
-  const all_links = document.querySelectorAll('a');
   const pointer_1x = document.querySelectorAll('.pointer-1x');
   const pointer_2x = document.querySelectorAll('.pointer-2x');
   const pointer_arrow = document.querySelectorAll('.pointer-arrow');

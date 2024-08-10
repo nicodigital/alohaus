@@ -1,4 +1,4 @@
-import htmx from "htmx.org";
+// import htmx from "htmx.org";
 
 /* ////////////////////////COMPONENTS ///////////////////////// */
 import PictureItem from './components/PictureItem.js';
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	scrollMarkers(body, platform, isMobile, isDesktop, isTablet);
 	
 	menuMobile();
-	cursor();
+	cursor(body);
 	servicios();
 	customSwiper();
 	cookies();
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	// filters();
 
 	// Pasamos las funciones a Barba.js
-	motion( page, device_data, animations, accordion, customSwiper, modal, lenisScroll, htmx );
+	motion( page, device_data, animations, accordion, customSwiper, modal, lenisScroll );
 
 	// getUrlParams();
 	// goTo();
@@ -114,10 +114,10 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Ejecutar animaciones cuando HTMX carga nuevo contenido
-document.body.addEventListener('htmx:afterRequest', (event) => {
-	// console.log("HTMX afterSettle event triggered");  // Log para depuración
-  animations();
-});
+// document.body.addEventListener('htmx:afterRequest', (event) => {
+// 	// console.log("HTMX afterSettle event triggered");  // Log para depuración
+//   animations();
+// });
 
 
 // Testing HTMX
