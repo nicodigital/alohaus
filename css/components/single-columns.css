@@ -1,5 +1,5 @@
 .col-1,.col-2, .socket, .text-content, .togg-col, .togg-col svg{
-  transition: all .45s ease-in-out;
+  transition: var(--trans-45);
 }
 
 .togg-col{

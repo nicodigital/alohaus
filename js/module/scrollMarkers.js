@@ -8,8 +8,8 @@ function scrollMarkers(body, platform, isMobile, isTablet, isDesktop) {
 		// Opciones para el IntersectionObserver
 		var options = {
 			root: null, // Usar el viewport como área de observación
-			rootMargin: '0px', // Margen adicional alrededor del área de observación
-			threshold: 0.5 // Porcentaje del elemento que debe estar visible para activar la función de callback
+			rootMargin: '20%', // Margen adicional alrededor del área de observación
+			threshold: 0 // Porcentaje del elemento que debe estar visible para activar la función de callback
 		}
 
 		// Función de callback que se ejecuta cuando el elemento entra en la pantalla

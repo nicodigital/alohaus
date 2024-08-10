@@ -1,10 +1,10 @@
 <div class="socket fixed left-0 bottom-0 w-full ctr-px">
   <div class="container">
-    <div class="flex justify-between items-center py-1 border-t border-w">
+    <div class="togg-me flex justify-between items-center py-1 border-t border-w">
 
-      <div class="grid grid-cols-2 xg:w-50% items-center">
+      <div class="flex xg:min-w-50% items-center gap-20">
         <div class="text-h1 font-title">
-          Volta
+          Larnaudie Single Malt 
         </div>
         <p class="translate-y-[.7rem]">
           Packaging

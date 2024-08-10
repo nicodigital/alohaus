@@ -1,0 +1,18 @@
+.single-tools{
+   @apply fixed left-0 bottom-0 flex justify-between items-end xg:w-33% ctr-p;
+}
+
+.single-tools > div{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  transition: var(--trans-45);
+}
+
+.toggle-column .single-tools > div,
+[data-scroll="bottom"] .single-tools > div{
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+
+.single-tools .sharebar:hover{
+  clip-path: none;
+}

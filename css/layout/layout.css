@@ -5,6 +5,8 @@
   --orange: theme(colors.orange);
   --white: theme(colors.white);
   --card-aspect: 1/0.9;
+  --trans-45: all .45s ease-in-out;
+  --trans-6: all .6s ease-in-out;
 }
 
 html {

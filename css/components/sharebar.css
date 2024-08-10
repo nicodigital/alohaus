@@ -9,7 +9,8 @@
 .sharebar a{
   position: relative;
   display: block;
-  width: fit-content;
+  width: 100%;
+  text-align: right;
   opacity: 0;
   transform: translateY(1rem);
   pointer-events: none;
@@ -57,11 +58,6 @@
   top: -3rem;
   transform: translateY(-100%);
   justify-content: flex-end;
-}
-
-.sharebar.top .items a{
-  width: 100%;
-  text-align: right;
 }
 
 @keyframes itemShow{
