@@ -1,4 +1,4 @@
-function menuMobile() {
+function menuMobile(html,body) {
 
   const btn_togg = document.querySelectorAll('.togg');
 
@@ -23,7 +23,7 @@ function menuMobile() {
 
   function menuToggler() {
 
-    const toggler = document.querySelector('body.toggler');
+    const toggler = document.querySelector('.menu-toggler');
 
     if ( toggler.classList.contains('menu-in') ) {
 

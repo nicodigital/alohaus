@@ -1,5 +1,5 @@
 :root{
-	--burger-color: #000;
+	--burger-color: theme(colors.orange);
 	--burger-size: 3.5rem;
 }
 
@@ -29,13 +29,6 @@
 	background-color: var(--burger-color);
 }
 
-
-
-body.menu-in .burger-inner::after,
-body.menu-in .burger-inner::before {
-	background-color: #fff;
-}
-
 .burger-inner::after,
 .burger-inner::before {
 	content: "";
@@ -51,7 +44,7 @@ body.menu-in .burger-inner::before {
 }
 
 
-body.menu-in {
+.menu-toggler.menu-in {
 
   .burger-inner {
 

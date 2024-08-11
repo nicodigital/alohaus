@@ -36,7 +36,7 @@
 
 <body id="top" data-scroll="top" data-page="<?= $page ?>" data-barba="wrapper" >
 <div class="pointer"></div>
-<div class="first-load <?= $page ?> toggler" data-barba="container" data-barba-namespace="<?=$page?>" >
+<div class="first-load <?= $page ?> menu-toggler" data-barba="container" data-barba-namespace="<?=$page?>" >
 
   <header class="container">
     <div class="row items-center">
@@ -46,7 +46,7 @@
       <div class="xg:col-5-10">
         <?php include 'layout/components/menu.php'; ?>
       </div>
-      <div class="xg:col-12-13 flex justify-end">
+      <div class="xg:col-12-13 hidden xg:flex justify-end">
         <?php include 'layout/components/lang-switcher.php'; ?>
       </div>
     </div>

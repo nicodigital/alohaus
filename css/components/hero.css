@@ -1,29 +1,30 @@
-.brand-intro {
-   position: absolute;
-   display: flex;
-   justify-content: center;
-   left: 0;
-   top: 0;
-   width: 100%;
-   transform-origin: center;
-   overflow: hidden;
-
-   & svg{
-      transform: scale(.23);
-      height: fit-content;
-      overflow: hidden;
-   }
-
-   & path{
-      transform: translateY(100%);
-   }
-
+.row-brand{
+  @apply row 
+        absolute left-0 bottom-0 w-full h-[100svh] xg:h-auto 
+        flex items-center
+        ctr-px pointer-events-none;
 }
 
+.brand-intro {
+  @apply absolute w-full top-0 left-0 
+         flex justify-center
+         overflow-hidden;
+   transform-origin: center;
+}
+
+.brand-intro svg{
+  @apply scale-[.5] xg:scale-[.23] 
+         h-fit overflow-hidden;
+}
+
+.brand-intro path{
+  @apply translate-y-[110%] xg:translate-y-[100%]
+}
+
+
 .line-txt{
-  display: flex;
+  @apply flex overflow-hidden;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  overflow: hidden;
 
   span{
     transform: translateY(100%);
@@ -31,22 +32,27 @@
 
 }
 
+.arrow-intro{
+  @apply absolute top-0 right-0 xg:bottom-0 xg:left-0 
+  w-2 xg:w-[1.2vw] 
+  xg:translate-y-[.7vh] xg:translate-x-[-2.5vw] 
+  overflow-hidden;
+}
+
 .hero-title{
-   position: absolute;
-   top: 0;
-   left: 0;
-   opacity: 0;
- 
+
+  @apply absolute top-[-4rem] xg:top-0 left-0 opacity-0;
+
    .line {
      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 96%);
      overflow: hidden;
    }
  
-   .char{
-     transform: translateY(10.5vw);
-     transition: transform .6s;
-   }
- 
+ }
+
+ .hero-title .char{
+    @apply translate-y-[5rem] xg:translate-y-[10.5vw];
+    transition: transform .6s;
  }
 
 .hero-back {

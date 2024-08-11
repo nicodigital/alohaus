@@ -34,7 +34,7 @@ export function brandIntro( container ) {
     .to( ".brand path:nth-child(2)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
     .to( ".brand path:nth-child(1)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
     .to( "#hero-title .char", { y: 0, stagger: 0.04, duration: .15, ease: "power2.out" }, "-=1.2" )
-    .to( ".line-txt span", { y: 0, stagger: 0.04, duration: .2, ease: "power4.out" }, "=.2" )
+    .to( ".line-txt span", { y: 0, stagger: 0.06, duration: .6, ease: "power4.out" }, "=.2" )
     .to( "header a:not(.brand)", {translateY: "0", autoAlpha: 1, stagger: 0.04, duration: .4, ease: "ease.out" }, "-=.2" )
     .to( ".arrow-intro svg", {translateY: "0", translateX: "0", duration: .4, ease: "power2.out" }, "=.2" )
     .to( ".hero-back", { opacity: 0.1, duration: 5, ease: "power2.out" }, "-=2.5" )

@@ -4,22 +4,12 @@
   padding-right: var(--container-gap);
 
   @apply 
-    fixed 
-    xg:relative 
-    w-100%
-    h-screen
-    xg:h-auto
-    top-0 
-    right-0 
-    xg:left-0
-    flex 
-    flex-col
-    xg:flex-row
+    fixed xg:relative w-100% h-screen xg:h-auto
+    top-0 right-0 xg:left-0
+    flex flex-col justify-between xg:flex-row
     py-2 xg:py-0
-    gap-2
     xg:gap-4
-    justify-start
-    xg:justify-between 
+    bg-grey-dark
     translate-x-[100%]	
     xg:translate-x-[0%]
     z-[999]
@@ -27,17 +17,16 @@
     transition-all
     ease-in-out
     duration-[.4s];
+}
 
-    & > a, & > div{
-      @apply text-h1 xg:text-body font-title cursor-pointer;
-      
-      &:nth-child(2){
-        @apply mt-5 xg:mt-0;
-      }
+#menu nav{
+  @apply w-full flex flex-col xg:flex-row xg:justify-between;
+}
 
-    }
-    
-
+#menu .item{
+  @apply text-big font-title uppercase text-orange w-full border-b-[1.5px] border-orange
+  xg:text-body xg:lowercase xg:text-white xg:w-fit xg:border-none
+  cursor-pointer;
 }
 
 .menu-in{

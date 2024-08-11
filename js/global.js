@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	lenisScroll();
 	scrollMarkers(body, platform, isMobile, isDesktop, isTablet);
 	
-	menuMobile();
+	menuMobile(html,body);
 	cursor(body);
 	servicios();
 	customSwiper();

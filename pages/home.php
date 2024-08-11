@@ -6,7 +6,7 @@
 <?php include 'layout/section/hero.php' ?>
 
 <!-- NOSOTROS-->
-<section id="nosotros" class="container">
+<!-- <section id="nosotros" class="container">
   <hr class="text-orange mb-2">
 
   <div class="row relative mb-20">
@@ -37,10 +37,10 @@
     </div>
   </div>
 
-</section>
+</section> -->
 
 <!-- PROJECTS -->
-<section id="proyectos" class="container mb-2">
+<!-- <section id="proyectos" class="container mb-2">
   <hr class="text-orange mb-1">
 
   <div class="row">
@@ -77,10 +77,10 @@
     </div>
   </div>
 
-</section>
+</section> -->
 
 <!-- SERVICIOS -->
-<section id="servicios" class="mt-[33vh] xl:h-[210vh] 2xl:h-[240vh] 3xl:h-[215vh] 4xl:h-[210vh] 5xl:h-[200vh]">
+<!-- <section id="servicios" class="mt-[33vh] xl:h-[210vh] 2xl:h-[240vh] 3xl:h-[215vh] 4xl:h-[210vh] 5xl:h-[200vh]">
 
   <div class="container sticky flex h-screen items-end top-2 mt-[-25vh]">
     <h2 id="title-servicios" class="big-title text-grey-bold mb-2 opacity-0 transition-all duration-[.6s]">
@@ -105,10 +105,10 @@
 
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- TEAM & CLIENTS-->
-<section id="team" class=" bg-orange min-h-screen ctr-pb text-grey-dark">
+<!-- <section id="team" class=" bg-orange min-h-screen ctr-pb text-grey-dark">
 
   <div class="container flex justify-between items-end mb-20">
     <div class="translate-y-[-2.5rem]">
@@ -178,4 +178,4 @@
     </div>
   </div>
 
-</section>
+</section> -->
