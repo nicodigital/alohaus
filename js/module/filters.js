@@ -12,16 +12,17 @@ function filters() {
 
   filterButtons.forEach((button) => {
     button.addEventListener("click", (e) => {
-      let confCategory = e.target.getAttribute("data-filter");
+      // Obtener las categorías seleccionadas del botón, separadas por comas y eliminando espacios adicionales
+      let selectedFilters = e.target.getAttribute("data-filter").split(',').map(filter => filter.trim());
 
       if (!document.startViewTransition) {
         updateActiveButton(e.target);
-        filterEvents(confCategory);
+        filterEvents(selectedFilters);
       }
 
       document.startViewTransition(() => {
         updateActiveButton(e.target);
-        filterEvents(confCategory);
+        filterEvents(selectedFilters);
       });
     });
   });
@@ -31,13 +32,15 @@ function filters() {
     newButton.classList.add("active");
   }
 
-  function filterEvents(filter) {
+  function filterEvents(filters) {
     filterItems.forEach((filterItem) => {
-      // get each filterItems category
-      let dataType = filterItem.getAttribute("data-type");
+      // Obtener las categorías del ítem, separadas por comas y eliminando espacios adicionales
+      let dataTypes = filterItem.getAttribute("data-type").split(',').map(type => type.trim());
 
-      // check if that category matches with the filter
-      if (filter === "all" || filter === dataType) {
+      // Verificar si alguna de las categorías seleccionadas coincide con las categorías del ítem
+      let match = filters.includes("all") || filters.some(filter => dataTypes.includes(filter));
+
+      if (match) {
         filterItem.removeAttribute("hidden");
       } else {
         filterItem.setAttribute("hidden", "");

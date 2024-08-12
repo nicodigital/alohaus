@@ -7,6 +7,7 @@ $works = [
     "img" => ASSETS_PATH . "img/works/alohaus-volta-thumbnail.jpg",
     "cliente" => "Volta",
     "pieza" => "Diseño de logotipo",
+    "cat" => "Identidad",
   ],
 
   [
@@ -14,6 +15,7 @@ $works = [
     "img" => ASSETS_PATH . "img/works/alohaus-larnaudie-cover.jpg",
     "cliente" => "Larnaudie",
     "pieza" => "Etiqueta",
+    "cat" => "3d,Packaging",
   ],
 
   [
@@ -21,6 +23,7 @@ $works = [
     "img" => ASSETS_PATH . "img/works/alohaus-beats-visualizacion-3d.png",
     "cliente" => "",
     "pieza" => "Visualización 3D",
+    "cat" => "3d,Lab",
   ],
 
   [
@@ -28,6 +31,7 @@ $works = [
     "img" => ASSETS_PATH . "img/works/alohaus-viaaqua-post-cover.jpg",
     "cliente" => "VIAAQUA",
     "pieza" => "Aftermovie",
+    "cat" => "Identidad,Producción",
   ],
 
   [
@@ -35,6 +39,7 @@ $works = [
     "img" => ASSETS_PATH . "img/works/alohaus-chamal-render01.jpg",
     "cliente" => "CHAMAL GIN",
     "pieza" => "Artis4lovers",
+    "cat" => "3d,Packaging",
   ],
 
   [
@@ -42,6 +47,7 @@ $works = [
     "img" => ASSETS_PATH . "img/works/alohaus-fenicio-post-cover.jpg",
     "cliente" => "Fenicio",
     "pieza" => "Video promocional",
+    "cat" => "Motion Graphics,Producción",
   ],
 
   [
@@ -49,6 +55,15 @@ $works = [
     "img" => ASSETS_PATH . "img/works/AH-Portfolio-Lata3D-Destacada.jpg",
     "cliente" => "",
     "pieza" => "Visualización 3D",
+    "cat" => "3d,Lab",
+  ],
+
+  [
+    "title" => "Corisma",
+    "img" => ASSETS_PATH . "img/works/AH-Portfolio-Corimsa-Destacada.png",
+    "cliente" => "Corimsa",
+    "pieza" => "Rediseño identidad visual",
+    "cat" => "Identidad",
   ],
 
 

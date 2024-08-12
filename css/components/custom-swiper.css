@@ -23,7 +23,7 @@
 #clients{
 
   & .swiper-slide {
-    @apply px-4;
+    @apply pl-2 xg:px-4;
   }
 
   & img{

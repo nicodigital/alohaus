@@ -86,10 +86,6 @@
 
     .card{ 
 
-        position: relative;
-        @apply min-h-[30vh];
-        border-top: 1px solid theme(colors.white);
-
         & span{
             font-family: theme(fontFamily.title);
             font-size: 1.8rem;
@@ -107,6 +103,10 @@
 
 }
 
+#servicios .card{
+    @apply relative min-h-[30vh] xg:border-t xg:border-white; 
+}
+
 #servicios .card p{
     @apply xg:w-70% mt-1 pb-4 xg:pb-0
     transition-all duration-[400ms] ease-in-out;
@@ -115,14 +115,6 @@
 #team{
 
     .card{
-
-        display: flex;
-        flex-direction: column-reverse;
-        color: theme(colors.grey-dark);
-
-        img{
-            filter: grayscale(100);
-        }
 
         & figcaption{
 
@@ -149,11 +141,20 @@
 
         }
 
-        &:first-child img{
+        /* &:first-child img{
             width: calc(100% + var(--container-gap)*2);
-        }
+        } */
 
     }
+}
+
+#team .card{
+    @apply flex flex-row-reverse xg:flex-col-reverse text-grey-dark;
+}
+
+#team .card img{
+    @apply w-50% xg:w-full translate-x-[2rem] xg:translate-x-0;
+    filter: grayscale(100);
 }
 
 #all-works{
@@ -170,7 +171,7 @@
             width: 100%;
             height: 100%;
             z-index: 10;
-            background-color: var(--orange);
+            background-color: var(--grey-dark);
             pointer-events: none;
             mix-blend-mode: color;
             filter: grayscale(1);
@@ -270,6 +271,10 @@
                 opacity: .2;
             }
 
+        }
+
+        &[hidden]{
+            display: none;
         }
 
     }

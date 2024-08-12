@@ -1,8 +1,8 @@
-<section id="all-works" class="container xg:mt-12 xg:mb-10 3xl:mt-16 3xl:mb-12">
+<section id="all-works" class="container mt-12 xg:mt-12 xg:mb-10 3xl:mt-16 3xl:mb-12">
 
   <div class="row filter ctr-pb">
 
-    <div class="xg:col-1-5">
+    <div class="xg:col-1-5 hidden xg:block">
       <h1>
         Cada nuevo proyecto, <br> 
         un crecimiento, <br>
@@ -15,18 +15,18 @@
       <?php include 'layout/components/filter.php' ?>
     </div>
 
-    <div class="xg:col-9-13 flex justify-end">
+    <div class="xg:col-9-13 hidden xg:flex justify-end">
         <?php include 'layout/components/sharebar.php' ?>
     </div>
 
   </div>
 
-  <div class="grid grid-cols-3 gap-2">
+  <div class="grid filter-items xg:grid-cols-3 gap-2">
     <?php include 'data/works.php';
 
     foreach ($works as $work) { ?>
 
-      <a class="card pointer-arrow">
+      <a href="case" class="card filter-item pointer-arrow" data-type="<?= $work["cat"] ?>" >
         <figure>
           <img src='<?php echo $work["img"] ?>' <?php img_size($work["img"]) ?> <?php img_size($work["img"]) ?> alt='<?php echo $work["title"] ?>' loading='lazy' decoding='async' />
           <figcaption>

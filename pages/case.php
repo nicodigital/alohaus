@@ -1,12 +1,12 @@
-<section class="container xg:my-12 3xl:my-16">
+<section class="container my-14 xg:my-12 3xl:my-16">
 
   <div class="columns relative">
 
-    <div class="flex gap-2">
+    <div class="flex flex-wrap gap-2">
 
-      <div class="col-1 xg:w-33%">
+      <div class="col-1 w-full xg:w-33%">
 
-        <aside class="sticky single-content top-2">
+        <aside class="xg:sticky single-content top-2">
           <div class="flex flex-col justify-between h-full">
 
             <div class="text-content xg:w-[36rem]">
@@ -16,7 +16,7 @@
               <p>
                 Nunc interdum lacus sit amet orci. Nunc nulla. Etiam ultricies nisi vel augue. Vestibulum dapibus nunc ac augue. Praesent ut ligula non mi varius sagittis.
               </p>
-              <p class="mt-6">
+              <p class="mt-6 text-right xg:text-left">
                 Packaging
               </p>
             </div>
@@ -27,7 +27,7 @@
 
       </div>
 
-      <div class="col-2 xg:w-66% flex flex-col gap-2">
+      <div class="col-2  w-full xg:w-66% flex flex-col gap-2">
 
         <?php include 'data/works.php';
 

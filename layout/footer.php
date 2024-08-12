@@ -1,8 +1,8 @@
 	<footer id="contacto" class="container flex flex-col justify-between min-h-screen text-orange">
 
-		<div class="row pt-5 xg:pt-7 pb-10">
+		<div class="row pt-4 xg:pt-7 pb-10">
 
-			<h2 class="big-title mb-2 xg:hidden">
+			<h2 class="big-title mb-12 xg:hidden">
 				CONTACTO
 			</h2>
 

@@ -4,6 +4,7 @@
   --letter-track-2: -0.05em;
   --orange: theme(colors.orange);
   --white: theme(colors.white);
+  --grey-dark: theme(colors.grey-dark);
   --card-aspect: 1/0.9;
   --line-width: 1.5px;
   --trans-45: all .45s ease-in-out;

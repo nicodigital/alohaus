@@ -33,9 +33,9 @@
 }
 
 .arrow-intro{
-  @apply absolute bottom-0 xg:top-0 right-0 xg:bottom-0 xg:left-0 
+  @apply absolute bottom-0 right-0 xg:left-0 
   w-2 xg:w-[1.2vw] 
-  xg:translate-y-[.7vh] xg:translate-x-[-2.5vw] 
+  xg:translate-y-[-.7vh] xg:translate-x-[-2.5vw] 
   overflow-hidden;
 }
 
@@ -64,7 +64,6 @@
    object-fit: cover;
    z-index: -1;
    filter: grayscale();
-   opacity: 0.05;
    object-fit: cover;
    opacity: 0;
 }

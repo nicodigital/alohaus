@@ -6,24 +6,13 @@ import accordionItem from './components/accordionItem.js';
 import modalItem from './components/modalItem.js';
 
 /* ///////////////////////// MODULES ///////////////////////// */
-import lenisScroll from './module/lenisScroll.js';
 import getDevice from './module/getDevice.js';
-import cursor from './module/cursor.js';
-import menuMobile from './module/menuMobile.js';
-import scrollMarkers from './module/scrollMarkers.js';
-import customSwiper from './module/customSwiper.js';
-import modal from './module/modal.js';
-import accordion from './module/accordion.js';
-import cookies from './module/cookies.js';
-import servicios from './module/servicios.js';
-// import filters from './module/filters.js';
 
 /*Animations*/
-import animations from './module/animations.js';
 import motion from './module/motion.js';
 
-import preventZoom from './module/preventZoom.js';
-import alertRotateDevice from './module/alertRotateDevice.js';
+// import preventZoom from './module/preventZoom.js';
+// import alertRotateDevice from './module/alertRotateDevice.js';
 // import customRellax from './module/customRellax.js';
 // import getUrlParams from './module/getUrlParams.js';
 
@@ -87,33 +76,11 @@ modalItem();
 // 2do. Cargamos los módulos después que el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function () {
 
-	lenisScroll();
-	scrollMarkers(body, platform, isMobile, isDesktop, isTablet);
-	
-	menuMobile(html,body);
-	cursor(body);
-	customSwiper();
-	cookies();
-	modal();
-	// customRellax();
-	// filters();
-
-	if( page === "home" ) {
-		servicios(device_data);
-	}
-
 	// Pasamos las funciones a Barba.js
-	motion( page, device_data, animations, accordion, customSwiper, modal, lenisScroll );
+	motion( page, device_data );
+	// preventZoom();
+	// alertRotateDevice(isDesktop, isBigTablet, isMobile);
 
-	// getUrlParams();
-	// goTo();
-	// imgFadeInLoad();
-	accordion();
-	animations();
-	preventZoom();
-	alertRotateDevice(isDesktop, isBigTablet, isMobile);
-
-	
 });
 
 // Ejecutar animaciones cuando HTMX carga nuevo contenido
