@@ -17,7 +17,8 @@ if (!function_exists('get_logo')) {
 function cardServ( $num = "01", $slug = '', $title = '', $text = '') { ?>
 
   <div class="card" data-serv="<?= $slug ?>" data-title="<?= $title ?>">
-    <span><?= $num ?>.</span>
+    <span class="xg:hidden" ><?= $title ?>.</span>
+    <span class="hidden xg:block" ><?= $num ?>.</span>
     <p class="pointer-1x">
       <?= $text ?>
     </p>

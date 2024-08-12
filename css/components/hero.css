@@ -23,7 +23,7 @@
 
 
 .line-txt{
-  @apply flex overflow-hidden;
+  @apply inline-flex text-nowrap overflow-hidden;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 
   span{
@@ -33,7 +33,7 @@
 }
 
 .arrow-intro{
-  @apply absolute top-0 right-0 xg:bottom-0 xg:left-0 
+  @apply absolute bottom-0 xg:top-0 right-0 xg:bottom-0 xg:left-0 
   w-2 xg:w-[1.2vw] 
   xg:translate-y-[.7vh] xg:translate-x-[-2.5vw] 
   overflow-hidden;
@@ -41,7 +41,7 @@
 
 .hero-title{
 
-  @apply absolute top-[-4rem] xg:top-0 left-0 opacity-0;
+  @apply absolute top-0 left-0 opacity-0;
 
    .line {
      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 96%);

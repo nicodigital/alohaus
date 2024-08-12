@@ -1,7 +1,7 @@
 <section class='container hero relative h-screen w-full flex items-end overflow-hidden pb-2 z-10'>
 
   <div class="row w-full">
-    <div class="xg:col-10-13 relative flex justify-end">
+    <div class="xg:col-10-13 relative flex xg:justify-end">
 
       <p class="pointer-1x relative">
 

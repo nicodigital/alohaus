@@ -6,20 +6,24 @@
 <?php include 'layout/section/hero.php' ?>
 
 <!-- NOSOTROS-->
-<!-- <section id="nosotros" class="container">
-  <hr class="text-orange mb-2">
+<section id="nosotros" class="container mt-16 xg:mt-0">
+  <hr class="text-orange mb-1 xg:mb-2">
 
   <div class="row relative mb-20">
 
     <div class="xg:col-1-13">
 
-      <article class="w-[24%]">
+      <h2 class="big-title xg:hidden text-orange mb-10">
+        Nosotros
+      </h2>
+
+      <article class="xg:w-[24%]">
         <p class="mb-2 pointer-1x">
-          AloHaus nace de la inquietud de un equipo caracterizado por tener un pie en lo digital y otro en la comunicación impresa, brindando soluciones globales. No hay proyecto pequeño, ni menos importante, ni desafío que no queramos afrontar.El compromiso con nuestros clientes, con sus tiempos y sus necesidades, nos ha definido y fortalecido a lo largo del tiempo como socios estratégicos.
+          AloHaus nace de la inquietud de un equipo caracterizado por tener un pie en lo digital y otro en la comunicación impresa, brindando soluciones globales. No hay proyecto pequeño, ni menos importante, ni desafío que no queramos afrontar. El compromiso con nuestros clientes, con sus tiempos y sus necesidades, nos ha definido y fortalecido a lo largo del tiempo como socios estratégicos.
         </p>
       </article>
 
-      <p class="absolute top-0 left-[44%] w-[24%] pointer-1x">
+      <p class="xg:absolute top-0 left-[44%] xg:w-[24%] pointer-1x">
         Uno de los pilares de nuestro equipo es disfrutar de la investigación, de continuar creciendo en un rubro donde aparecen nuevas herramientas, lo que conlleva a nuevas posibilidades.
       </p>
     </div>
@@ -28,36 +32,37 @@
 
   <div class="row">
     <div class="xg:col-1-13 flex justify-between items-end">
-      <div class="translate-y-[-1rem]">
+      <div class="hidden xg:block translate-y-[-1rem]">
         <?php miniTitle("Proyectos") ?>
       </div>
-      <h2 id="title-nosotros" class="big-title title-scroll text-grey-bold mb-1">
+      <h2 id="title-nosotros" class="big-title hidden xg:block title-scroll text-grey-bold mb-1">
         Nosotros
       </h2>
     </div>
   </div>
 
-</section> -->
+</section>
 
 <!-- PROJECTS -->
-<!-- <section id="proyectos" class="container mb-2">
+<section id="proyectos" class="container mb-2">
   <hr class="text-orange mb-1">
 
   <div class="row">
     <div class="xg:col-1-10">
-      <h2 id="title-proyectos" class="big-title title-scroll top text-grey-bold mb-1">
-        Our pride
+      <h2 id="title-proyectos" class="big-title title-scroll text-orange xg:text-grey-bold mb-1">
+        <span class="hidden xg:block">Our pride</span>
+        <span class="xg:hidden">Proyectos</span>
       </h2>
     </div>
-    <div class="xg:col-11-13 flex justify-end items-end">
+    <div class="xg:col-11-13 hidden xg:flex justify-end items-end">
       <?php include 'layout/components/column-icons.php' ?>
     </div>
   </div>
 
-  <div class="row mt-20">
-    <div class="grid grid-cols-3 gap-[1.5px]">
-      <div>
-        <p class="w-60% self-end pointer-1x">
+  <div class="row mt-2 xg:mt-20">
+    <div class="grid xg:grid-cols-3 gap-2 xg:gap-[1.5px]">
+      <div class="mb-8 xg:mb-0">
+        <p class="xg:w-60% self-end pointer-1x">
           Combinamos creatividad y tecnología para crear marcas memorables, piezas visuales impactantes y experiencias que resuenen con el público.
         </p>
       </div>
@@ -68,7 +73,7 @@
       }
       ?>
 
-      <div class="flex items-end justify-end">
+      <div class="flex items-end justify-end mt-8 xg:mt-0">
         <a href="proyectos" class="link-underline">
           <?php miniTitle("Más Proyectos", "up") ?>
         </a>
@@ -77,10 +82,10 @@
     </div>
   </div>
 
-</section> -->
+</section>
 
 <!-- SERVICIOS -->
-<!-- <section id="servicios" class="mt-[33vh] xl:h-[210vh] 2xl:h-[240vh] 3xl:h-[215vh] 4xl:h-[210vh] 5xl:h-[200vh]">
+<section id="servicios" class="mt-[33vh] xl:h-[210vh] 2xl:h-[240vh] 3xl:h-[215vh] 4xl:h-[210vh] 5xl:h-[200vh]">
 
   <div class="container sticky flex h-screen items-end top-2 mt-[-25vh]">
     <h2 id="title-servicios" class="big-title text-grey-bold mb-2 opacity-0 transition-all duration-[.6s]">
@@ -94,7 +99,7 @@
     </div>
     <div class="row h-full">
 
-      <div class="xg:col-1-13 grid grid-cols-3 gap-2">
+      <div class="xg:col-1-13 grid xg:grid-cols-3 gap-2">
 
         <?php
         foreach ($GLOBALS['servicios'] as $serv) {
@@ -105,7 +110,7 @@
 
     </div>
   </div>
-</section> -->
+</section>
 
 <!-- TEAM & CLIENTS-->
 <!-- <section id="team" class=" bg-orange min-h-screen ctr-pb text-grey-dark">

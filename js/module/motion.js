@@ -33,14 +33,22 @@ function motion( page, device_data, animations, accordion, customSwiper, modal, 
         once( {next} ){
           // console.log(next.container);
           brandIntro(next.container)
-          animTitle( next.container )
+          // console.log(device_data);
+          if( device_data.isDesktop === true ) {
+            animTitle( next.container )
+          }
+          
         },
         leave: ({current}) => {
           // animLeave( current.container )
         },
         enter: ({next}) => {
           // console.log(next.container);
-          animTitle( next.container )
+          // console.log(device_data);
+          if( device_data.isDesktop === true ) {
+            animTitle( next.container )
+          }
+
           animations();
           accordion();
           modal();

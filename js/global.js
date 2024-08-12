@@ -92,12 +92,15 @@ document.addEventListener('DOMContentLoaded', function () {
 	
 	menuMobile(html,body);
 	cursor(body);
-	servicios();
 	customSwiper();
 	cookies();
 	modal();
 	// customRellax();
 	// filters();
+
+	if( page === "home" ) {
+		servicios(device_data);
+	}
 
 	// Pasamos las funciones a Barba.js
 	motion( page, device_data, animations, accordion, customSwiper, modal, lenisScroll );

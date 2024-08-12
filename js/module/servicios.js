@@ -1,17 +1,21 @@
-function servicios() {
+function servicios(device_data) {
 
-  const SERVICIOS = document.querySelectorAll("#servicios .card");
-  const TITLE = document.querySelector("#servicios .big-title");
+  if( device_data.isDesktop === true ) {
 
-  SERVICIOS.forEach(card => {
+    const SERVICIOS = document.querySelectorAll("#servicios .card");
+    const TITLE = document.querySelector("#servicios .big-title");
 
-    card.addEventListener("mouseover", () => {
-      let servTitle = card.dataset.title;
-      TITLE.style.opacity = 1;
-      TITLE.innerHTML = servTitle;
-    });
+    SERVICIOS.forEach(card => {
 
-  })
+      card.addEventListener("mouseover", () => {
+        let servTitle = card.dataset.title;
+        TITLE.style.opacity = 1;
+        TITLE.innerHTML = servTitle;
+      });
+
+    })
+
+  }
 
 }
 

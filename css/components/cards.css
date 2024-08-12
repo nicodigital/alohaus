@@ -12,8 +12,6 @@
             height: 100%;
             z-index: 10;
             padding: 2rem;
-            background-color: theme(colors.orange);
-            color: theme(colors.grey-dark);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -27,7 +25,6 @@
                     font-size: var(--h1);
                     letter-spacing: -0.05em;
                     line-height: 1;
-                    width: 50%;
                 }
 
                 &.dots{
@@ -71,7 +68,18 @@
 
     }
 
+}
 
+#proyectos .card .info{
+    @apply text-white xg:bg-orange xg:text-grey-dark;
+}
+
+#proyectos .card .info > span:first-child{
+    @apply xg:w-50%;
+}
+
+#proyectos .dots{
+    @apply hidden xg:block;
 }
 
 #servicios{
@@ -82,19 +90,10 @@
         @apply min-h-[30vh];
         border-top: 1px solid theme(colors.white);
 
-        & p{
-            @apply w-70% mt-1 transition-all duration-[400ms] ease-in-out;
-            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-        }
-
         & span{
             font-family: theme(fontFamily.title);
             font-size: 1.8rem;
         }
-
-        /* &:not(:last-child){
-            border-right: 1px solid white;
-        } */
 
         &:hover{
 
@@ -106,6 +105,11 @@
 
     }
 
+}
+
+#servicios .card p{
+    @apply xg:w-70% mt-1 pb-4 xg:pb-0
+    transition-all duration-[400ms] ease-in-out;
 }
 
 #team{
@@ -272,6 +276,18 @@
 
 }
 
+
+/*//////////////////////////////////////////////////////////*/
+/*//////////////////////// 992px ///////////////////////////*/
+/*//////////////////////////////////////////////////////////*/
+
+@media (min-width: theme("screens.xg")) {
+
+    #servicios .card p{
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+}
 
 
 @keyframes lineIn{

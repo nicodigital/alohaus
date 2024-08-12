@@ -2,7 +2,11 @@
 
 		<div class="row pt-5 xg:pt-7 pb-10">
 
-			<div class="col-1-4 h-full flex flex-col">
+			<h2 class="big-title mb-2 xg:hidden">
+				CONTACTO
+			</h2>
+
+			<div class="xg:col-1-4 h-full flex flex-col order-3 xg:order-1 mt-8 xg:mt-0">
 				<div class="mb-3">
 					<p class="contact-data mb-4 pointer-1x">
 						<span>España</span>
@@ -30,48 +34,46 @@
 				</div>
 			</div>
 
-			<div class="col-6-11">
+			<div class="xg:col-6-11 order-2">
 				<?php include 'layout/forms/contact-form.php' ?>
 			</div>
 
-			<div class="col-11-13 flex justify-end pt-7">
-				<a href="#top" class="go-top anchor barba-ignore pointer-1x">
-					<svg width="46" height="43" viewBox="0 0 46 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path fill-rule="evenodd" clip-rule="evenodd" d="M19.7947 42.32L19.7948 11.3123L4.17891 26.928L0.000121456 22.7494L22.7495 0L45.4989 22.7494L41.3202 26.9281L25.7044 11.3123L25.7043 42.32H19.7947Z" fill="currentColor" />
-					</svg>
-					<span class="txt">Back</span>
-				</a>
+			<div class="col-11-13 hidden xg:flex justify-end pt-7 xg:order-3">
+				<?php include 'layout/components/go-top.php' ?>
 			</div>
 
 		</div>
 
 		<div class="row">
-			<div class="xg:col-1-9">
-				<h2 class="big-title mb-2">
+			<div class="col-10-13 xg:col-1-9 flex items-end justify-end xg:justify-start order-2 xg:order-1">
+				<h2 class="big-title mb-2 hidden xg:block">
 					CONTACTO
 				</h2>
+				<div class="xg:hidden">
+					<?php include 'layout/components/go-top.php' ?>
+				</div>
 			</div>
-			<div class="xg:col-9-13 flex justify-end items-end">
-				<p class="mb-3">
-					© <?= date('Y') ?> AloHaus Estudio de diseño. <br> All rights reserved.
+			<div class="col-1-10 xg:col-9-13 flex xg:justify-end items-end order-1 xg:order-2">
+				<p class="mb-3 text-small">
+					© <?= date('Y') ?> AloHaus <br class="xg:hidden" > Estudio de diseño. <br> All rights reserved.
 				</p>
 			</div>
 		</div>
 
 	</footer>
 
-</div> <!-- Barba Container -->
+	</div> <!-- Barba Container -->
 
-<?php
-// include 'layout/modals.php';
-// include 'layout/components/whatsapp.php' ;
-?>
+	<?php
+	// include 'layout/modals.php';
+	// include 'layout/components/whatsapp.php' ;
+	?>
 
-</body>
+	</body>
 
-</html>
+	</html>
 
-<?php // Active this to write HTML to public folder
-if (MODE == 'html') {
-	$htmlCache->generate();
-}
+	<?php // Active this to write HTML to public folder
+	if (MODE == 'html') {
+		$htmlCache->generate();
+	}

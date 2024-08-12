@@ -1,3 +1,6 @@
-<a id="go-top" href="#top" class="anchor" >
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12A10 10 0 0 1 12 2a10 10 0 0 1 10 10M7.4 15.4l4.6-4.6l4.6 4.6L18 14l-6-6l-6 6z"/></svg>
+<a href="#top" class="go-top anchor barba-ignore pointer-1x">
+    <svg width="46" height="43" viewBox="0 0 46 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M19.7947 42.32L19.7948 11.3123L4.17891 26.928L0.000121456 22.7494L22.7495 0L45.4989 22.7494L41.3202 26.9281L25.7044 11.3123L25.7043 42.32H19.7947Z" fill="currentColor" />
+    </svg>
+    <span class="txt">Back</span>
 </a>
