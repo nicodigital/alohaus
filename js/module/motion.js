@@ -10,7 +10,7 @@ import accordion from './accordion.js';
 import servicios from './servicios.js';
 import filters from './filters.js';
 import caseToggle from './caseToggle.js';
-import animations from './animations.js';
+// import animations from './animations.js';
 // import modal from './modal.js';
 // import cookies from './cookies.js';
 
@@ -19,10 +19,10 @@ function motion( page, device_data  ) {
   barba.use(barbaPrefetch);
 
   function globalFunctions(container) {
-    lenisScroll()
+    lenisScroll(container)
     cursor(container);
-    menuMobile(device_data.html,device_data.body);
-    animations();
+    menuMobile(device_data);
+    // animations();
     scrollMarkers(device_data.body, device_data.platform, device_data.isMobile, device_data.isDesktop, device_data.isTablet);
   }
 
@@ -33,7 +33,7 @@ function motion( page, device_data  ) {
     prevent: ({ event, href }) => {
 
       // Prevenir la transición de Barba.js si el enlace tiene la clase 'barba-ignore'
-      let barbaIgnore = document.querySelector('.barba-ignore');
+      let barbaIgnore = document.querySelectorAll('.barba-ignore');
 
       if( barbaIgnore.lenght > 0 ) {
         if ( event.target.classList.contains('barba-ignore')) {
@@ -42,8 +42,8 @@ function motion( page, device_data  ) {
       }
       
       // Prevenir la transición de Barba.js si la URL termina con '#top'
-      if (href.endsWith('#top')) {
-        return true;
+      if ( href.includes('#') ) { 
+        return true
       }
   
       return false;
@@ -84,9 +84,12 @@ function motion( page, device_data  ) {
             accordion();
           }
 
+          window.scrollTo(0, 0)
+
         },
         leave: ( { current } ) => {
             console.log("LEAVE HOME");
+            
         },
         enter: ( { next } ) => {
           console.log("ENTER HOME");
@@ -98,7 +101,7 @@ function motion( page, device_data  ) {
           if( device_data.isDesktop === true ) {
             animTitle( next.container )
           }
-
+          window.scrollTo(0, 0)
         }
       },
       // PROYECTOS
@@ -119,7 +122,7 @@ function motion( page, device_data  ) {
               pageTrans(current.container, "in")
                 setTimeout(() => {
                     resolve();
-                }, 600);
+                }, 300);
             });
  
         },
@@ -132,7 +135,8 @@ function motion( page, device_data  ) {
                   pageTrans(next.container, "out")
                   globalFunctions(next.container)
                   filters();
-              }, 500);
+                  window.scrollTo(0, 0)
+              }, 600);
           });
          
         }
@@ -151,11 +155,19 @@ function motion( page, device_data  ) {
         leave: ( { current } ) => {
             console.log("LEAVE CASE")
             // globalFunctions(current.container)
+            return new Promise( resolve => {
+              pageTrans(current.container, "in")
+                setTimeout(() => {
+                    resolve();
+                }, 600);
+            });
         },
         enter: ( { next } ) => {
           console.log("ENTER CASE");
           globalFunctions(next.container)
           caseToggle(next.container)
+          pageTrans(next.container, "out")
+          window.scrollTo(0, 0)
         }
       },
     ]

@@ -29,12 +29,8 @@
   cursor-pointer;
 }
 
-.menu-in{
-
-  #menu{
+.menu-in #menu{
     @apply translate-x-[0%];
-  }
-
 }
 
 /*//////////////////////////////////////////////////////////*/
@@ -48,7 +44,7 @@
     background: transparent;
   }
 
-  .home header a:not(.brand){
+  .home header .item{
     transform: translateY(-2rem);
     opacity: 0;
   }

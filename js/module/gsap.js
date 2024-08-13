@@ -12,20 +12,20 @@ export function brandIntro( container ) {
   if( brandIntro ){
     return gsap.timeline()
     .to( "#hero-title", { opacity: 1, duration: .1 })
-    .to( ".brand-intro path:nth-child(7)", {translateY: "0", duration: .4, ease: "power2.out" })
-    .to( ".brand-intro path:nth-child(6)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
-    .to( ".brand-intro path:nth-child(5)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
-    .to( ".brand-intro path:nth-child(4)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
-    .to( ".brand-intro path:nth-child(3)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
-    .to( ".brand-intro path:nth-child(2)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
-    .to( ".brand-intro path:nth-child(1)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
-    .to( ".brand-intro path:nth-child(7)", { yPercent: -120, duration: .4, ease: "power2.out" }, "=.3" )
-    .to( ".brand-intro path:nth-child(6)", { yPercent: -120, duration: .4, ease: "power2.out" }, "-=.35" )
-    .to( ".brand-intro path:nth-child(5)", { yPercent: -120, duration: .4, ease: "power2.out" }, "-=.35" )
-    .to( ".brand-intro path:nth-child(4)", { yPercent: -120, duration: .4, ease: "power2.out" }, "-=.35" )
-    .to( ".brand-intro path:nth-child(3)", { yPercent: -120, duration: .4, ease: "power2.out" }, "-=.35" )
-    .to( ".brand-intro path:nth-child(2)", { yPercent: -120, duration: .4, ease: "power2.out" }, "-=.35" )
-    .to( ".brand-intro path:nth-child(1)", { yPercent: -120, duration: .4, ease: "power2.out" }, "-=.35" )
+    .to( ".hero .brand-intro path:nth-child(7)", {translateY: "0", duration: .4, ease: "power2.out" })
+    .to( ".hero .brand-intro path:nth-child(6)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
+    .to( ".hero .brand-intro path:nth-child(5)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
+    .to( ".hero .brand-intro path:nth-child(4)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
+    .to( ".hero .brand-intro path:nth-child(3)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
+    .to( ".hero .brand-intro path:nth-child(2)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
+    .to( ".hero .brand-intro path:nth-child(1)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
+    .to( ".hero .brand-intro path:nth-child(7)", { yPercent: -120, duration: .4, ease: "power2.out" }, "=.3" )
+    .to( ".hero .brand-intro path:nth-child(6)", { yPercent: -120, duration: .4, ease: "power2.out" }, "-=.35" )
+    .to( ".hero .brand-intro path:nth-child(5)", { yPercent: -120, duration: .4, ease: "power2.out" }, "-=.35" )
+    .to( ".hero .brand-intro path:nth-child(4)", { yPercent: -120, duration: .4, ease: "power2.out" }, "-=.35" )
+    .to( ".hero .brand-intro path:nth-child(3)", { yPercent: -120, duration: .4, ease: "power2.out" }, "-=.35" )
+    .to( ".hero .brand-intro path:nth-child(2)", { yPercent: -120, duration: .4, ease: "power2.out" }, "-=.35" )
+    .to( ".hero .brand-intro path:nth-child(1)", { yPercent: -120, duration: .4, ease: "power2.out" }, "-=.35" )
     .to( ".brand path:nth-child(7)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.4" )
     .to( ".brand path:nth-child(6)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
     .to( ".brand path:nth-child(5)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
@@ -35,7 +35,7 @@ export function brandIntro( container ) {
     .to( ".brand path:nth-child(1)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
     .to( "#hero-title .char", { y: 0, stagger: 0.04, duration: .15, ease: "power2.out" }, "-=1.2" )
     .to( ".line-txt span", { y: 0, stagger: 0.06, duration: .6, ease: "power4.out" }, "=.1" )
-    .to( "header a:not(.brand)", {translateY: "0", autoAlpha: 1, stagger: 0.04, duration: .4, ease: "ease.out" }, "-=1.5" )
+    .to( "header .item", {translateY: "0", autoAlpha: 1, stagger: 0.04, duration: .4, ease: "ease.out" }, "-=1.5" )
     .to( ".arrow-intro svg", {translateY: "0", translateX: "0", duration: .4, ease: "power2.out" }, "=.1" )
     .to( ".hero-back", { opacity: 0.05, duration: 5, ease: "power2.out" }, "-=2.5" )
   }
@@ -99,11 +99,23 @@ export function animTitle( container ){
 export function pageTrans( container, status = "out" ){
 
   const pageTrans = document.querySelector( ".page-trans" );
+  const brandPaths = ".page-trans .brand-intro path";
 
   if( status === "in" ){
     pageTrans.setAttribute("data-status", "in");
+
+    gsap.timeline()
+    .to( brandPaths, { autoAlpha:1, translateY: "120%", duration: 0 })
+    .to( brandPaths, {translateY: "0", duration: .3, stagger: 0.04, ease: "power2.out" }, "=.4")
+
   }else{ // out
-    pageTrans.setAttribute("data-status", "out");
+    setTimeout(() => {
+      pageTrans.setAttribute("data-status", "out");
+      gsap.timeline()
+      .to( brandPaths, { translateY: "-120%", duration: .3, stagger: 0.04, ease: "power2.out" }, "=.2" )
+      .to( brandPaths, { autoAlpha: 0, duration: .0 }, "=.2" )
+      .to( brandPaths, { translateY: "120%", duration: .0 }, "=.2" )
+    }, 400);
   }
 
 }

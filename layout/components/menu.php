@@ -9,21 +9,21 @@
 				<?= $i18n["menu"][0][0] ?>
 			</a>
 
-			<a href="<?= transPath( '#nosotros' , $lang) ?> " class="item togg anchor barba-ignore" >
+			<a href="<?php anchor("#nosotros", "home" ) ?> " class="item togg <?php anchor_class($page,"home") ?>" >
 				<?= $i18n["menu"][1][0] ?>
 			</a>
 
-			<a href="<?= transPath( '#team' , $lang) ?> " class="item togg anchor barba-ignore" >
+			<a href="<?php anchor("#team", "home" ) ?>" class="item togg <?php anchor_class($page,"home") ?>" >
 				<?= $i18n["menu"][2][0] ?>
 			</a>
 
-			<a href="<?= transPath( 'proyectos' , $lang) ?>" class="item togg anchor barba-ignore" >
+			<a href="<?= transPath( 'proyectos' , $lang) ?>" class="item" >
 				<?= $i18n["menu"][3][0] ?>
 			</a>
 
-			<a href="<?php anchor("#contacto", "home") ?>" class="item togg anchor barba-ignore">
+			<div href="#contacto" class="item togg anchor barba-ignore">
 				<?= $i18n["menu"][4][0] ?>
-			</a>
+			</div>
 		</nav>
 
 		<?php if(!$isDesktop){ ?>

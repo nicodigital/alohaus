@@ -64,7 +64,11 @@
 
 </div> <!-- Barba Container -->
 
-<div class="page-trans" data-status="out" ></div>
+<div class="page-trans" data-status="out" >
+	<div class="absolute-center">
+		<?php include "layout/components/brand-intro.php"; ?>
+	</div>
+</div>
 
 	<?php
 	// include 'layout/modals.php';

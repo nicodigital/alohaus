@@ -15,7 +15,7 @@
     foreach ($team as $t) { ?>
 
       <figure class="card">
-        <img src="public/img/team/team-<?= $x ?>.webp" alt='' loading='lazy' decoding='async' />
+        <img src="public/img/team/team-<?= $x ?>.webp" <?php img_size('public/img/team/team-'.$x .'.webp' ) ?> alt='' loading='lazy' decoding='async' />
         <figcaption>
           <h3><?= $t['name'] ?></h3>
           <h4><?= $t['rol'] ?></h4>

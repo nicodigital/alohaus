@@ -1,5 +1,10 @@
-function menuMobile(html,body) {
+function menuMobile(device_data) {
 
+  if( device_data.isDesktop === true ) {
+    return;
+  }
+  const html = device_data.html;
+  const body = device_data.body;
   const btn_togg = document.querySelectorAll('.togg');
 
   // Crea un elemento div que tenga un ancho forzado de desbordamiento

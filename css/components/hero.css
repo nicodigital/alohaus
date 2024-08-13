@@ -5,23 +5,6 @@
         ctr-px pointer-events-none;
 }
 
-.brand-intro {
-  @apply absolute w-full top-0 left-0 
-         flex justify-center
-         overflow-hidden;
-   transform-origin: center;
-}
-
-.brand-intro svg{
-  @apply scale-[.5] xg:scale-[.23] 
-         h-fit overflow-hidden;
-}
-
-.brand-intro path{
-  @apply translate-y-[110%] xg:translate-y-[100%]
-}
-
-
 .line-txt{
   @apply inline-flex text-nowrap overflow-hidden;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);

@@ -1,6 +1,6 @@
 import Lenis from '@studio-freight/lenis'
 
-function lenisScroll() {
+function lenisScroll( container ) {
 
   const lenis = new Lenis({
     smoothWheel: true,
@@ -12,7 +12,7 @@ function lenisScroll() {
     infinite: false // Infinite scrolling
   });
 
-  const smoothLinks = document.querySelectorAll('.anchor');
+  const smoothLinks = container.querySelectorAll('.anchor');
 
   smoothLinks.forEach(link => {
     let anchor = link.getAttribute('href');
