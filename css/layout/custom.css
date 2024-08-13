@@ -42,6 +42,20 @@
 
 }
 
+.page-trans{
+   @apply fixed top-0 left-0 w-full h-screen 
+   bg-grey-dark 
+   pointer-events-none z-[999];
+   transition: all 1s ease-in-out;
+}
+
+.page-trans[data-status="out"]{
+   @apply translate-y-[100%];
+}
+
+.page-trans[data-status="in"]{
+   @apply translate-y-[0%];
+}
 
 /*//////////////////////////////////////////////////////////*/
 /*//////////////////////// 992px ///////////////////////////*/

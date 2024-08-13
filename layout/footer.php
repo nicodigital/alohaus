@@ -62,7 +62,9 @@
 
 	</footer>
 
-	</div> <!-- Barba Container -->
+</div> <!-- Barba Container -->
+
+<div class="page-trans" data-status="out" ></div>
 
 	<?php
 	// include 'layout/modals.php';

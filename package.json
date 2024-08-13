@@ -9,7 +9,6 @@
     "@studio-freight/lenis": "^1.0.42",
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
     "gsap": "^3.12.5",
-    "htmx.org": "^2.0.1",
     "nesting": "^0.1.0",
     "split-type": "^0.3.4",
     "swiper": "^11.0.5"

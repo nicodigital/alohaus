@@ -83,7 +83,7 @@
 
   /* El placeholder solo lo agarra aca */
   input::placeholder, textarea::placeholder{
-    color: theme(colors.white)!important;
+    color: var(--orange)!important;
     opacity: 1 !important;
   }
 

@@ -9,14 +9,11 @@
   <link rel="canonical" href="<?= $canonical_url ?>" />
   <base href="<?= $base_url ?>" target="_self">
   <meta name="view-transition" content="same-origin" />
-  
   <?php include 'inc/css.php'; ?>
   <!--preload-->
   <?php include 'inc/preload.php'; ?>
-
   <!--js-->
   <?php include 'inc/js.php' ?>
-
   <?php
   include 'inc/open-graph.php';
   include 'inc/richsnippets.php';
@@ -35,8 +32,8 @@
 </head>
 
 <body id="top" data-scroll="top" data-page="<?= $page ?>" data-barba="wrapper" >
-<div class="pointer"></div>
-<div class="first-load <?= $page ?> menu-toggler" data-barba="container" data-barba-namespace="<?=$page?>" >
+  <div class="first-load <?= $page ?> menu-toggler" data-barba="container" data-barba-namespace="<?=$page?>" >
+  <div class="pointer"></div>
 
   <header class="container">
     <div class="row items-center">

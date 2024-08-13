@@ -1,9 +1,10 @@
-function cursor(body) {
+function cursor(container) {
+  // console.log(container);
 
-  const pointer = document.querySelector(".pointer");
-  const pointer_1x = document.querySelectorAll('.pointer-1x');
-  const pointer_2x = document.querySelectorAll('.pointer-2x');
-  const pointer_arrow = document.querySelectorAll('.pointer-arrow');
+  const pointer = container.querySelector(".pointer");
+  const pointer_1x = container.querySelectorAll('.pointer-1x');
+  const pointer_2x = container.querySelectorAll('.pointer-2x');
+  const pointer_arrow = container.querySelectorAll('.pointer-arrow');
 
   document.addEventListener("mousemove", (e) => {
     pointer.classList.add('active');
@@ -19,12 +20,8 @@ function cursor(body) {
 
         pointer.classList.add(hover_x);
 
-        if (hover_x == 'hover-2x') {
-          body.classList.add('pointer-hover');
-        }
-
         if (hover_x == 'hover-arrow') {
-          body.classList.add('pointer-arrow');
+          container.classList.add('pointer-arrow');
         }
 
       });
@@ -33,7 +30,7 @@ function cursor(body) {
         pointer.classList.remove(hover_x);
 
         if (hover_x == 'hover-2x') {
-          body.classList.remove('pointer-hover');
+          container.classList.remove('pointer-hover');
         }
 
       });
@@ -62,11 +59,11 @@ function cursor(body) {
   // if (item_contacto) {
 
   //   item_contacto.addEventListener('mouseover', () => {
-  //     body.classList.add('invert-screen');
+  //     container.classList.add('invert-screen');
   //   });
 
   //   item_contacto.addEventListener('mouseleave', () => {
-  //     body.classList.remove('invert-screen');
+  //     container.classList.remove('invert-screen');
   //   });
 
   // }

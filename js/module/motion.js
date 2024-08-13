@@ -1,6 +1,6 @@
 import barba from '@barba/core';
 import barbaPrefetch from '@barba/prefetch';
-import { brandIntro, animTitle } from './gsap.js'
+import { brandIntro, animTitle, pageTrans } from './gsap.js'
 import lenisScroll from './lenisScroll.js';
 import cursor from './cursor.js';
 import menuMobile from './menuMobile.js';
@@ -9,6 +9,7 @@ import customSwiper from './customSwiper.js';
 import accordion from './accordion.js';
 import servicios from './servicios.js';
 import filters from './filters.js';
+import caseToggle from './caseToggle.js';
 import animations from './animations.js';
 // import modal from './modal.js';
 // import cookies from './cookies.js';
@@ -17,9 +18,9 @@ function motion( page, device_data  ) {
 
   barba.use(barbaPrefetch);
 
-  function globalFunctions() {
+  function globalFunctions(container) {
     lenisScroll()
-    cursor(device_data.body);
+    cursor(container);
     menuMobile(device_data.html,device_data.body);
     animations();
     scrollMarkers(device_data.body, device_data.platform, device_data.isMobile, device_data.isDesktop, device_data.isTablet);
@@ -51,17 +52,17 @@ function motion( page, device_data  ) {
       // DEFAULT
       {
         name: 'default',
-        once( next ){
+        once( { next } ){
           console.log("ONCE DEFAULT");
-          globalFunctions()
+          globalFunctions(next.container)
         },
-        leave: ({current}) => {
+        leave: ({ current }) => {
           console.log("LEAVE DEFAULT");
-          globalFunctions()
+          globalFunctions(next.container)
         },
-        enter: ({next}) => {
+        enter: ({ next }) => {
           console.log("ENTER DEFAULT");
-          globalFunctions()
+          globalFunctions(next.container)
         }
       },
       // HOME
@@ -70,11 +71,12 @@ function motion( page, device_data  ) {
         to: {
           namespace: 'home',
         },
-        once( {next} ){
+        once( { next } ){
           console.log("ONCE HOME");
-          globalFunctions()
+          globalFunctions(next.container)
           brandIntro(next.container)
           customSwiper(device_data.isDesktop) 
+          servicios(device_data)
 
           if( device_data.isDesktop === true ) {
             animTitle( next.container )
@@ -82,55 +84,78 @@ function motion( page, device_data  ) {
             accordion();
           }
 
-          if( page === "home" ) {
-            servicios(device_data);
-          }
-          
         },
-        leave: ( current ) => {
+        leave: ( { current } ) => {
             console.log("LEAVE HOME");
-          // animLeave( current.container )
         },
-        enter: ( next ) => {
+        enter: ( { next } ) => {
           console.log("ENTER HOME");
+          // console.log(next.container )
+          globalFunctions(next.container)
+          brandIntro(next.container)
+          customSwiper(device_data.isDesktop) 
+          servicios(device_data)
           if( device_data.isDesktop === true ) {
             animTitle( next.container )
           }
 
-          // animations();
-          // accordion();
-          // filters();
-
-          // if (htmx) {
-          //   htmx.process(next.container);
-          // } else {
-          //   console.error('HTMX is not defined');
-          // }
-
-          //window.scrollTo(0, 0); // Force Scroll to top
-   
         }
-
       },
       // PROYECTOS
-      // HOME
       {
         name: 'Proyectos',
         to: {
           namespace: 'proyectos',
         },
-        once( {next} ){
+        once( { next } ){
           console.log("ONCE PROYECTOS");
-          globalFunctions()
+          globalFunctions(next.container)
           filters();
         },
-        leave: ( current ) => {
+        leave: ( { current } ) => {
             console.log("LEAVE PROYECTOS");
 
+            return new Promise( resolve => {
+              pageTrans(current.container, "in")
+                setTimeout(() => {
+                    resolve();
+                }, 600);
+            });
+ 
         },
-        enter: ( next ) => {
+        enter: ( { next } ) => {
           console.log("ENTER PROYECTOS");
+
+          return new Promise( resolve => {
+              setTimeout(() => {
+                  resolve();
+                  pageTrans(next.container, "out")
+                  globalFunctions(next.container)
+                  filters();
+              }, 500);
+          });
          
+        }
+      },
+      // CASE
+      {
+        name: 'Case',
+        to: {
+          namespace: 'case',
+        },
+        once( { next } ){
+          console.log("ONCE CASE");
+          globalFunctions(next.container)
+          caseToggle(next.container)
+        },
+        leave: ( { current } ) => {
+            console.log("LEAVE CASE")
+            // globalFunctions(current.container)
+        },
+        enter: ( { next } ) => {
+          console.log("ENTER CASE");
+          globalFunctions(next.container)
+          caseToggle(next.container)
         }
       },
     ]

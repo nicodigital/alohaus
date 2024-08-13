@@ -2,7 +2,7 @@
 
   <div class="columns relative">
 
-    <div class="flex flex-wrap gap-2">
+    <div class="flex flex-wrap xg:flex-nowrap gap-2">
 
       <div class="col-1 w-full xg:w-33%">
 
@@ -47,15 +47,3 @@
   </div>
 
 </section>
-
-<script>
-  const columns = document.querySelector('.columns');
-  const col1 = document.querySelector('.col-1');
-  const toggMe = document.querySelectorAll('.togg-me');
-
-  toggMe.forEach( togg => {
-    togg.addEventListener('click', () => {
-      columns.classList.toggle('toggle-column');
-    });
-  })
-</script>

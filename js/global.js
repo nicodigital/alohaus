@@ -1,5 +1,3 @@
-// import htmx from "htmx.org";
-
 /* ////////////////////////COMPONENTS ///////////////////////// */
 import PictureItem from './components/PictureItem.js';
 import accordionItem from './components/accordionItem.js';
@@ -13,8 +11,6 @@ import motion from './module/motion.js';
 
 // import preventZoom from './module/preventZoom.js';
 // import alertRotateDevice from './module/alertRotateDevice.js';
-// import customRellax from './module/customRellax.js';
-// import getUrlParams from './module/getUrlParams.js';
 
 /*/////////////////////////////////////////////////////////////////////*/
 /*////////////////////////// GET URL, PATH  ///////////////////////////*/
@@ -75,22 +71,9 @@ modalItem();
 
 // 2do. Cargamos los módulos después que el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function () {
-
 	// Pasamos las funciones a Barba.js
 	motion( page, device_data );
 	// preventZoom();
 	// alertRotateDevice(isDesktop, isBigTablet, isMobile);
-
 });
 
-// Ejecutar animaciones cuando HTMX carga nuevo contenido
-// document.body.addEventListener('htmx:afterRequest', (event) => {
-// 	// console.log("HTMX afterSettle event triggered");  // Log para depuración
-//   animations();
-// });
-
-
-// Testing HTMX
-// document.body.addEventListener('htmx:load', function (evt) {
-//   htmx.logAll();
-// });
