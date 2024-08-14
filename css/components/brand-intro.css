@@ -1,5 +1,5 @@
 .hero .brand-intro {
-  @apply absolute w-full top-0 left-0 
+  @apply absolute w-full top-[50%] xg:top-0 left-0 translate-y-[-50%] xg:translate-y-0
          flex justify-center
          overflow-hidden;
    transform-origin: center;
@@ -12,6 +12,10 @@
 
 .brand-intro path{
   @apply translate-y-[110%] xg:translate-y-[100%]
+}
+
+.page-trans .brand-intro{
+  @apply scale-[33%] xg:scale-[100%];
 }
 
 

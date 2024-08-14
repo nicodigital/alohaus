@@ -1,13 +1,10 @@
 #menu{
 
-  padding-left: var(--container-gap);
-  padding-right: var(--container-gap);
-
   @apply 
-    fixed xg:relative w-100% h-screen xg:h-auto
+    fixed xg:relative w-100%
     top-0 right-0 xg:left-0
     flex flex-col justify-between xg:flex-row
-    py-2 xg:py-0
+    ctr-px py-2 xg:py-0
     xg:gap-4
     bg-grey-dark
     translate-x-[100%]	
@@ -17,6 +14,8 @@
     transition-all
     ease-in-out
     duration-[.4s];
+    height: 100vh;
+    height: 100svh;
 }
 
 #menu nav{
@@ -40,6 +39,7 @@
 @media (min-width: theme("screens.xg")) {
 
   #menu{
+    height: auto;
     padding: 0;
     background: transparent;
   }

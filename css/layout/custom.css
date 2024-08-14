@@ -17,52 +17,6 @@
 }
 
 
-.go-top {
-
-   position: relative;
-   display: block;
-   height: 8rem;
-
-    .txt {
-        display: block;
-        font-family: theme(fontFamily.title);
-        font-size: 2rem;
-        line-height: 1;
-        color: theme(colors.orange);
-        white-space: nowrap;
-        transform: rotate(90deg) translate(.7rem, -.2rem);
-    }
-
-    & svg{
-      position: absolute;
-      top: -5.5rem;
-      left: 1.5rem;
-      @apply w-[2rem];
-    }
-
-}
-
-.page-trans{
-   @apply fixed top-0 left-0 w-full h-screen 
-   pointer-events-none z-[999];
-   transition: all .6s ease-in-out;
-}
-
-.page-trans:before{
-   content: "";
-   @apply absolute top-0 left-0 w-full h-full
-   bg-grey-dark z-0; 
-   transition: all .6s ease-in-out;
-}
-
-.page-trans[data-status="out"]:before{
-   @apply opacity-0;
-}
-
-.page-trans[data-status="in"]:before{
-   @apply opacity-100;
-}
-
 /*//////////////////////////////////////////////////////////*/
 /*//////////////////////// 992px ///////////////////////////*/
 /*//////////////////////////////////////////////////////////*/

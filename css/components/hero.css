@@ -1,7 +1,13 @@
+.hero{
+  @apply relative w-full flex items-end overflow-hidden pb-2 z-10;
+  height: 100vh;
+  height: 100svh;
+}
+
 .row-brand{
   @apply row 
         absolute left-0 bottom-0 w-full h-[100svh] xg:h-auto 
-        flex items-center
+        flex items-start xg:items-center
         ctr-px pointer-events-none;
 }
 
@@ -23,18 +29,20 @@
 }
 
 .hero-title{
-
   @apply absolute top-0 left-0 opacity-0;
+ }
 
-   .line {
-     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 96%);
-     overflow: hidden;
-   }
- 
+ .hero-title .line{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 96%);
+    overflow: hidden;
+ }
+
+ .hero-title .word{
+  white-space: nowrap;
  }
 
  .hero-title .char{
-    @apply translate-y-[5rem] xg:translate-y-[10.5vw];
+    @apply translate-y-[8rem] xg:translate-y-[10.5vw];
     transition: transform .6s;
  }
 

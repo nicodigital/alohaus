@@ -5,7 +5,7 @@
 		<?php } ?>
 		
 		<nav>
-			<a href="<?= transPath( '' , $lang) ?>" class="item togg <?= status( $page, "home" ) ?>">
+			<a href="<?= BASE_URL ?>" class="item togg <?= status( $page, "home" ) ?>">
 				<?= $i18n["menu"][0][0] ?>
 			</a>
 

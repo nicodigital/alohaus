@@ -53,7 +53,7 @@
     <div class="row">
       <div class="col-1-13">
 
-        <div id="clients" class='swiper mobile-wide-fit'>
+        <div id="clients" class='swiper mobile-wide-fit text-grey-dark'>
           <div class='swiper-wrapper'>
             <?php include 'data/clients.php';
             foreach ($clientes as $c) { ?>

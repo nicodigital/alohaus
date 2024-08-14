@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Apercu Mono';
-  src: url('Apercu-Mono.woff2') format('woff2');
+  src: url('fonts/Apercu-Mono.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -15,7 +15,7 @@
 
 :root {
   --html: 10px;
-  --big: 4.5rem;
+  --big: 10vw;
   --h1: 2.8rem;
   --h2: 2.2rem;
   --h3: 2rem;

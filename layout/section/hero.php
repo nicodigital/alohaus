@@ -1,4 +1,4 @@
-<section class='container hero relative h-screen w-full flex items-end overflow-hidden pb-2 z-10'>
+<section class='hero container'>
 
   <div class="row w-full">
     <div class="xg:col-10-13 relative flex xg:justify-end">
@@ -32,12 +32,12 @@
   </div>
 
   <div class="row-brand">
-    <div class="col-1-13 relative xg:min-h-[61.5vh] text-orange">
+    <div class="col-1-13 relative h-full xg:min-h-[61.5vh] text-orange">
 
       <?php include "layout/components/brand-intro.php"; ?>
  
-      <h2 id="hero-title" class="big-title hero-title pb-1">
-        Inter<br class="xg:hidden" >pretamos, <br>
+      <h2 id="hero-title" class="big-title hero-title mt-[40rem] xg:mt-0 pb-1">
+        Interpretamos,
         evaluamos <br>
         y creamos.
       </h2>

@@ -26,6 +26,8 @@
 @import "./components/sharebar.css";
 @import "./components/single-tools.css";
 @import "./components/single-columns.css";
+@import "./components/go-top.css";
+@import "./components/page-trans.css";
 /* @import "./components/view-transitions.css"; */
 /* @import "./components/custom-select.css"; */
 /* @import "./components/checkbox-radio.css"; */

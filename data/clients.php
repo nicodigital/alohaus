@@ -7,6 +7,7 @@ $clientes = array(
     "clientes_corimsa.svg",
     "clientes_cpm.svg",
     "clientes_cvr.svg",
+    "clientes_na.svg",
     "clientes_gebi.svg",
     "clientes_homeopatia-alemana.svg",
     "clientes_moviegroup-1.svg",

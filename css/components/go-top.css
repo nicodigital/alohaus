@@ -1,25 +1,24 @@
-#go-top {
+.go-top {
 
-  @apply fixed
-            bottom-0
-            xg:bottom-3
-            left-4
-            translate-y-full
-            xg:translate-y-[175%]
-            transition-all
-            z-[99];
+   position: relative;
+   display: block;
+   height: 8rem;
 
-  svg {
-    @apply w-[5rem] h-[5rem];
-  }
+    .txt {
+        display: block;
+        font-family: theme(fontFamily.title);
+        font-size: 2rem;
+        line-height: 1;
+        color: theme(colors.orange);
+        white-space: nowrap;
+        transform: rotate(90deg) translate(.7rem, -.2rem);
+    }
 
-}
+    & svg{
+      position: absolute;
+      top: -5.5rem;
+      left: 1.5rem;
+      @apply w-[2rem];
+    }
 
-body:not([data-scroll="top"]) {
-
-  #go-top {
-    @apply translate-y-[-50%]
-            xg:translate-y-[0];
-  }
-  
 }
