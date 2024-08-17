@@ -102,20 +102,44 @@ export function pageTrans( container, status = "out" ){
   const brandPaths = ".page-trans .brand-intro path";
 
   if( status === "in" ){
-    pageTrans.setAttribute("data-status", "in");
+    // pageTrans.setAttribute("data-status", "in");
 
     gsap.timeline()
     .to( brandPaths, { autoAlpha:1, translateY: "120%", duration: 0 })
-    .to( brandPaths, {translateY: "0", duration: .3, stagger: 0.04, ease: "power2.out" }, "=.4")
+    .to( pageTrans , { autoAlpha: 1, duration: .0 } ) 
+    .to( pageTrans , { clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)" } ) 
+    .to( brandPaths, {translateY: "0", duration: .3, stagger: 0.04, ease: "power2.out" }, "=.4" )
 
   }else{ // out
     setTimeout(() => {
-      pageTrans.setAttribute("data-status", "out");
+      // pageTrans.setAttribute("data-status", "out");
       gsap.timeline()
-      .to( brandPaths, { translateY: "-120%", duration: .3, stagger: 0.04, ease: "power2.out" }, "=.2" )
+      .to( brandPaths, { translateY: "-120%", duration: .3, stagger: 0.04, ease: "power2.out" }, "=.4" )
       .to( brandPaths, { autoAlpha: 0, duration: .0 }, "=.2" )
+      .to( pageTrans , { clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }, "-=1" ) 
       .to( brandPaths, { translateY: "120%", duration: .0 }, "=.2" )
+      .to( pageTrans , { autoAlpha: 0, duration: .0 } )
+      .to( pageTrans , { clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)", duration: .0 } )
     }, 400);
   }
 
 }
+
+// export function caseCardAnim( container ){
+
+//   const caseCard = document.querySelectorAll( "#proyectos .card" );
+
+//   const tl = gsap.timeline({
+//     scrollTrigger: {
+//       trigger: caseCard, 
+//       markers: true,
+//       start: "top 80%", 
+//       end: "top 50%", 
+//       scrub: true,
+//       // toggleActions: 'play reverse play reverse',
+//     }
+//   })
+
+//   tl.fromTo( caseCard, { translateY: "-2rem", clipPath: "polygon(0 100%, 0 100%, 0 100%, 0 100%)"}, { translateY: "0", clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)", stagger: 0.04 } )
+
+// }

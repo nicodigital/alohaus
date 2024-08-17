@@ -11,12 +11,12 @@
 
       <article class="xg:w-[24%]">
         <p class="mb-2 pointer-1x">
-          AloHaus nace de la inquietud de un equipo caracterizado por tener un pie en lo digital y otro en la comunicación impresa, brindando soluciones globales. No hay proyecto pequeño, ni menos importante, ni desafío que no queramos afrontar. El compromiso con nuestros clientes, con sus tiempos y sus necesidades, nos ha definido y fortalecido a lo largo del tiempo como socios estratégicos.
+          <?= $data["nosotros_txt_1"] ?>
         </p>
       </article>
 
       <p class="xg:absolute top-0 left-[44%] xg:w-[24%] pointer-1x">
-        Uno de los pilares de nuestro equipo es disfrutar de la investigación, de continuar creciendo en un rubro donde aparecen nuevas herramientas, lo que conlleva a nuevas posibilidades.
+        <?= $data["nosotros_txt_2"] ?>
       </p>
     </div>
 

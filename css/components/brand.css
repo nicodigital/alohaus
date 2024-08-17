@@ -5,6 +5,7 @@
 .brand{
   
   width: var(--brand-width);
+  transition: var(--trans-45);
 
   & svg{
     @apply w-full h-auto;

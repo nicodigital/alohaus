@@ -1,20 +1,8 @@
 .page-trans{
-   @apply fixed top-0 left-0 w-full h-screen 
+   @apply fixed top-0 left-0 w-full h-screen
+   bg-grey-dark 
    pointer-events-none z-[999];
-   transition: all .6s ease-in-out;
+   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+   transition: all .5s ease-in-out;
 }
 
-.page-trans:before{
-   content: "";
-   @apply absolute top-0 left-0 w-full h-full
-   bg-grey-dark z-0; 
-   transition: all .6s ease-in-out;
-}
-
-.page-trans[data-status="out"]:before{
-   @apply opacity-0;
-}
-
-.page-trans[data-status="in"]:before{
-   @apply opacity-100;
-}

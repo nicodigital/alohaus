@@ -14,7 +14,7 @@
   @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
 }
 
-.link-underline, #menu a{
+.link-underline, #menu .item{
   width: fit-content;
   text-decoration: none;
   background-image: linear-gradient(currentColor, currentColor);

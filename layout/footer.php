@@ -11,24 +11,28 @@
 					<p class="contact-data mb-4 pointer-1x">
 						<span>España</span>
 						<span>
-							+34 613 45 37 65 <br>
-							camila@alohaus.uy
+							<?= $options["spain"]["tel"] ?> <br>
+							<?= $options["spain"]["correo_electronico"] ?>
 						</span>
 					</p>
 					<p class="contact-data mb-4 pointer-1x">
 						<span>Uruguay</span>
 						<span>
-							+598 91 498 184 <br>
-							hola@alohaus.uy
+							<?= $options["uruguay"]["tel"] ?> <br>
+							<?= $options["uruguay"]["correo_electronico"] ?>
 						</span>
 					</p>
 
 					<p class="contact-data pointer-1x">
-						<span>Seguinos</span>
 						<span>
-							<a href="https://www.instagram.com/alohaus.uy/" target='_blank' rel='noreferrer noopener'>Instagram</a> <br>
-							<a href="https://www.linkedin.com/company/alohaus" target='_blank' rel='noreferrer noopener'>Linkedin</a> <br>
-							<a href="https://vimeo.com/user204100825" target='_blank' rel='noreferrer noopener'>Vimeo</a>
+							Seguinos
+						</span>
+						<span>
+							<?php foreach ($options["social"] as $social ) { ?>
+								<a href="<?= $social["link"] ?>" target='_blank' rel='noreferrer noopener'>
+									<?= $social["label"] ?>
+								</a> <br>
+							<?php } ?>
 						</span>
 					</p>
 				</div>

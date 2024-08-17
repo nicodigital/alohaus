@@ -24,14 +24,16 @@
     <div class="row h-full">
 
       <div class="xg:col-1-13 hidden xg:grid xg:grid-cols-3 gap-2">
-        <?php
-        foreach ($GLOBALS['servicios'] as $serv) {
-          cardServ($serv['num'], $serv['slug'], $serv['title'], $serv['text']);
-        } ?>
+        <?php $x = 1;
+        foreach ( $data["serv_list"] as $serv) {
+          $num = setNum($x);
+          $slug = slugify($serv['title']);
+          cardServ( $num , $slug , $serv['title'], $serv['text']);
+        $x++; } ?>
       </div>
 
       <div class="xg:hidden accordion text-white">
-        <?php foreach ($GLOBALS['servicios'] as $serv) { ?>
+        <?php foreach ( $data["serv_list"] as $serv) { ?>
           <acc-item title="<?= $serv['title'] ?>">
             <?= $serv['text'] ?>
           </acc-item>

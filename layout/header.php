@@ -47,6 +47,7 @@
         <?php include 'layout/components/lang-switcher.php'; ?>
       </div>
     </div>
+
   </header>
 
   <?php //debug($_SERVER['REQUEST_URI']);

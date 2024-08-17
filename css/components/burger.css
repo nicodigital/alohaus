@@ -4,10 +4,11 @@
 }
 
 .burger {
-	@apply absolute cursor-pointer top-[2.5rem] z-[9999] xg:hidden ;
+	@apply fixed cursor-pointer top-[2.5rem] z-[9999] xg:hidden ;
 	width: var(--burger-size);
 	height: var(--burger-size);
 	right: var(--container-gap);
+	transition: var(--trans-45);
 }
 
 .burger-box {
@@ -33,6 +34,12 @@
 .burger-inner::before {
 	content: "";
 	display: block;
+}
+
+.menu-in .burger-inner,
+.menu-in .burger-inner::after,
+.menu-in .burger-inner::before {
+	background-color: var(--grey-dark);
 }
 
 .burger-inner::before {

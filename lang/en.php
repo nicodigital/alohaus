@@ -4,15 +4,20 @@ $i18n = array(
 
   'menu' => [
     ['Home','/'],
-    ['About','nosotros'],
-    ['Films','films'],
-    ['Contact','contacto'],
+    ['About us','#nosotros'],
+    ['Team','#equipo'],
+    ['Projects','proyectos'],
+    ['Contact','#contacto'],
   ],
 
   'words' => [
-    'about' => 'About',
-    'films' => 'Films',
-    'acc_title' => 'Accordrion Title'
+    'about' => 'About us',
+    'more_projects' => 'Más proyectos',
+    'follow_us'     => 'Follow us',
+    'spain'         => 'Spain',
+    'contact'       => 'Contact',
+    'clients'       => 'Clients',
+    'projects'      => 'Projects',
   ],
 
 );

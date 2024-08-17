@@ -2,7 +2,7 @@
 
   <div class="row filter ctr-pb">
 
-    <div class="xg:col-1-5 hidden xg:block">
+    <div class="xg:col-1-5 hidden xg:block animate" data-anim="bottom" data-delay="900" >
       <h1>
         Cada nuevo proyecto, <br> 
         un crecimiento, <br>
@@ -11,7 +11,7 @@
       </h1>
     </div>
 
-    <div class="xg:col-5-9">
+    <div class="xg:col-5-9 animate" data-anim="bottom" data-delay="1000">
       <?php include 'layout/components/filter.php' ?>
     </div>
 
@@ -21,12 +21,12 @@
 
   </div>
 
-  <div class="grid filter-items xg:grid-cols-3 gap-2">
+  <div class="grid filter-items xg:grid-cols-3 gap-2 animate force-anim" data-anim="bottom" data-delay="1100" >
     <?php include 'data/works.php';
 
     foreach ($works as $work) { ?>
 
-      <a href="case" class="card filter-item pointer-arrow" data-type="<?= $work["cat"] ?>" >
+      <a href="case" class="card filter-item pointer-arrow " data-type="<?= $work["cat"] ?>" >
         <figure>
           <img src='<?php echo $work["img"] ?>' <?php img_size($work["img"]) ?> <?php img_size($work["img"]) ?> alt='<?php echo $work["title"] ?>' loading='lazy' decoding='async' />
           <figcaption>

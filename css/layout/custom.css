@@ -16,35 +16,7 @@
    grid-template-columns: 1fr 1fr;
 }
 
-
-/*//////////////////////////////////////////////////////////*/
-/*//////////////////////// 992px ///////////////////////////*/
-/*//////////////////////////////////////////////////////////*/
-
-@media (min-width: theme("screens.xg")) {
-
-   .single-content{
-      height: calc(100vh - 10rem - 4rem );
-   }
-   
-   [data-scroll="down"] .single-content{
-      height: calc(100vh - 5rem );
-   }
-   
+.lang-switcher{
+   transition: var(--trans-5);
 }
 
-/*//////////////////////////////////////////////////////////*/
-/*///////////////////////// 1280px /////////////////////////*/
-/*//////////////////////////////////////////////////////////*/
-
-@media (min-width: theme("screens.3xl")) {
-
-   .single-content{
-      height: calc(100vh - 16rem - 3rem );
-   }
-   
-   [data-scroll="down"] .single-content{
-      height: calc(100vh - 5rem );
-   }
-   
- }

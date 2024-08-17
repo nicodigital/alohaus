@@ -1,9 +1,9 @@
-function animations() {
+function animations(container) {
   // console.log("Animate First Load");  
 
   const observedElements = new Set();
 
-  const animations = document.querySelectorAll(".animate");
+  const animations = container.querySelectorAll(".animate");
 
   if (animations.length > 0) {
     let lastScrollY = 0;

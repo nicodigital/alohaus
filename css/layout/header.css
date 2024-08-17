@@ -1,9 +1,41 @@
 header {
-   @apply absolute top-0 left-0 w-full
+   @apply fixed top-0 left-0 w-full
         flex items-center
-        py-2 z-[99] transition-all;
+        py-2 z-[99] overflow-hidden;
+        transition: var(--trans-5);
 }
 
 header > .row{
    @apply w-full items-center;
+}
+
+:not([data-scroll="top"])[data-stack="on"] [data-barba="container"]:not(.home) header{
+   @apply bg-grey-dark;
+}
+
+:not([data-scroll="top"])[data-stack="off"] header .brand,
+:not([data-scroll="top"])[data-stack="off"] .burger{
+   transform: translateY(-5rem);
+}
+
+/*//////////////////////////////////////////////////////////*/
+/*//////////////////////// 992px ///////////////////////////*/
+/*//////////////////////////////////////////////////////////*/
+
+@media (min-width: theme("screens.xg")) {
+
+   [data-barba="container"]:not(.home) header{
+      @apply bg-grey-dark;
+   }
+
+   :not([data-scroll="top"])[data-stack="off"] header .brand{
+      transform: translateY(0);
+   }
+
+   :not([data-scroll="top"])[data-stack="off"] header{
+      transform: translateY(-7rem);
+   }
+
+   
+
 }

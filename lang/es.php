@@ -12,6 +12,12 @@ $i18n = array(
 
   'words' => [
     'about' => 'Nosotros',
+    'more_projects' => 'Más proyectos',
+    'follow_us'     => 'Seguinos',
+    'spain'         => 'España',
+    'contact'       => 'Contacto',
+    'clients'       => 'Clientes',
+    'projects'      => 'Proyectos',
   ],
 
 );

@@ -6,10 +6,10 @@
 
       <div class="col-1 w-full xg:w-33%">
 
-        <aside class="xg:sticky single-content top-2">
+        <aside class="xg:sticky single-content xg:top-10">
           <div class="flex flex-col justify-between h-full">
 
-            <div class="text-content xg:w-[36rem]">
+            <div class="text-content xg:w-[36rem] animate" data-anim="bottom" data-delay="900" >
               <h1 class="text-h1 font-title mb-2 leading-[1.25]">
                 Larnaudie Single Malt
               </h1>
@@ -27,7 +27,7 @@
 
       </div>
 
-      <div class="col-2  w-full xg:w-66% flex flex-col gap-2">
+      <div class="col-2  w-full xg:w-66% flex flex-col gap-2 animate force-anim" data-anim="bottom" data-delay="1100" >
 
         <?php include 'data/works.php';
 

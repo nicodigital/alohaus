@@ -1,6 +1,6 @@
 import barba from '@barba/core';
 import barbaPrefetch from '@barba/prefetch';
-import { brandIntro, animTitle, pageTrans } from './gsap.js'
+import { brandIntro, animTitle, pageTrans, caseCardAnim } from './gsap.js'
 import lenisScroll from './lenisScroll.js';
 import cursor from './cursor.js';
 import menuMobile from './menuMobile.js';
@@ -10,7 +10,7 @@ import accordion from './accordion.js';
 import servicios from './servicios.js';
 import filters from './filters.js';
 import caseToggle from './caseToggle.js';
-// import animations from './animations.js';
+import animations from './animations.js';
 // import modal from './modal.js';
 // import cookies from './cookies.js';
 
@@ -22,7 +22,7 @@ function motion( page, device_data  ) {
     lenisScroll(container)
     cursor(container);
     menuMobile(device_data);
-    // animations();
+    animations(container);
     scrollMarkers(device_data.body, device_data.platform, device_data.isMobile, device_data.isDesktop, device_data.isTablet);
   }
 
@@ -77,6 +77,7 @@ function motion( page, device_data  ) {
           brandIntro(next.container)
           customSwiper(device_data.isDesktop) 
           servicios(device_data)
+          // caseCardAnim(next.container)
 
           if( device_data.isDesktop === true ) {
             animTitle( next.container )
@@ -122,13 +123,13 @@ function motion( page, device_data  ) {
               pageTrans(current.container, "in")
                 setTimeout(() => {
                     resolve();
-                }, 300);
+                }, 400);
             });
  
         },
         enter: ( { next } ) => {
           console.log("ENTER PROYECTOS");
-
+          
           return new Promise( resolve => {
               setTimeout(() => {
                   resolve();
@@ -159,7 +160,7 @@ function motion( page, device_data  ) {
               pageTrans(current.container, "in")
                 setTimeout(() => {
                     resolve();
-                }, 600);
+                }, 900);
             });
         },
         enter: ( { next } ) => {

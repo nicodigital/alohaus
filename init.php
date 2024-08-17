@@ -117,7 +117,8 @@ include 'inc/get-lang.php';
 include 'inc/get-page.php';
 include 'lang/' . $lang . '.php';
 include 'inc/contact-info.php';
-include 'inc/data.php';
+include 'data/data.php';
+include 'inc/components.php';
 include 'inc/meta-tags.php';
 include_once 'inc/template.class.php';
 

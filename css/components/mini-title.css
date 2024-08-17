@@ -1,0 +1,21 @@
+.mini-title{
+  position: relative;
+  font-family: theme(fontFamily.title);
+  font-size: var(--h1);
+  display: flex;
+  width: fit-content;
+  gap: 1rem;
+}
+
+.mini-title span:first-child{
+  @apply flex;
+  letter-spacing: var(--letter-track-1);
+}
+
+.mini-title span:last-child{
+  @apply flex items-end;
+}
+
+.mini-title svg{
+  @apply w-[1.7rem] h-auto translate-y-[-.9rem] xg:translate-y-[-1.15rem];
+}

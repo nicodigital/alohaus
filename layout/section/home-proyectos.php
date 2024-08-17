@@ -4,7 +4,9 @@
   <div class="row">
     <div class="xg:col-1-10">
       <h2 id="title-proyectos" class="big-title title-scroll text-orange xg:text-grey-bold mb-4 xg:mb-1">
-        <span class="hidden xg:block">Our pride</span>
+        <span class="hidden xg:block">
+        <?= $data["proyectos_title"] ?>
+        </span>
         <span class="xg:hidden">Proyectos</span>
       </h2>
     </div>
@@ -17,7 +19,7 @@
     <div class="grid xg:grid-cols-3 gap-2 xg:gap-[1.5px]">
       <div class="mb-4 xg:mb-0">
         <p class="xg:w-60% self-end pointer-1x">
-          Combinamos creatividad y tecnología para crear marcas memorables, piezas visuales impactantes y experiencias que resuenen con el público.
+          <?= $data["proyectos_txt"] ?>
         </p>
       </div>
 

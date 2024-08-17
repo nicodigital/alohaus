@@ -2,7 +2,9 @@
 
     .card{
         position: relative;
+        display: block;
         aspect-ratio: var(--card-aspect);
+        transition: all .8s ease-out;
 
         & .info{
             position: absolute;
