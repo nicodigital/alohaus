@@ -124,22 +124,3 @@ export function pageTrans( container, status = "out" ){
   }
 
 }
-
-// export function caseCardAnim( container ){
-
-//   const caseCard = document.querySelectorAll( "#proyectos .card" );
-
-//   const tl = gsap.timeline({
-//     scrollTrigger: {
-//       trigger: caseCard, 
-//       markers: true,
-//       start: "top 80%", 
-//       end: "top 50%", 
-//       scrub: true,
-//       // toggleActions: 'play reverse play reverse',
-//     }
-//   })
-
-//   tl.fromTo( caseCard, { translateY: "-2rem", clipPath: "polygon(0 100%, 0 100%, 0 100%, 0 100%)"}, { translateY: "0", clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)", stagger: 0.04 } )
-
-// }

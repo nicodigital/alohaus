@@ -1,0 +1,11 @@
+.lang-switcher{
+   position: relative;
+   transition: var(--trans-5);
+}
+
+.lang-switcher a{
+   @apply absolute top-0 left-[-2rem] 
+   xg:size-4
+   flex justify-center items-center
+   translate-x-[-50%] translate-y-[-50%];
+}

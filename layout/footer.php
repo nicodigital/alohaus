@@ -3,13 +3,15 @@
 		<div class="row pt-4 xg:pt-7 pb-10">
 
 			<h2 class="big-title mb-12 xg:hidden">
-				CONTACTO
+				<?= $i18n["words"]["contact"] ?>
 			</h2>
 
 			<div class="xg:col-1-4 h-full flex flex-col order-3 xg:order-1 mt-8 xg:mt-0">
 				<div class="mb-3">
 					<p class="contact-data mb-4 pointer-1x">
-						<span>España</span>
+						<span>
+						<?= $i18n["words"]["spain"] ?>
+						</span>
 						<span>
 							<?= $options["spain"]["tel"] ?> <br>
 							<?= $options["spain"]["correo_electronico"] ?>
@@ -25,7 +27,7 @@
 
 					<p class="contact-data pointer-1x">
 						<span>
-							Seguinos
+						<?= $i18n["words"]["follow_us"] ?>
 						</span>
 						<span>
 							<?php foreach ($options["social"] as $social ) { ?>
@@ -51,7 +53,7 @@
 		<div class="row">
 			<div class="col-10-13 xg:col-1-9 flex items-end justify-end xg:justify-start order-2 xg:order-1">
 				<h2 class="big-title mb-2 hidden xg:block">
-					CONTACTO
+					<?= $i18n["words"]["contact"] ?>
 				</h2>
 				<div class="xg:hidden">
 					<?php include 'layout/components/go-top.php' ?>
@@ -59,7 +61,7 @@
 			</div>
 			<div class="col-1-10 xg:col-9-13 flex xg:justify-end items-end order-1 xg:order-2">
 				<p class="mb-3 text-small">
-					© <?= date('Y') ?> AloHaus <br class="xg:hidden" > Estudio de diseño. <br> All rights reserved.
+					© <?= date('Y') ?> AloHaus <br class="xg:hidden" ><?= $i18n["words"]["design_studio"] ?>. <br> All rights reserved.
 				</p>
 			</div>
 		</div>

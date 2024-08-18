@@ -32,8 +32,8 @@
       $i++;} ?>
 
       <div class="flex items-end justify-end mt-8 xg:mt-0">
-        <a href="proyectos" class="link-underline">
-          <?php miniTitle("Más Proyectos", "up") ?>
+        <a href="<?= transPath( 'proyectos' , $GLOBALS["lang"] ) ?>" class="link-underline">
+          <?php miniTitle( $i18n["words"]["more_projects"] , "up") ?>
         </a>
       </div>
 

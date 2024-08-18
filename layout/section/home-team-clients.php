@@ -43,7 +43,7 @@
     <hr class="text-grey-dark mb-1">
     <div class="row mb-[25vh]">
       <div class="xg:col-1-5">
-        <?= miniTitle("Clientes") ?>
+        <?= miniTitle( $i18n["words"]["clients"]) ?>
       </div>
       <div class="xg:col-5-8">
         <p class="pointer-1x">

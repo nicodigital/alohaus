@@ -11,13 +11,14 @@ $i18n = array(
   ],
 
   'words' => [
-    'about' => 'Nosotros',
+    'about_us' => 'Nosotros',
     'more_projects' => 'Más proyectos',
     'follow_us'     => 'Seguinos',
     'spain'         => 'España',
     'contact'       => 'Contacto',
     'clients'       => 'Clientes',
     'projects'      => 'Proyectos',
+    'design_studio' => 'Estudio de diseño',
   ],
 
 );

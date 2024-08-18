@@ -3,7 +3,7 @@
   <div class="row w-full">
     <div class="xg:col-10-13 relative flex xg:justify-end">
 
-      <p class="pointer-1x relative">
+      <p class="relative">
 
         <span class="arrow-intro">
           <svg class="w-full h-auto translate-x-[2rem] translate-y-[-1rem]" width="17" height="17" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -30,7 +30,7 @@
 
       <?php include "layout/components/brand-intro.php"; ?>
 
-      <h2 id="hero-title" class="big-title hero-title mt-[40rem] xg:mt-0 pb-1">
+      <h2 id="hero-title" class="big-title hero-title mt-[40rem] xg:mt-0 pb-1 pointer-2x">
         <?= $data["hero_title"] ?>
       </h2>
     </div>

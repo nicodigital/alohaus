@@ -26,45 +26,26 @@ function motion( page, device_data  ) {
     scrollMarkers(device_data.body, device_data.platform, device_data.isMobile, device_data.isDesktop, device_data.isTablet);
   }
 
+
   barba.init({
     // cacheFirstPage: true,
     debug: true,
     sync: true,
+    timeout: 5000, // default is 2000ms
     prevent: ({ event, href }) => {
 
-      // Prevenir la transición de Barba.js si el enlace tiene la clase 'barba-ignore'
-      let barbaIgnore = document.querySelectorAll('.barba-ignore');
-
-      if( barbaIgnore.lenght > 0 ) {
-        if ( event.target.classList.contains('barba-ignore')) {
-          return true;
-        }
-      }
-      
       // Prevenir la transición de Barba.js si la URL termina con '#top'
       if ( href.includes('#') ) { 
+        return true
+      }
+
+      if ( !href.includes('http') ) { 
         return true
       }
   
       return false;
     },
     transitions: [
-      // DEFAULT
-      {
-        name: 'default',
-        once( { next } ){
-          console.log("ONCE DEFAULT");
-          globalFunctions(next.container)
-        },
-        leave: ({ current }) => {
-          console.log("LEAVE DEFAULT");
-          globalFunctions(next.container)
-        },
-        enter: ({ next }) => {
-          console.log("ENTER DEFAULT");
-          globalFunctions(next.container)
-        }
-      },
       // HOME
       {
         name: 'Home',

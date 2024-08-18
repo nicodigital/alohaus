@@ -16,7 +16,4 @@
    grid-template-columns: 1fr 1fr;
 }
 
-.lang-switcher{
-   transition: var(--trans-5);
-}
 

@@ -4,10 +4,7 @@
 
     <div class="xg:col-1-5 hidden xg:block animate" data-anim="bottom" data-delay="900" >
       <h1>
-        Cada nuevo proyecto, <br> 
-        un crecimiento, <br>
-        Cada nueva herramienta,<br>
-         una conquista.
+        <?= $data["projects_intro"] ?>
       </h1>
     </div>
 

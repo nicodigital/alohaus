@@ -100,9 +100,9 @@ function contactForm() {
       checkForm()
     }
 
-    message.addEventListener('mouseleave', function() {
-     checkForm();
-    })
+    // message.addEventListener('mouseleave', function() {
+    //  checkForm();
+    // })
 
     /* ////////////////// SUBMIT ///////////////////*/
 

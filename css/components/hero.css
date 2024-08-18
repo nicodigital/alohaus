@@ -8,7 +8,7 @@
   @apply row 
         absolute left-0 bottom-0 w-full h-[100svh] xg:h-auto 
         flex items-start xg:items-center
-        ctr-px pointer-events-none;
+        ctr-px;
 }
 
 .line-txt{

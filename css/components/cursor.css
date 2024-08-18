@@ -37,8 +37,8 @@
         }
 
         &.hover-2x {
-             transform: scale(4) translateZ(0px) !important;
-             -webkit-transform: scale(4) translateZ(0px) !important;
+             transform: scale(6) translateZ(0px) !important;
+             -webkit-transform: scale(6) translateZ(0px) !important;
         }
 
         .menu-active:not(.pointer-hover) &{

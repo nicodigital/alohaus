@@ -27,8 +27,7 @@
 #menu .item{
   @apply w-full xg:w-fit 
   text-big font-title uppercase text-grey-dark xg:text-white xg:text-body xg:lowercase
-  border-b-[1.5px] border-grey-dark xg:border-none
-  cursor-pointer;
+  border-b-[1.5px] border-grey-dark xg:border-none;
 }
 
 .menu-in #menu{

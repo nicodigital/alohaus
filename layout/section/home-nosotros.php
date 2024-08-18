@@ -6,7 +6,7 @@
     <div class="xg:col-1-13">
 
       <h2 class="big-title xg:hidden text-orange mb-4">
-        Nosotros
+        <?= $i18n["words"]["about_us"] ?>
       </h2>
 
       <article class="xg:w-[24%]">
@@ -25,10 +25,10 @@
   <div class="row">
     <div class="xg:col-1-13 flex justify-between items-end">
       <div class="hidden xg:block translate-y-[-1rem]">
-        <?php miniTitle("Proyectos") ?>
+        <?php miniTitle( $i18n["words"]["projects"] ) ?>
       </div>
       <h2 id="title-nosotros" class="big-title hidden xg:block title-scroll text-grey-bold mb-1">
-        Nosotros
+        <?= $i18n["words"]["about_us"] ?>
       </h2>
     </div>
   </div>

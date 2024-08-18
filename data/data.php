@@ -11,14 +11,16 @@ $options_url   = $api_domain . "/wp-json/acf/v3/options/options";
 $get_options = get_data($options_url);
 $options = $get_options["acf"];
 
-
-
-// if( $page == 'home' || $page == 'en' ){
-
-    $slug = 'home_'.$lang; // home_es || home_en
+/* Get Page Content */
+if( $page == 'home' || $page == 'en' ){
+    $slug = 'home-'.$lang; // home_es || home_en
     $content = get_post( $slug, $api_url );
+}
 
-// }
+if( $page == 'proyectos' ){
+    $slug = 'proyectos-'.$lang; // home_es || home_en
+    $content = get_post( $slug, $api_url );
+}
 
 // Ahora $data contiene los datos ya sea desde el caché o desde la API
 if ( $content ) {
