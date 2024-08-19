@@ -228,6 +228,7 @@
         }
 
         & img{
+            object-fit: cover;
             aspect-ratio: var(--card-aspect);
             transition: all .4s ease;
         }

@@ -19,22 +19,55 @@
   </div>
 
   <div class="grid filter-items xg:grid-cols-3 gap-2 animate force-anim" data-anim="bottom" data-delay="1100" >
-    <?php include 'data/works.php';
 
-    foreach ($works as $work) { ?>
+    <?php 
+    foreach ($GLOBALS["cases"] as $case) {
 
-      <a href="case" class="card filter-item pointer-arrow " data-type="<?= $work["cat"] ?>" >
+        $c = $case["acf"];
+        $types_txt = "";
+        
+        $type_count = count($c["types"]);
+        $z = 0;
+
+        foreach($c["types"] as $type) {
+
+          if( $z < $type_count-1 ){
+            $types_txt.= $type["slug"].",";
+          }else{
+            $types_txt.= $type["slug"];
+          }
+          
+        $z++; }
+
+         ?>
+
+      <a href="case/<?= $case["slug"] ?>" class="card filter-item pointer-arrow " data-type="<?= $types_txt ?>" >
         <figure>
-          <img src='<?php echo $work["img"] ?>' <?php img_size($work["img"]) ?> <?php img_size($work["img"]) ?> alt='<?php echo $work["title"] ?>' loading='lazy' decoding='async' />
+    
+          <?= picture( $c["main_img"]["url"], $case["title"]["rendered"], true, $c["main_img"]["width"], $c["main_img"]["height"] ) ?>
+
           <figcaption>
-            <span><?= $work["title"]  ?></span>
+
             <span>
-              <span>
-                Cliente: <?= $work["cliente"]  ?>
-              </span>
-              <span>
-                Pieza: <?= $work["pieza"]  ?>
-              </span>
+              <?= $case["title"]["rendered"]  ?>
+            </span>
+
+            <span>
+
+              <?php $w = 0;
+
+              foreach( $c["details"] as $detail ) { 
+
+                if( $w < 2 ){ ?>
+
+                <span>
+                  <?= $detail["label"]  ?>: <?= $detail["txt"]  ?>
+                </span>
+
+              <?php }
+
+              $w++; } ?>
+
             </span>
           </figcaption>
         </figure>

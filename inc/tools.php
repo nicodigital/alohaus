@@ -158,63 +158,63 @@ if (!function_exists('webp')) {
    * @return string
    */
 
-if (!function_exists('picture')) {
+   if (!function_exists('picture')) {
 
-  function picture($imagePath, $alt = "", $lazy = true)
-  {
-      // Verifica si la ruta es una URL externa
-      $isExternal = filter_var($imagePath, FILTER_VALIDATE_URL) !== false;
-  
-      // Si es una URL externa, obtén el tipo de la imagen desde los headers
-      if ($isExternal) {
-          $headers = get_headers($imagePath, 1);
-          $imageType = isset($headers['Content-Type']) ? $headers['Content-Type'] : null;
-  
-          // Como no puedes verificar si el archivo webp existe en una URL externa, simplemente usa el formato original
-          $webpImagePath = null;
-      } else {
-          // Si es una ruta local, sigue el proceso original
-          $imagePathWithoutExtension = pathinfo($imagePath, PATHINFO_DIRNAME) . '/' . pathinfo($imagePath, PATHINFO_FILENAME);
-          $webpImagePath = $imagePathWithoutExtension . '.webp';
-          list($width, $height) = getimagesize($imagePath);
-          $imageType = mime_content_type($imagePath);
-      }
-  
-      // Empieza a construir el markup <picture>
-      $markup = "<picture>\n";
-  
-      // Agrega el <source> para webp si el archivo existe y es una ruta local
-      if ($webpImagePath && file_exists($webpImagePath)) {
-          $markup .= "    <source srcset='{$webpImagePath}' type='image/webp'>\n";
-      }
-  
-      // Agrega el <source> para jpeg o png según corresponda
-      if ($imageType === 'image/jpeg') {
-          $markup .= "    <source srcset='{$imagePath}' type='image/jpeg'>\n";
-      } elseif ($imageType === 'image/png') {
-          $markup .= "    <source srcset='{$imagePath}' type='image/png'>\n";
-      }
-  
-      // Añade atributos lazy
-      $lazyAttr = $lazy ? 'loading="lazy"' : '';
-  
-      // Escapa el atributo alt para evitar inyecciones
-      $alt_stripped = strip_tags($alt);
-  
-      // Agrega el <img> con las dimensiones obtenidas
-      if (!$isExternal) {
-          $markup .= "    <img src='{$imagePath}' alt='{$alt_stripped}' title='{$alt_stripped}' {$lazyAttr} decoding='async' width='{$width}' height='{$height}' />\n";
-      } else {
-          $markup .= "    <img src='{$imagePath}' alt='{$alt_stripped}' title='{$alt_stripped}' {$lazyAttr} decoding='async' />\n";
-      }
-  
-      // Cierra el markup <picture>
-      $markup .= "</picture>";
-  
-      return $markup;
-  }
-  
+    function picture($imagePath, $alt = "", $lazy = true, $width = null, $height = null)
+    {
+        // Verifica si la ruta es una URL externa
+        $isExternal = filter_var($imagePath, FILTER_VALIDATE_URL) !== false;
+
+        // Si es una URL externa, obtén el tipo de la imagen desde los headers
+        if ($isExternal) {
+            $headers = get_headers($imagePath, 1);
+            $imageType = isset($headers['Content-Type']) ? $headers['Content-Type'] : null;
+            $webpImagePath = null; // No se puede verificar un archivo webp en URLs externas
+        } else {
+            // Si es una ruta local, sigue el proceso original
+            $imagePathWithoutExtension = pathinfo($imagePath, PATHINFO_DIRNAME) . '/' . pathinfo($imagePath, PATHINFO_FILENAME);
+            $webpImagePath = $imagePathWithoutExtension . '.webp';
+
+            // Si no se proporcionan $width y $height, los calculamos
+            if (is_null($width) || is_null($height)) {
+                list($width, $height) = getimagesize($imagePath);
+            }
+
+            $imageType = mime_content_type($imagePath);
+        }
+
+        // Escapa el atributo alt para evitar inyecciones
+        $alt_stripped = htmlspecialchars(strip_tags($alt), ENT_QUOTES);
+
+        // Construye el markup <picture>
+        $markup = "<picture>\n";
+
+        // Agrega el <source> para webp si el archivo existe y es una ruta local
+        if ($webpImagePath && file_exists($webpImagePath)) {
+            $markup .= "    <source srcset='{$webpImagePath}' type='image/webp'>\n";
+        }
+
+        // Agrega el <source> para jpeg o png según corresponda
+        if ($imageType === 'image/jpeg') {
+            $markup .= "    <source srcset='{$imagePath}' type='image/jpeg'>\n";
+        } elseif ($imageType === 'image/png') {
+            $markup .= "    <source srcset='{$imagePath}' type='image/png'>\n";
+        }
+
+        // Añade atributos lazy
+        $lazyAttr = $lazy ? 'loading="lazy"' : '';
+
+        // Agrega el <img> con las dimensiones y el título, unificando title con alt
+        $markup .= "    <img src='{$imagePath}' alt='{$alt_stripped}' title='{$alt_stripped}' {$lazyAttr} decoding='async' width='{$width}' height='{$height}' />\n";
+
+        // Cierra el markup <picture>
+        $markup .= "</picture>";
+
+        return $markup;
+    }
+
 }
+
 
 /* //////////////////////////// FORMAT NUMBER  ////////////////////////////*/
 

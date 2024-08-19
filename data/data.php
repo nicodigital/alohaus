@@ -2,8 +2,8 @@
 
 $api_domain = "https://nicolook.com/alohaus/gestor";
 
-$api_url = $api_domain . "/wp-json/wp/v2";
-$options_url   = $api_domain . "/wp-json/acf/v3/options/options";
+$api_url        = $api_domain . "/wp-json/wp/v2";
+$options_url    = $api_domain . "/wp-json/acf/v3/options/options";
 //https://nicolook.com/alohaus/gestor/wp-json/wp/v2
 
 // Experimental - Get Data from Cache or API
@@ -20,6 +20,9 @@ if( $page == 'home' || $page == 'en' ){
 if( $page == 'proyectos' ){
     $slug = 'proyectos-'.$lang; // home_es || home_en
     $content = get_post( $slug, $api_url );
+    $get_cases = get_postype( "cases", $api_url );
+    $cases = $get_cases;
+    // debug($cases);
 }
 
 // Ahora $data contiene los datos ya sea desde el caché o desde la API

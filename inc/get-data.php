@@ -10,6 +10,13 @@ function get_data($url) {
   return json_decode($JSON, true);
 }
 
+/*///////////////////////// GET POST TYPE ////////////////////////////*/
+// Función para obtener datos desde un POST TYPE
+function get_postype( $slug, $api_url ) {
+    $endpoint = $api_url ."/". $slug;
+    $JSON = file_get_contents($endpoint);
+    return json_decode($JSON, true);
+  }
 
 /*//////////////////////////// GET POST /////////////////////////////*/
 // Función para obtener un post específico desde la API
