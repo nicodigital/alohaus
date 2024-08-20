@@ -5,6 +5,7 @@
   display: flex;
   width: fit-content;
   gap: 1rem;
+  line-height: .9;
 }
 
 .mini-title span:first-child{
@@ -17,5 +18,5 @@
 }
 
 .mini-title svg{
-  @apply w-[1.7rem] h-auto translate-y-[-.9rem] xg:translate-y-[-1.15rem];
+  @apply w-[1.7rem] h-auto translate-y-[-.9rem] xg:translate-y-[-.3rem];
 }

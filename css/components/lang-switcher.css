@@ -9,3 +9,7 @@
    flex justify-center items-center
    translate-x-[-50%] translate-y-[-50%];
 }
+
+.lang-switcher a:first-child{
+   @apply translate-x-[-125%]
+}

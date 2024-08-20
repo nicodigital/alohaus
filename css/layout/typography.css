@@ -40,7 +40,7 @@ p {
 }
 
 .big-title{
-   @apply text-big font-title font-[500] uppercase tracking-[-0.04em] leading-[0.95];
+   @apply text-big font-title font-[500] uppercase tracking-[-0.04em] leading-[0.9];
 }
 
 hr{

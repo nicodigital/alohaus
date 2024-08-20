@@ -1,5 +1,6 @@
 :root {
    --container-gap: 1rem;
+   --header-height: 7.5rem;
    --letter-track-1: -0.02em;
    --letter-track-2: -0.05em;
    --orange: theme(colors.orange);
@@ -58,7 +59,7 @@ main{
    width: 100%;
    top: 0;
    left: 0;
-   height: 7rem;
+   height: var(--header-height);
    background-color: rgba(0, 0, 0, 1);
    opacity: 1;
    z-index: 999;
@@ -95,6 +96,7 @@ main{
 @media (min-width: theme('screens.xg')) {
    :root {
       --container-gap: 2%;
+      --header-height: 7.5rem;
    }
 }
 

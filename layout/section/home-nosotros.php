@@ -24,7 +24,7 @@
 
   <div class="row">
     <div class="xg:col-1-13 flex justify-between items-end">
-      <div class="hidden xg:block translate-y-[-1rem]">
+      <div class="hidden xg:block mb-2">
         <?php miniTitle( $i18n["words"]["projects"] ) ?>
       </div>
       <h2 id="title-nosotros" class="big-title hidden xg:block title-scroll text-grey-bold mb-1">

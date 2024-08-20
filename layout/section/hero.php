@@ -30,7 +30,7 @@
 
       <?php include "layout/components/brand-intro.php"; ?>
 
-      <h2 id="hero-title" class="big-title hero-title mt-[40rem] xg:mt-0 pb-1 pointer-2x">
+      <h2 id="hero-title" class="big-title hero-title mt-[40rem] xg:mt-0 pointer-2x">
         <?= $data["hero_title"] ?>
       </h2>
     </div>

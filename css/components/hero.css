@@ -29,7 +29,7 @@
 }
 
 .hero-title{
-  @apply absolute top-0 left-0 opacity-0;
+  @apply absolute bottom-1 left-0 opacity-0;
  }
 
  .hero-title .line{

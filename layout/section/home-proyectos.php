@@ -3,15 +3,12 @@
 
   <div class="row">
     <div class="xg:col-1-10">
-      <h2 id="title-proyectos" class="big-title title-scroll text-orange xg:text-grey-bold mb-4 xg:mb-1">
+      <h2 id="title-proyectos" class="big-title title-scroll text-orange xg:text-grey-bold mb-4 xg:mb-1 xg:translate-y-[-.5rem]">
         <span class="hidden xg:block">
         <?= $data["proyectos_title"] ?>
         </span>
         <span class="xg:hidden">Proyectos</span>
       </h2>
-    </div>
-    <div class="xg:col-11-13 hidden xg:flex justify-end items-end">
-      <?php include 'layout/components/column-icons.php' ?>
     </div>
   </div>
 

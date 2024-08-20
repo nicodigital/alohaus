@@ -9,11 +9,11 @@
 				<?= $i18n["menu"][0][0] ?>
 			</a>
 
-			<a href="<?php anchor("#nosotros", "home" ) ?> " class="item togg <?php anchor_class($page,"home") ?>" >
+			<a href="<?php anchor("#nosotros", "home" ) ?> " class="item togg <?php anchor_class($page,"home") ?>" data-barba-prevent="self" >
 				<?= $i18n["menu"][1][0] ?>
 			</a>
 
-			<a href="<?php anchor("#team", "home" ) ?>" class="item togg <?php anchor_class($page,"home") ?>" >
+			<a href="<?php anchor("#team", "home" ) ?>" class="item togg <?php anchor_class($page,"home") ?>" data-barba-prevent="self" >
 				<?= $i18n["menu"][2][0] ?>
 			</a>
 
@@ -21,7 +21,7 @@
 				<?= $i18n["menu"][3][0] ?>
 			</a>
 
-			<div href="#contacto" class="item togg anchor barba-ignore">
+			<div href="#contacto" class="item togg anchor barba-ignore" data-barba-prevent="self" >
 				<?= $i18n["menu"][4][0] ?>
 			</div>
 		</nav>

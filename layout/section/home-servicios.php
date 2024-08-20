@@ -9,7 +9,7 @@
 
   <div class="container xg:mt-[-75vh]">
 
-    <div class="row mb-3">
+    <div class="row mb-2">
       <div class="xg:hidden">
         <!-- <hr class="text-orange mb-1"> -->
         <h2 class="big-title text-orange">

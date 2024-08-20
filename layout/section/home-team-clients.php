@@ -1,7 +1,7 @@
 <section id="team" class=" bg-orange min-h-screen py-3 xg:pt-1 ctr-pb text-grey-dark">
 
-  <div class="container flex justify-between items-end mb-20">
-    <div class="xg:translate-y-[-2.5rem]">
+  <div class="container flex justify-between mb-10 3xl:mb-20">
+    <div class="xg:translate-y-[1.5rem]">
       <?php miniTitle("Team") ?>
     </div>
     <h2 id="title-team" class="big-title hidden xg:block text-right mb-2 opacity-20">
@@ -41,12 +41,12 @@
 
   <div class="container mt-[25vh]">
     <hr class="text-grey-dark mb-1">
-    <div class="row mb-[25vh]">
-      <div class="xg:col-1-5">
+    <div class="row mb-[15vh] 3xl:mb-[25vh]">
+      <div class="xg:col-1-5 pt-1">
         <?= miniTitle( $i18n["words"]["clients"]) ?>
       </div>
       <div class="xg:col-5-8">
-        <p class="pointer-1x">
+        <p class="pointer-1x pt-1">
           <?= $data["clientes_text"] ?>
         </p>
       </div>
