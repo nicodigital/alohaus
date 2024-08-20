@@ -1,36 +1,26 @@
 <?php
 
-/* Detect Device */
-if ( $detect->isMobile() && !$detect->isTablet() ) {
+// Mapeo de páginas a sus configuraciones
+$page_config = [
+    'home' => [
+        'theme'     => 'dark',
+        'page_type' => 'home', // Page Type sobrescribe el page_type obtenido por la API, solo en caso del Home y Proyectos
+    ],
+    'proyectos' => [
+        'theme'     => 'dark',
+        'page_type' => 'proyectos',
+    ],
+];
 
-  $device = 'mobile';
-  $isMobile = true;
-  $isTablet = false;
-  $isDesktop = false;
+// Configuración por defecto
+$default_config = [
+    'theme' => 'dark',
+    'page_type' => $page_type, // Aqui asignamos por defecto el page_type obtenido por la api
+];
 
-}else if( $detect->isTablet() ){ // is Tablet
+// Asignar valores según la página
+$config = $page_config[$page] ?? $default_config;
 
-  $device = 'tablet';
-  $isMobile = false;
-  $isTablet = true;
-  $isDesktop = false;
+$theme = $config['theme'];
+$page_type = $config['page_type'];
 
-}else{ // is Desktop
-  $device = 'desktop';
-  $isMobile = false;
-  $isTablet = false;
-  $isDesktop = true;
-
-}
-
-switch ($page) {
-
-	case 'home':
-		$theme = 'dark';
-		break;
-
-	default:
-		$theme = 'light';
-		break;
-    
-}

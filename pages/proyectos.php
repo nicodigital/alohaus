@@ -2,29 +2,31 @@
 
   <div class="row filter ctr-pb">
 
-    <div class="xg:col-1-5 hidden xg:block animate" data-anim="bottom" data-delay="900" >
+    <div class="xg:col-1-5 hidden xg:block animate" data-anim="bottom"  >
       <h1>
         <?= $data["projects_intro"] ?>
       </h1>
     </div>
 
-    <div class="xg:col-5-9 animate" data-anim="bottom" data-delay="1000">
+    <div class="xg:col-5-9 animate" data-anim="bottom" data-delay="300">
       <?php include 'layout/components/filter.php' ?>
     </div>
 
-    <div class="xg:col-9-13 hidden xg:flex justify-end">
+    <div class="xg:col-9-13 hidden xg:flex justify-end animate" data-anim="bottom" data-delay="600">
         <?php include 'layout/components/sharebar.php' ?>
     </div>
 
   </div>
 
-  <div class="grid filter-items xg:grid-cols-3 gap-2 animate force-anim" data-anim="bottom" data-delay="1100" >
+  <div class="grid filter-items xg:grid-cols-3 gap-2 animate force-anim" data-anim="bottom" data-delay="800" >
 
     <?php 
     foreach ($GLOBALS["cases"] as $case) {
 
         $c = $case["acf"];
         $types_txt = "";
+
+        // debug($c);
         
         $type_count = count($c["types"]);
         $z = 0;
@@ -44,7 +46,7 @@
       <a href="case/<?= $case["slug"] ?>" class="card filter-item pointer-arrow " data-type="<?= $types_txt ?>" >
         <figure>
     
-          <?= picture( $c["main_img"]["url"], $case["title"]["rendered"], true, $c["main_img"]["width"], $c["main_img"]["height"] ) ?>
+          <?= picture( $c["main_img"]["url"], $case["title"]["rendered"], true, $c["main_img"]["width"], $c["main_img"]["height"], true ) ?>
 
           <figcaption>
 
@@ -55,8 +57,9 @@
             <span>
 
               <?php $w = 0;
+              $lang = $GLOBALS["lang"];
 
-              foreach( $c["details"] as $detail ) { 
+              foreach( $c["detalles_".$lang ] as $detail ) { 
 
                 if( $w < 2 ){ ?>
 

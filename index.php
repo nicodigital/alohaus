@@ -1,15 +1,15 @@
 <?php include 'init.php';
 
 
-if( $bfe_slug == 'film' ){ // CASO SINGLE
+if( $bfe_slug == 'case' ){ // CASO SINGLE
 
-	$uri = get_uri( $lang, 'film' ); 
+	$uri = get_uri( $lang, 'case' ); 
 	// $uri[1] <-- Aqui esta el nombre del archivo del single correspondiente
 
 	$content = new Template( 'pages/'.$uri[1].'.php', [
 		'base_url' => $base_url,
 		'i18n' => $i18n,
-		'film' => $uri[0],
+		'case' => $uri[0],
 		'data' => $data,
 	] );
 

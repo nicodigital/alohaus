@@ -1,6 +1,6 @@
 import barba from '@barba/core';
 import barbaPrefetch from '@barba/prefetch';
-import { brandIntro, animTitle, pageTrans, caseCardAnim } from './gsap.js'
+import { brandIntro, animTitle, pageOut, heroBackOut } from './gsap.js'
 import lenisScroll from './lenisScroll.js';
 import cursor from './cursor.js';
 import menuMobile from './menuMobile.js';
@@ -31,7 +31,7 @@ function motion( page, device_data  ) {
     // cacheFirstPage: true,
     debug: true,
     sync: true,
-    timeout: 5000, // default is 2000ms
+    timeout: 8000, // default is 2000ms
     prevent: ({ event, href }) => {
 
       // Prevenir la transición de Barba.js si la URL termina con '#top'
@@ -71,7 +71,13 @@ function motion( page, device_data  ) {
         },
         leave: ( { current } ) => {
             console.log("LEAVE HOME");
-            
+            pageOut( current.container );
+            return new Promise( resolve => {
+                setTimeout(() => {
+                    resolve();
+                }, 400);
+            });
+
         },
         enter: ( { next } ) => {
           console.log("ENTER HOME");
@@ -93,15 +99,15 @@ function motion( page, device_data  ) {
           namespace: 'proyectos',
         },
         once( { next } ){
-          console.log("ONCE PROYECTOS");
+          console.log("ONCE PROYECTOS")
           globalFunctions(next.container)
           filters();
         },
         leave: ( { current } ) => {
-            console.log("LEAVE PROYECTOS");
-
+            console.log("LEAVE PROYECTOS")
+            pageOut( current.container )
+            heroBackOut( current.container )
             return new Promise( resolve => {
-              pageTrans(current.container, "in")
                 setTimeout(() => {
                     resolve();
                 }, 400);
@@ -110,17 +116,9 @@ function motion( page, device_data  ) {
         },
         enter: ( { next } ) => {
           console.log("ENTER PROYECTOS");
-          
-          return new Promise( resolve => {
-              setTimeout(() => {
-                  resolve();
-                  pageTrans(next.container, "out")
-                  globalFunctions(next.container)
-                  filters();
-                  window.scrollTo(0, 0)
-              }, 600);
-          });
-         
+          globalFunctions(next.container)
+          filters();
+          window.scrollTo(0, 0)
         }
       },
       // CASE
@@ -137,18 +135,18 @@ function motion( page, device_data  ) {
         leave: ( { current } ) => {
             console.log("LEAVE CASE")
             // globalFunctions(current.container)
+            pageOut( current.container )
+            heroBackOut( current.container )
             return new Promise( resolve => {
-              pageTrans(current.container, "in")
                 setTimeout(() => {
                     resolve();
-                }, 900);
+                }, 400);
             });
         },
         enter: ( { next } ) => {
           console.log("ENTER CASE");
           globalFunctions(next.container)
           caseToggle(next.container)
-          pageTrans(next.container, "out")
           window.scrollTo(0, 0)
         }
       },

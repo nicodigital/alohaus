@@ -15,7 +15,7 @@
     foreach ( $data["team"] as $t) { ?>
 
       <figure class="card">
-        <?= picture ($t["foto"]["url"], $t["name"]  ) ?>
+        <?= picture( $t["foto"]["url"], $t["name"] , true, $t["foto"]["width"], $t["foto"]["height"], true  ) ?>
         <figcaption>
           <h3><?= $t['name'] ?></h3>
           <h4><?= $t['role'] ?></h4>

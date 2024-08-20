@@ -52,6 +52,9 @@ main{
   mix-blend-mode: lighten;
 }
 
+img{
+  @apply w-full;
+}
 
 .home main:before {
    position: fixed;

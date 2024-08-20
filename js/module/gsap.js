@@ -96,31 +96,17 @@ export function animTitle( container ){
 
 }
 
-export function pageTrans( container, status = "out" ){
+export function pageOut( container ) {
 
-  const pageTrans = document.querySelector( ".page-trans" );
-  const brandPaths = ".page-trans .brand-intro path";
+  const sections = container.querySelectorAll( "section" );
+  const footer = container.querySelector( "footer" );
 
-  if( status === "in" ){
-    // pageTrans.setAttribute("data-status", "in");
+  gsap.timeline().to( sections, {autoAlpha: 0, translateY: "-2rem", duration: 0.4, ease: "power4.out" } )
+  .to( footer, {autoAlpha: 0, translateY: "-2rem", duration: 0.4, ease: "power4.out" }, "-=0.4" )
 
-    gsap.timeline()
-    .to( brandPaths, { autoAlpha:1, translateY: "120%", duration: 0 })
-    .to( pageTrans , { autoAlpha: 1, duration: .0 } ) 
-    .to( pageTrans , { clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)" } ) 
-    .to( brandPaths, {translateY: "0", duration: .3, stagger: 0.04, ease: "power2.out" }, "=.4" )
+}
 
-  }else{ // out
-    setTimeout(() => {
-      // pageTrans.setAttribute("data-status", "out");
-      gsap.timeline()
-      .to( brandPaths, { translateY: "-120%", duration: .3, stagger: 0.04, ease: "power2.out" }, "=.4" )
-      .to( brandPaths, { autoAlpha: 0, duration: .0 }, "=.2" )
-      .to( pageTrans , { clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }, "-=1" ) 
-      .to( brandPaths, { translateY: "120%", duration: .0 }, "=.2" )
-      .to( pageTrans , { autoAlpha: 0, duration: .0 } )
-      .to( pageTrans , { clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)", duration: .0 } )
-    }, 400);
-  }
-
+export function heroBackOut( container ) {
+  const heroBack = container.querySelector( ".hero-back" );
+  gsap.timeline().to( heroBack, {autoAlpha: 0, duration: 0.4, ease: "power4.out" } )
 }

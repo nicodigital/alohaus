@@ -5,23 +5,23 @@
 		<?php } ?>
 		
 		<nav>
-			<a href="<?= transPath( '' , $lang) ?>" class="item togg <?= status( $page, "home" ) ?>">
+			<a href="<?= transPath( '' , $lang) ?>" class="item pointer-1x togg <?= status( $page, "home" ) ?>">
 				<?= $i18n["menu"][0][0] ?>
 			</a>
 
-			<a href="<?php anchor("#nosotros", "home" ) ?> " class="item togg <?php anchor_class($page,"home") ?>" data-barba-prevent="self" >
+			<a href="<?php anchor("#nosotros", "home" ) ?> " class="item pointer-1x togg <?php anchor_class($page,"home") ?>" data-barba-prevent="self" >
 				<?= $i18n["menu"][1][0] ?>
 			</a>
 
-			<a href="<?php anchor("#team", "home" ) ?>" class="item togg <?php anchor_class($page,"home") ?>" data-barba-prevent="self" >
+			<a href="<?php anchor("#team", "home" ) ?>" class="item pointer-1x togg <?php anchor_class($page,"home") ?>" data-barba-prevent="self" >
 				<?= $i18n["menu"][2][0] ?>
 			</a>
 
-			<a href="<?= transPath( 'proyectos' , $lang) ?>" class="item" >
+			<a href="<?= transPath( 'proyectos' , $lang) ?>" class="item pointer-1x" >
 				<?= $i18n["menu"][3][0] ?>
 			</a>
 
-			<div href="#contacto" class="item togg anchor barba-ignore" data-barba-prevent="self" >
+			<div href="#contacto" class="item pointer-1x togg anchor barba-ignore" data-barba-prevent="self" >
 				<?= $i18n["menu"][4][0] ?>
 			</div>
 		</nav>

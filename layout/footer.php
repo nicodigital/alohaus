@@ -70,19 +70,12 @@
 
 </div> <!-- Barba Container -->
 
-<div class="page-trans" data-status="out" >
-	<div class="absolute-center">
-		<?php include "layout/components/brand-intro.php"; ?>
-	</div>
-</div>
-
 	<?php
 	// include 'layout/modals.php';
 	// include 'layout/components/whatsapp.php' ;
 	?>
 
 	</body>
-
 	</html>
 
 	<?php // Active this to write HTML to public folder

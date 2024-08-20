@@ -158,29 +158,17 @@ if (!function_exists('webp')) {
    * @return string
    */
 
-   if (!function_exists('picture')) {
+  if (!function_exists('picture')) {
 
-    function picture($imagePath, $alt = "", $lazy = true, $width = null, $height = null)
+    function picture($imagePath, $alt = "", $lazy = true, $width = null, $height = null, $forceWebP = false, $class = "" )
     {
-        // Verifica si la ruta es una URL externa
-        $isExternal = filter_var($imagePath, FILTER_VALIDATE_URL) !== false;
+        // Obtén la ruta sin la extensión
+        $imagePathWithoutExtension = pathinfo($imagePath, PATHINFO_DIRNAME) . '/' . pathinfo($imagePath, PATHINFO_FILENAME);
+        $webpImagePath = $imagePathWithoutExtension . '.webp';
 
-        // Si es una URL externa, obtén el tipo de la imagen desde los headers
-        if ($isExternal) {
-            $headers = get_headers($imagePath, 1);
-            $imageType = isset($headers['Content-Type']) ? $headers['Content-Type'] : null;
-            $webpImagePath = null; // No se puede verificar un archivo webp en URLs externas
-        } else {
-            // Si es una ruta local, sigue el proceso original
-            $imagePathWithoutExtension = pathinfo($imagePath, PATHINFO_DIRNAME) . '/' . pathinfo($imagePath, PATHINFO_FILENAME);
-            $webpImagePath = $imagePathWithoutExtension . '.webp';
-
-            // Si no se proporcionan $width y $height, los calculamos
-            if (is_null($width) || is_null($height)) {
-                list($width, $height) = getimagesize($imagePath);
-            }
-
-            $imageType = mime_content_type($imagePath);
+        // Si no se proporcionan $width y $height, los calculamos
+        if (is_null($width) || is_null($height)) {
+            list($width, $height) = getimagesize($imagePath);
         }
 
         // Escapa el atributo alt para evitar inyecciones
@@ -189,9 +177,19 @@ if (!function_exists('webp')) {
         // Construye el markup <picture>
         $markup = "<picture>\n";
 
-        // Agrega el <source> para webp si el archivo existe y es una ruta local
-        if ($webpImagePath && file_exists($webpImagePath)) {
+        // Agrega el <source> para webp si el archivo existe o si se fuerza su generación
+        if ($forceWebP || file_exists($webpImagePath)) {
             $markup .= "    <source srcset='{$webpImagePath}' type='image/webp'>\n";
+        }
+
+        // Determina el tipo de imagen basado en la extensión del archivo
+        $extension = strtolower(pathinfo($imagePath, PATHINFO_EXTENSION));
+        $imageType = null;
+
+        if (in_array($extension, ['jpg', 'jpeg'])) {
+            $imageType = 'image/jpeg';
+        } elseif ($extension === 'png') {
+            $imageType = 'image/png';
         }
 
         // Agrega el <source> para jpeg o png según corresponda
@@ -205,7 +203,7 @@ if (!function_exists('webp')) {
         $lazyAttr = $lazy ? 'loading="lazy"' : '';
 
         // Agrega el <img> con las dimensiones y el título, unificando title con alt
-        $markup .= "    <img src='{$imagePath}' alt='{$alt_stripped}' title='{$alt_stripped}' {$lazyAttr} decoding='async' width='{$width}' height='{$height}' />\n";
+        $markup .= "    <img class='{$class}' src='{$imagePath}' alt='{$alt_stripped}' title='{$alt_stripped}' {$lazyAttr} decoding='async' width='{$width}' height='{$height}' />\n";
 
         // Cierra el markup <picture>
         $markup .= "</picture>";
@@ -222,65 +220,35 @@ function setNum($number) {
   return str_pad($number, 2, '0', STR_PAD_LEFT);
 }
 
-/* /////////////////////////// IMG ORIENTATION  ///////////////////////////*/
+/*/////////////////////////// CHECK FILE TYPE //////////////////////////*/
 
-function img_orient($url, $getclass = '', $webp = false, $alt = '', $lazy = true, $async = true)
-{
+function checkFileType($filename) {
+  // Listado de extensiones de imagen y video
+  $imageExtensions = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
+  $videoExtensions = ['mp4', 'mov', 'avi', 'mkv', 'webm', 'flv', 'wmv', 'm4v'];
 
-  // Obtener el ancho y alto de la imagen
-  list($ancho, $alto) = getimagesize($url);
+  // Extraer la extensión del archivo
+  $extension = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
 
-  // Evaluar WebP
-  if ($webp) {
-
-    // Obtener Extensión
-    $layout_url = pathinfo($url);
-    $extension = $layout_url['extension'];
-
-    if (strpos($_SERVER['HTTP_ACCEPT'], 'image/webp') !== false) {
-      $ext = 'webp';
-    } else {
-      $ext = $extension;
-    }
-
-    $img_path = $layout_url['dirname'] . '/' . $layout_url['filename'] . '.' . $ext;
-  } else {
-
-    $img_path = $url;
+  // Verificar si es una imagen
+  if (in_array($extension, $imageExtensions)) {
+      return 'image';
   }
 
-  // Determinar si la imagen es vertical u horizontal
-  $class = ($ancho > $alto) ? 'horizontal' : 'vertical';
-  $class .= ' ' . $getclass;
-
-  if ($lazy) {
-    $lazy_attr = 'loading="lazy"';
-  } else {
-    $lazy_attr = '';
+  // Verificar si es un video
+  if (in_array($extension, $videoExtensions)) {
+      return 'video';
   }
 
-  if ($async) {
-    $async_attr = 'decoding="async"';
-  } else {
-    $async_attr = '';
-  }
-
-  // HTML con la imagen y la clase CSS
-  echo "<img src='$img_path' alt='$alt' class='$class' width='$ancho' height='$alto' $lazy_attr  $async_attr />";
+  // No es ni imagen ni video
+  return false;
 }
 
+// Ejemplos de uso
+// echo checkFileType('example.jpg'); // Retorna 'image'
+// echo checkFileType('example.mp4'); // Retorna 'video'
+// echo checkFileType('example.txt'); // Retorna false
 
-/*/////////////////////////// PRINT REQUIRE ///////////////////////////*/
-
-if (!function_exists('print_require')) {
-
-  function print_require($file)
-  {
-    ob_start();
-    require($file);
-    return ob_get_clean();
-  }
-}
 
 /*////////////////////////// THE PAGE STATUS //////////////////////////*/
 

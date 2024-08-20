@@ -24,7 +24,7 @@
       $i = 0;
       foreach ($works as $work) {
         if($i <= 6 ){
-          cardCase($work["title"], $work["img"], $work["cliente"], $work["pieza"]);
+          cardCase($work["title"], $work["img"], "", "", $work["cliente"], $work["pieza"]);
         }
       $i++;} ?>
 

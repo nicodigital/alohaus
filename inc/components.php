@@ -17,11 +17,11 @@ function cardServ($num = "01", $slug = '', $title = '', $text = '')
 
 /*////////////////////////////// CARD CASE ////////////////////////////////*/
 
-function cardCase($title, $img, $cliente = '', $pieza = '')
+function cardCase($title, $img, $imgW = '', $imgH = '', $cliente = '', $pieza = '')
 { ?>
   <a href="case" class="card pointer-arrow black">
     <figure>
-      <?= picture ($img, $title  ) ?>
+      <?= picture( $img, $title , true, $imgW, $imgH ) ?>
       <figcaption class="info">
         <span><?= $title ?></span>
         <span class="dots"></span>

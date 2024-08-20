@@ -22,4 +22,27 @@ if( $iPod || $iPhone || $iPad || $webOS || $macintosh || $mac_os ){
 
 }
 
+/* Detect Device */
+if ( $detect->isMobile() && !$detect->isTablet() ) {
+
+   $device = 'mobile';
+   $isMobile = true;
+   $isTablet = false;
+   $isDesktop = false;
+ 
+ }else if( $detect->isTablet() ){ // is Tablet
+ 
+   $device = 'tablet';
+   $isMobile = false;
+   $isTablet = true;
+   $isDesktop = false;
+ 
+ }else{ // is Desktop
+   $device = 'desktop';
+   $isMobile = false;
+   $isTablet = false;
+   $isDesktop = true;
+ 
+ }
+
 
