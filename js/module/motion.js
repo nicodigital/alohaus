@@ -14,37 +14,48 @@ import animations from './animations.js';
 // import modal from './modal.js';
 // import cookies from './cookies.js';
 
-function motion( page, device_data  ) {
+function motion(page, device_data) {
 
   barba.use(barbaPrefetch);
 
+  let clickedItem = null;
+  let clickedItemIndex = null;
+  let clickedAnchor = null;
+
+  document.addEventListener('click', (event) => {
+    const target = event.target.closest('a');
+  
+    if (target) {
+      clickedItem = target;
+      const allLinks = Array.from(document.querySelectorAll('a'));
+      clickedItemIndex = allLinks.indexOf(target);
+  
+      // Obtiene el valor del href
+      const href = target.getAttribute('href');
+  
+      // Extrae el anchor (si existe)
+      if (href && href.includes('#')) {
+        clickedAnchor = href.split('#')[1]; // Obtiene solo la parte después del '#'
+      } else {
+        clickedAnchor = null; // No hay anchor en el href
+      }
+    }
+  });
+  
+
   function globalFunctions(container) {
-    lenisScroll(container)
+    // lenisScroll(container)
     cursor(container);
     menuMobile(device_data);
     animations(container);
     scrollMarkers(device_data.body, device_data.platform, device_data.isMobile, device_data.isDesktop, device_data.isTablet);
   }
 
-
   barba.init({
     // cacheFirstPage: true,
     debug: true,
     sync: true,
     timeout: 8000, // default is 2000ms
-    prevent: ({ event, href }) => {
-
-      // Prevenir la transición de Barba.js si la URL termina con '#top'
-      if ( href.includes('#') ) { 
-        return true
-      }
-
-      if ( !href.includes('http') ) { 
-        return true
-      }
-  
-      return false;
-    },
     transitions: [
       // HOME
       {
@@ -52,44 +63,46 @@ function motion( page, device_data  ) {
         to: {
           namespace: 'home',
         },
-        once( { next } ){
+        once({ next }) {
           console.log("ONCE HOME");
+          lenisScroll(next.container, clickedAnchor )
           globalFunctions(next.container)
           brandIntro(next.container)
-          customSwiper(device_data.isDesktop) 
+          customSwiper(device_data.isDesktop)
           servicios(device_data)
           // caseCardAnim(next.container)
 
-          if( device_data.isDesktop === true ) {
-            animTitle( next.container )
-          }else{
+          if (device_data.isDesktop === true) {
+            animTitle(next.container)
+          } else {
             accordion();
           }
 
           window.scrollTo(0, 0)
 
         },
-        leave: ( { current } ) => {
-            console.log("LEAVE HOME");
-            pageOut( current.container );
-            return new Promise( resolve => {
-                setTimeout(() => {
-                    resolve();
-                }, 400);
-            });
+        leave: ({ current }) => {
+          console.log("LEAVE HOME");
+          pageOut(current.container);
+          return new Promise(resolve => {
+            setTimeout(() => {
+              resolve();
+            }, 400);
+          });
 
         },
-        enter: ( { next } ) => {
+        enter: ({ next }) => {
           console.log("ENTER HOME");
           // console.log(next.container )
+          lenisScroll(next.container, clickedAnchor )
           globalFunctions(next.container)
           brandIntro(next.container)
-          customSwiper(device_data.isDesktop) 
+          customSwiper(device_data.isDesktop)
           servicios(device_data)
-          if( device_data.isDesktop === true ) {
-            animTitle( next.container )
+          if (device_data.isDesktop === true) {
+            animTitle(next.container)
           }
-          window.scrollTo(0, 0)
+          // window.scrollTo(0, 0)
         }
       },
       // PROYECTOS
@@ -98,24 +111,26 @@ function motion( page, device_data  ) {
         to: {
           namespace: 'proyectos',
         },
-        once( { next } ){
+        once({ next }) {
           console.log("ONCE PROYECTOS")
+          lenisScroll(next.container, clickedAnchor )
           globalFunctions(next.container)
           filters();
         },
-        leave: ( { current } ) => {
-            console.log("LEAVE PROYECTOS")
-            pageOut( current.container )
-            heroBackOut( current.container )
-            return new Promise( resolve => {
-                setTimeout(() => {
-                    resolve();
-                }, 400);
-            });
- 
+        leave: ({ current }) => {
+          console.log("LEAVE PROYECTOS")
+          pageOut(current.container)
+          heroBackOut(current.container)
+          return new Promise(resolve => {
+            setTimeout(() => {
+              resolve();
+            }, 400);
+          });
+
         },
-        enter: ( { next } ) => {
+        enter: ({ next }) => {
           console.log("ENTER PROYECTOS");
+          lenisScroll(next.container, clickedAnchor )
           globalFunctions(next.container)
           filters();
           window.scrollTo(0, 0)
@@ -127,24 +142,26 @@ function motion( page, device_data  ) {
         to: {
           namespace: 'case',
         },
-        once( { next } ){
+        once({ next }) {
           console.log("ONCE CASE");
+          lenisScroll(next.container, clickedAnchor )
           globalFunctions(next.container)
           caseToggle(next.container)
         },
-        leave: ( { current } ) => {
-            console.log("LEAVE CASE")
-            // globalFunctions(current.container)
-            pageOut( current.container )
-            heroBackOut( current.container )
-            return new Promise( resolve => {
-                setTimeout(() => {
-                    resolve();
-                }, 400);
-            });
+        leave: ({ current }) => {
+          console.log("LEAVE CASE")
+          // globalFunctions(current.container)
+          pageOut(current.container)
+          heroBackOut(current.container)
+          return new Promise(resolve => {
+            setTimeout(() => {
+              resolve();
+            }, 400);
+          });
         },
-        enter: ( { next } ) => {
+        enter: ({ next }) => {
           console.log("ENTER CASE");
+          lenisScroll(next.container, clickedAnchor )
           globalFunctions(next.container)
           caseToggle(next.container)
           window.scrollTo(0, 0)

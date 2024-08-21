@@ -1,6 +1,7 @@
 import Lenis from '@studio-freight/lenis'
 
-function lenisScroll(container) {
+function lenisScroll( container, clickedAnchor = null ) {
+
   const lenis = new Lenis({
     smoothWheel: true,
     wheelMultiplier: 1,
@@ -52,6 +53,17 @@ function lenisScroll(container) {
 
     });
   });
+
+  // console.log(clickedAnchor);
+
+  if( clickedAnchor != null ){
+    setTimeout(() => {
+      lenis.scrollTo( "#"+clickedAnchor, {
+        duration: 2, // Puedes ajustar la duración según tus necesidades
+        easing: (t) => 1 - Math.pow(1 - t, 6) // Ejemplo de una función de easing personalizada
+      })
+    },300)
+  }
 
   function raf(time) {
     lenis.raf(time);

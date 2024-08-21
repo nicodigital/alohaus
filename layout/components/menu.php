@@ -5,15 +5,17 @@
 		<?php } ?>
 		
 		<nav>
-			<a href="<?= transPath( '' , $lang) ?>" class="item pointer-1x togg <?= status( $page, "home" ) ?>">
+			<a href="<?php transPath( '' , $lang) ?>" class="item pointer-1x togg <?= status( $page, "home" ) ?>">
 				<?= $i18n["menu"][0][0] ?>
 			</a>
 
-			<a href="<?php anchor("#nosotros", "home" ) ?> " class="item pointer-1x togg <?php anchor_class($page,"home") ?>" data-barba-prevent="self" >
+			<a href="<?php anchorTransPath( "#nosotros" ) ?>" class="item pointer-1x togg <?php anchor_class($page,"home") ?>" 
+			<?= ($page == "home") ? 'data-barba-prevent="self"' : '' ?> >
 				<?= $i18n["menu"][1][0] ?>
 			</a>
 
-			<a href="<?php anchor("#team", "home" ) ?>" class="item pointer-1x togg <?php anchor_class($page,"home") ?>" data-barba-prevent="self" >
+			<a href="<?php anchor("#team", "home" ) ?>" class="item pointer-1x togg <?php anchor_class($page,"home") ?>" 
+			<?= ($page == "home") ? 'data-barba-prevent="self"' : '' ?> > 
 				<?= $i18n["menu"][2][0] ?>
 			</a>
 

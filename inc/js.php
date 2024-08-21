@@ -4,8 +4,8 @@ $js =  ASSETS_PATH . 'js/scripts.js';
 $js_url = $js.$cache;
 
 /* JS MODE */
-// $js_mode = 'normal';
-$js_mode = 'inline';
+$js_mode = 'normal';
+// $js_mode = 'inline';
 
 if( $js_mode == 'inline' ){
 
