@@ -17,7 +17,7 @@ function cardServ($num = "01", $slug = '', $title = '', $text = '')
 
 /*////////////////////////////// CARD CASE ////////////////////////////////*/
 
-function cardCase($title, $img, $imgW = '', $imgH = '', $cliente = '', $pieza = '')
+function cardCase($title, $link = '#', $img, $imgW = '', $imgH = '', $cliente = '', $pieza = '')
 { ?>
   <a href="case" class="card pointer-arrow black">
     <figure>

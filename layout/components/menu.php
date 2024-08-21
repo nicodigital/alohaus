@@ -5,7 +5,7 @@
 		<?php } ?>
 		
 		<nav>
-			<a href="<?php transPath( '' , $lang) ?>" class="item pointer-1x togg <?= status( $page, "home" ) ?>">
+			<a href="<?php homeLink() ?>" class="item pointer-1x <?php homeLink("smooth") ?> togg <?= status( $page, "home" ) ?>" <?php homeLink("barba-ignore") ?> >
 				<?= $i18n["menu"][0][0] ?>
 			</a>
 
@@ -14,7 +14,7 @@
 				<?= $i18n["menu"][1][0] ?>
 			</a>
 
-			<a href="<?php anchor("#team", "home" ) ?>" class="item pointer-1x togg <?php anchor_class($page,"home") ?>" 
+			<a href="<?php anchorTransPath( "#team" ) ?>" class="item pointer-1x togg <?php anchor_class($page,"home") ?>" 
 			<?= ($page == "home") ? 'data-barba-prevent="self"' : '' ?> > 
 				<?= $i18n["menu"][2][0] ?>
 			</a>

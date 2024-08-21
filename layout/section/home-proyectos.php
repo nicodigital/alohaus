@@ -22,10 +22,25 @@
 
       <?php include 'data/works.php';
       $i = 0;
-      foreach ($works as $work) {
-        if($i <= 6 ){
-          cardCase($work["title"], $work["img"], "", "", $work["cliente"], $work["pieza"]);
+      foreach ($GLOBALS["cases"] as $case) {
+
+        // debug($case);
+        $acf = $case["acf"];
+
+        if( $acf["featured"] == 1 && $i <= 6 ){
+
+          cardCase( 
+              $case["title"]["rendered"], 
+              $case["slug"], 
+              $acf["main_img"]["url"], 
+              "", //imgW
+              "", //imgH
+              "",//pieza 
+              ""//cliente
+            );
+
         }
+
       $i++;} ?>
 
       <div class="flex items-end justify-end mt-8 xg:mt-0">

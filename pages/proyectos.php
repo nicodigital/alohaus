@@ -25,8 +25,6 @@
 
         $c = $case["acf"];
         $types_txt = "";
-
-        // debug($c);
         
         $type_count = count($c["types"]);
         $z = 0;

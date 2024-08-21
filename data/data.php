@@ -11,34 +11,28 @@ $options_url    = $api_domain . "/wp-json/acf/v3/options/options";
 // $get_data = get_cached_data($slug, $api_url, $cache_file, $cache_time);
 $get_options = get_data($options_url);
 $options = $get_options["acf"];
+$cases = get_postype( "cases", $api_url );
 
 /* Get Page Content */
 if( $page == 'home' || $page == 'en' ){
     $slug = 'home-'.$lang; // home_es || home_en
     $content = get_post( $slug, $api_url );
-
-    // debug($content);
-
     $page_type = $content[0]["type"];
-
 }
 
 if( $page == 'proyectos' ){
     $slug = 'proyectos-'.$lang; // home_es || home_en
     $content = get_post( $slug, $api_url );
-    $cases = get_postype( "cases", $api_url );
     $page_type = $content[0]["type"];
     // debug($cases);
 }
 
-if( $page != 'home' && $page != 'proyectos' ){ // Case
-    $cases = get_postype( "cases", $api_url );
+if( $page != 'home' && $page != 'proyectos' ){ // Case -> Cambiamos el type para saber que tipo de página es.
     $page_type = $cases[0]["type"];
 }
 
 // Ahora $data contiene los datos ya sea desde el caché o desde la API
 if ( isset($content) ) {
     $data = $content[0]["acf"];
-    // print_r($data);
 } 
 

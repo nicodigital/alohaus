@@ -147,6 +147,35 @@ function transPath( $slug, $lang ){
 
 }
 
+
+/*////////////////////////// ANCHOR_TRANS_PATH //////////////////////////*/
+
+function anchorTransPath( $hash, $echo = true) {
+
+  if ( $GLOBALS["page"] == 'home') {
+    
+    $anchor = $hash;
+
+  } else { // not home
+
+    if( $GLOBALS["lang"] != "es" ){
+      $anchor = $GLOBALS["base_url"] . $GLOBALS["lang"] ."/". $hash;
+    }else{ // es
+      $anchor = $GLOBALS["base_url"] ."/".  $hash;
+    }
+
+  }
+
+  // Decide si mostrar o devolver el resultado
+  if ($echo) {
+      echo $anchor;
+  } else {
+      return $anchor;
+  }
+
+}
+
+
 /*/////////////////////////// SWITCH PATH ////////////////////////////////*/
 // Esta función fue explicitamente hecho para el switcher de idiomas
 
