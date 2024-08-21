@@ -13,7 +13,7 @@
     </div>
 
     <div class="xg:col-9-13 hidden xg:flex justify-end animate" data-anim="bottom" data-delay="600">
-        <?php include 'layout/components/sharebar.php' ?>
+      <?php sharebar() ?>
     </div>
 
   </div>

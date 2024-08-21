@@ -73,11 +73,18 @@ function sharebar($items_position = "")
     </svg>
 
     <div class="items flex flex-col mt-[3.1rem] gap-[.5rem]">
-      <a href="">Facebook</a>
-      <a href="">Linkedin</a>
-      <a href="">WhatsApp</a>
-      <a href="">Pinterest</a>
-      <a href="">X</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=<?=$GLOBALS["url"]?>" target='_blank' rel='noreferrer noopener' >
+            Facebook
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?=$GLOBALS["url"]?>" target='_blank' rel='noreferrer noopener'>
+            Linkedin
+        </a>
+        <a href="https://twitter.com/intent/tweet?text=<?= $GLOBALS["meta_desc"] ?>&amp;url=<?=$GLOBALS["url"]?>">
+            X
+        </a>
+        <a href="whatsapp://send?text=<?=$GLOBALS["url"]?>" >
+          WhatsApp
+        </a>
     </div>
 
   </div>

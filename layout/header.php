@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title><?php echo $meta_title ?></title>
-  <meta name="description" content="<?php echo $description ?>">
+  <meta name="description" content="<?php echo $meta_desc ?>">
   <meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
   <link rel="canonical" href="<?= $canonical_url ?>" />
   <base href="<?= $base_url ?>" target="_self">

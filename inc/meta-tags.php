@@ -9,4 +9,4 @@ if( $page == 'home'){
 }
 
 // META description -> Esta debe tener hasta 150 caracteres
-$description = '';
+$meta_desc = 'Un estudio de diseño que comprende para luego comunicar. Comprometidos con los clientes, enfrentando desafíos con nuevas herramientas.';
