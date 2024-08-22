@@ -7,6 +7,7 @@
   transition: var(--trans-45);
 }
 
+
 .toggle-column .single-tools > div,
 [data-scroll="bottom"] .single-tools > div{
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
@@ -15,4 +16,12 @@
 
 .single-tools .sharebar:hover{
   clip-path: none;
+}
+
+.prev-next a{
+  @apply p-1;
+}
+
+.prev-next svg{
+  @apply w-[1.75rem];
 }

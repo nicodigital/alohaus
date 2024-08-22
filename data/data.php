@@ -24,7 +24,6 @@ if( $page == 'proyectos' ){
     $slug = 'proyectos-'.$lang; // home_es || home_en
     $content = get_post( $slug, $api_url );
     $page_type = $content[0]["type"];
-    // debug($cases);
 }
 
 if( $page != 'home' && $page != 'proyectos' ){ // Case -> Cambiamos el type para saber que tipo de página es.

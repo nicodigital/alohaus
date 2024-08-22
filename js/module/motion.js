@@ -11,6 +11,9 @@ import servicios from './servicios.js';
 import filters from './filters.js';
 import caseToggle from './caseToggle.js';
 import animations from './animations.js';
+
+import alertRotateDevice from './alertRotateDevice.js';
+// import preventZoom from './module/preventZoom.js';
 // import modal from './modal.js';
 // import cookies from './cookies.js';
 
@@ -45,10 +48,11 @@ function motion(page, device_data) {
 
   function globalFunctions(container) {
     // lenisScroll(container)
-    cursor(container);
-    menuMobile(device_data);
-    animations(container);
-    scrollMarkers(device_data.body, device_data.platform, device_data.isMobile, device_data.isDesktop, device_data.isTablet);
+    cursor(container)
+    menuMobile(device_data)
+    animations(container)
+    scrollMarkers(device_data.body, device_data.platform, device_data.isMobile, device_data.isDesktop, device_data.isTablet)
+    alertRotateDevice(device_data.isDesktop, device_data.isBigTablet, device_data.isMobile)
   }
 
   barba.init({

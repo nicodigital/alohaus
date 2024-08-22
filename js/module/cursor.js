@@ -5,6 +5,7 @@ function cursor(container) {
   const pointer_1x = container.querySelectorAll('.pointer-1x');
   const pointer_2x = container.querySelectorAll('.pointer-2x');
   const pointer_arrow = container.querySelectorAll('.pointer-arrow');
+  const pointer_expand = container.querySelectorAll('.pointer-expand');
 
   document.addEventListener("mousemove", (e) => {
     pointer.classList.add('active');
@@ -22,6 +23,10 @@ function cursor(container) {
 
         if (hover_x == 'hover-arrow') {
           container.classList.add('pointer-arrow');
+        }
+
+        if (hover_x == 'hover-expand') {
+          container.classList.add('pointer-expand');
         }
 
       });
@@ -52,21 +57,9 @@ function cursor(container) {
     hoverItems(pointer_arrow, 'hover-arrow');
   }
 
-
-  // Invertir color de pantalla en el Home al hacer Hover en Contacto
-  // const item_contacto = document.querySelector('.item[href="contacto"]');
-
-  // if (item_contacto) {
-
-  //   item_contacto.addEventListener('mouseover', () => {
-  //     container.classList.add('invert-screen');
-  //   });
-
-  //   item_contacto.addEventListener('mouseleave', () => {
-  //     container.classList.remove('invert-screen');
-  //   });
-
-  // }
+  if (pointer_expand) {
+    hoverItems(pointer_expand, 'hover-expand');
+  }
 
 }
 

@@ -3,7 +3,7 @@
 }
 
 .sharebar svg{
-   @apply text-white w-[1.7rem] h-auto;
+   @apply text-white w-[1.7rem] h-auto p-1 box-content;
 }
 
 .sharebar a{
@@ -55,9 +55,14 @@
 .sharebar.top .items{
   position: absolute;
   right: 0;
-  top: -3rem;
+  top: 0;
   transform: translateY(-100%);
   justify-content: flex-end;
+  padding-bottom: 4rem;
+}
+
+.sharebar.top svg{
+  @apply translate-y-[1rem];
 }
 
 @keyframes itemShow{

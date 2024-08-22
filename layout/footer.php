@@ -10,7 +10,7 @@
 				<div class="mb-3">
 					<p class="contact-data mb-4 pointer-1x">
 						<span>
-						<?= $i18n["words"]["spain"] ?>
+							<?= $i18n["words"]["spain"] ?>
 						</span>
 						<span>
 							<?= $options["spain"]["tel"] ?> <br>
@@ -27,10 +27,10 @@
 
 					<p class="contact-data pointer-1x">
 						<span>
-						<?= $i18n["words"]["follow_us"] ?>
+							<?= $i18n["words"]["follow_us"] ?>
 						</span>
 						<span>
-							<?php foreach ($options["social"] as $social ) { ?>
+							<?php foreach ($options["social"] as $social) { ?>
 								<a href="<?= $social["link"] ?>" target='_blank' rel='noreferrer noopener'>
 									<?= $social["label"] ?>
 								</a> <br>
@@ -61,19 +61,14 @@
 			</div>
 			<div class="col-1-10 xg:col-9-13 flex xg:justify-end items-end order-1 xg:order-2">
 				<p class="mb-3 text-small">
-					© <?= date('Y') ?> AloHaus <br class="xg:hidden" ><?= $i18n["words"]["design_studio"] ?>. <br> All rights reserved.
+					© <?= date('Y') ?> AloHaus <br class="xg:hidden"><?= $i18n["words"]["design_studio"] ?>. <br> All rights reserved.
 				</p>
 			</div>
 		</div>
 
 	</footer>
 
-</div> <!-- Barba Container -->
-
-	<?php
-	// include 'layout/modals.php';
-	// include 'layout/components/whatsapp.php' ;
-	?>
+	</div> <!-- Barba Container -->
 
 	</body>
 	</html>
