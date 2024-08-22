@@ -46,11 +46,9 @@
     transition: var(--trans-45);
   }
   
-  .home header .item{
+  .once .home header .item{
     transform: translateY(-2rem);
     opacity: 0;
   }
   
-
-
 }

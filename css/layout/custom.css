@@ -17,3 +17,6 @@
 }
 
 
+.home.home-leave section:not(.hero){
+   @apply opacity-0 translate-y-[3rem];
+}

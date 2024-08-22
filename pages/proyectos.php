@@ -1,3 +1,7 @@
+<?php 
+$lang = $GLOBALS["lang"];
+?>
+
 <section id="all-works" class="container mt-12 xg:mt-12 xg:mb-10 3xl:mt-16 3xl:mb-12">
 
   <div class="row filter ctr-pb">
@@ -41,7 +45,7 @@
 
          ?>
 
-      <a href="case/<?= $case["slug"] ?>" class="card filter-item pointer-arrow " data-type="<?= $types_txt ?>" >
+      <a href="<?= transPath( 'case/'.$case["slug"] , $lang) ?>" class="card filter-item pointer-arrow " data-type="<?= $types_txt ?>" >
         <figure>
     
           <?= picture( $c["main_img"]["url"], $case["title"]["rendered"], true, $c["main_img"]["width"], $c["main_img"]["height"], true ) ?>

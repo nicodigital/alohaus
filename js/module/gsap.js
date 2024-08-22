@@ -110,3 +110,31 @@ export function heroBackOut( container ) {
   const heroBack = container.querySelector( ".hero-back" );
   gsap.timeline().to( heroBack, {autoAlpha: 0, duration: 0.4, ease: "power4.out" } )
 }
+
+export function homeBack( container ){
+
+  const heroBack = container.querySelector( ".hero-back" );
+  const heroTitle = container.querySelector( "#hero-title" );
+  const txtIntro = container.querySelector( ".txt-intro" );
+  const sections = container.querySelectorAll( "section:not(.hero)" );
+
+  gsap.timeline().to( heroBack, { opacity: 0.05, duration: 0.8, ease: "power4.out" } )
+  .to( heroTitle, {autoAlpha: 1, translateY: "0", duration: 1, ease: "power4.out" }, "-=0.8" )
+  .to( txtIntro, {autoAlpha: 1, translateY: "0", duration: 0.8, ease: "power4.out" }, "-=0.6" )
+  .to( sections, { autoAlpha: 1, translateY: "0", duration: 0.8, ease: "power4.out" }, "-=0.8" )
+
+}
+
+export function homeLeave( container ) {
+  container.classList.add("home-leave");
+}
+
+// export function homeEnter( container ) {
+
+//   container.classList.add("home-enter");
+
+//   setInterval(() => {
+//     container.classList.remove("home-enter");
+//   }, 3000)
+
+// }

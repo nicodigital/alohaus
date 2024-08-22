@@ -161,7 +161,7 @@ function anchorTransPath( $hash, $echo = true) {
     if( $GLOBALS["lang"] != "es" ){
       $anchor = $GLOBALS["base_url"] . $GLOBALS["lang"] ."/". $hash;
     }else{ // es
-      $anchor = $GLOBALS["base_url"] ."/".  $hash;
+      $anchor = $GLOBALS["base_url"] .  $hash;
     }
 
   }

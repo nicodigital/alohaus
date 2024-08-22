@@ -33,10 +33,9 @@ header > .row{
       transform: translateY(0);
    }
 
+   :not([data-scroll="top"])[data-stack="off"] header,
    :not([data-scroll="top"])[data-stack="off"] header{
       transform: translateY(-7rem);
    }
-
-   
 
 }

@@ -1,8 +1,8 @@
-function filters() {
+function filters(container) {
 
-  const filterList = document.querySelector(".filter");
+  const filterList = container.querySelector(".filter");
   const filterButtons = filterList.querySelectorAll(".filter-btn");
-  const filterItems = document.querySelectorAll(".filter-item");
+  const filterItems = container.querySelectorAll(".filter-item");
 
   let filterItemIndex = 0;
 

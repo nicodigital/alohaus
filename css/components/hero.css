@@ -1,50 +1,66 @@
-.hero{
-  @apply relative w-full flex items-end overflow-hidden pb-2 z-10;
-  height: 100vh;
-  height: 100svh;
+.hero {
+   @apply relative w-full flex items-end overflow-hidden pb-2 z-10;
+   height: 100vh;
+   height: 100svh;
 }
 
-.row-brand{
-  @apply row 
+.row-brand {
+   @apply row 
         absolute left-0 bottom-0 w-full h-[100svh] xg:h-auto 
         flex items-start xg:items-center
         ctr-px;
 }
 
-.line-txt{
-  @apply inline-flex text-nowrap overflow-hidden;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-
-  span{
-    transform: translateY(100%);
-  }
-
+.line-txt {
+   @apply inline-flex text-nowrap overflow-hidden;
+   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
-.arrow-intro{
-  @apply absolute bottom-0 right-0 xg:left-0 
+.once .line-txt span{
+  transform: translateY(100%);
+}
+
+.arrow-intro {
+   @apply absolute bottom-0 right-0 xg:left-0 
   w-2 xg:w-[1.2vw] 
   xg:translate-y-[-.7vh] xg:translate-x-[-2.5vw] 
   overflow-hidden;
 }
 
-.hero-title{
-  @apply absolute bottom-1 left-0 opacity-0;
- }
+.arrow-intro svg{
+  @apply w-full h-auto transition-transform duration-[.4s];
+}
 
- .hero-title .line{
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 96%);
-    overflow: hidden;
- }
+.once .arrow-intro svg{
+  @apply translate-x-[2rem] translate-y-[-1rem];
+}
 
- .hero-title .word{
-  white-space: nowrap;
- }
+.hero-title {
+   @apply absolute bottom-1 left-0;
+}
 
- .hero-title .char{
-    @apply translate-y-[8rem] xg:translate-y-[10.5vw];
-    transition: transform .6s;
- }
+.once .hero-title {
+   @apply opacity-0;
+}
+
+.once .hero-title .line {
+   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 96%);
+   overflow: hidden;
+}
+
+.hero-title .word {
+   white-space: nowrap;
+}
+
+.once .hero-title .char {
+   @apply translate-y-[8rem] xg:translate-y-[10.5vw];
+   transition: transform 0.6s;
+}
+
+.home-leave .hero-title,
+.home-leave .txt-intro{
+  @apply translate-y-[3rem] opacity-0;
+}
 
 .hero-back {
    position: fixed;

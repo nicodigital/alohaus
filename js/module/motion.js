@@ -1,6 +1,6 @@
 import barba from '@barba/core';
 import barbaPrefetch from '@barba/prefetch';
-import { brandIntro, animTitle, pageOut, heroBackOut } from './gsap.js'
+import { brandIntro, animTitle, pageOut, heroBackOut, homeBack, homeLeave } from './gsap.js'
 import lenisScroll from './lenisScroll.js';
 import cursor from './cursor.js';
 import menuMobile from './menuMobile.js';
@@ -84,10 +84,14 @@ function motion(page, device_data) {
 
           window.scrollTo(0, 0)
 
+          setTimeout(() => { // Removemos la clase first-load para que saber que ya se ha cargado el ONCE
+            document.querySelector('body').classList.remove('once');
+          },3000)
+
         },
-        leave: ({ current }) => {
+        leave: ({ current, next }) => {
           console.log("LEAVE HOME");
-          pageOut(current.container);
+          pageOut(current.container)
           return new Promise(resolve => {
             setTimeout(() => {
               resolve();
@@ -100,12 +104,15 @@ function motion(page, device_data) {
           // console.log(next.container )
           lenisScroll(next.container, clickedAnchor )
           globalFunctions(next.container)
-          brandIntro(next.container)
+          homeLeave(next.container)
+         
           customSwiper(device_data.isDesktop)
           servicios(device_data)
           if (device_data.isDesktop === true) {
             animTitle(next.container)
           }
+
+          setTimeout( ()=>  homeBack(next.container) , 100 )
           // window.scrollTo(0, 0)
         }
       },
@@ -119,7 +126,7 @@ function motion(page, device_data) {
           console.log("ONCE PROYECTOS")
           lenisScroll(next.container, clickedAnchor )
           globalFunctions(next.container)
-          filters();
+          filters(next.container);
         },
         leave: ({ current }) => {
           console.log("LEAVE PROYECTOS")
@@ -136,7 +143,7 @@ function motion(page, device_data) {
           console.log("ENTER PROYECTOS");
           lenisScroll(next.container, clickedAnchor )
           globalFunctions(next.container)
-          filters();
+          filters(next.container);
           window.scrollTo(0, 0)
         }
       },

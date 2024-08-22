@@ -31,8 +31,8 @@
 
 </head>
 
-<body id="top" data-scroll="top" data-page="<?= $page ?>" data-barba="wrapper" >
-  <div class="first-load <?= $page ?> menu-toggler" data-barba="container" data-barba-namespace="<?= ( !is_array($page_type) ) ? $page_type : 'case' ?>"  >
+<body id="top" class="once" data-scroll="top" data-page="<?= $page ?>" data-barba="wrapper" >
+  <div class="<?= $page ?> menu-toggler" data-barba="container" data-barba-namespace="<?= ( !is_array($page_type) ) ? $page_type : 'case' ?>"  >
   <div class="pointer"></div>
 
   <header class="container">
