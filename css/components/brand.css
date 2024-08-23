@@ -3,14 +3,12 @@
 }
 
 .brand{
-  
   width: var(--brand-width);
   transition: var(--trans-45);
+}
 
-  & svg{
-    @apply w-full h-auto;
-  }
-
+.brand svg{
+  @apply w-full h-auto;
 }
 
 .once .home header .brand path{

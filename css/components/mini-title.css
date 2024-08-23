@@ -1,11 +1,7 @@
 .mini-title{
-  position: relative;
   font-family: theme(fontFamily.title);
-  font-size: var(--h1);
-  display: flex;
-  width: fit-content;
-  gap: 1rem;
-  line-height: .9;
+  @apply relative flex gap-1 w-fit
+  text-h1 font-bold leading-[.9];
 }
 
 .mini-title span:first-child{

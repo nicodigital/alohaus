@@ -1,87 +1,40 @@
-#proyectos{
+#proyectos .card{
+    position: relative;
+    display: block;
+    aspect-ratio: var(--card-aspect);
+    transition: all .8s ease-out;
+}
 
-    .card{
-        position: relative;
-        display: block;
-        aspect-ratio: var(--card-aspect);
-        transition: all .8s ease-out;
-
-        & .info{
-            position: absolute;
-            top:0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 10;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-
-            & > span{
-                
-                position: relative;
-
-                &:first-child{
-                    font-family: theme(fontFamily.title);
-                    font-size: var(--h1);
-                    letter-spacing: -0.05em;
-                    line-height: 1;
-                }
-
-                &.dots{
-                    position: absolute;
-                    top: 2.2rem;
-                    right: 0;
-                    width: 4.6rem;
-                    height: 2.5rem;
-                    background-image: url("img/icons/link-black.svg");
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                }
-
-                &:last-child{
-                    display: flex;
-                    justify-content: space-between;
-                    letter-spacing: var(--letter-track-2);
-                }
-
-            }
-
-        }
-
-        & figure{
-            width: 100%;
-            height: 100%;
-        }
-
-        & img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        &:hover{
-            .info{
-                background: transparent;
-                color: #fff;
-            }
-        }
-
-    }
-
+#proyectos .card figure,
+#proyectos .card img{
+    @apply size-full object-cover;
 }
 
 #proyectos .card .info{
-    @apply text-white xg:bg-orange xg:text-grey-dark;
+    @apply absolute top-0 left-0 
+    w-full h-full 
+    flex flex-col justify-between
+    text-white xg:bg-orange xg:text-grey-dark
+    p-2 z-10;
+}
+
+#proyectos .card .info > span{
+    @apply relative;
 }
 
 #proyectos .card .info > span:first-child{
-    @apply xg:w-50%;
+    @apply xg:w-50% text-h1 font-bold leading-[1];
+    font-family: theme(fontFamily.title);
+    letter-spacing: var(--letter-track-2);
 }
 
-#proyectos .dots{
-    @apply hidden xg:block;
+#proyectos .card .info > span:last-child{
+    @apply flex justify-between;
+    letter-spacing: var(--letter-track-2);
+}
+
+#proyectos .card:hover .info{
+    @apply bg-transparent text-white;
 }
 
 #servicios{

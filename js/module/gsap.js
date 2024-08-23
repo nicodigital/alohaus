@@ -4,10 +4,17 @@ import SplitType from 'split-type'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export function brandIntro( container ) {
+export function brandIntro( container, device_data ) {
 
   const heroTitle = new SplitType('#hero-title');
   const brandIntro = container.querySelector( ".brand-intro" );
+  let brandTransOut;
+
+  if ( device_data.isIphone ) { 
+    brandTransOut = "-37rem";
+  } else { 
+    brandTransOut = "-20rem";
+  }
 
   if( brandIntro ){
     return gsap.timeline()
@@ -19,13 +26,13 @@ export function brandIntro( container ) {
     .to( ".hero .brand-intro path:nth-child(3)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
     .to( ".hero .brand-intro path:nth-child(2)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
     .to( ".hero .brand-intro path:nth-child(1)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
-    .to( ".hero .brand-intro path:nth-child(7)", { yPercent: -120, duration: .4, ease: "power2.out" }, "=.3" )
-    .to( ".hero .brand-intro path:nth-child(6)", { yPercent: -120, duration: .4, ease: "power2.out" }, "-=.35" )
-    .to( ".hero .brand-intro path:nth-child(5)", { yPercent: -120, duration: .4, ease: "power2.out" }, "-=.35" )
-    .to( ".hero .brand-intro path:nth-child(4)", { yPercent: -120, duration: .4, ease: "power2.out" }, "-=.35" )
-    .to( ".hero .brand-intro path:nth-child(3)", { yPercent: -120, duration: .4, ease: "power2.out" }, "-=.35" )
-    .to( ".hero .brand-intro path:nth-child(2)", { yPercent: -120, duration: .4, ease: "power2.out" }, "-=.35" )
-    .to( ".hero .brand-intro path:nth-child(1)", { yPercent: -120, duration: .4, ease: "power2.out" }, "-=.35" )
+    .to( ".hero .brand-intro path:nth-child(7)", { translateY: brandTransOut, duration: .4, ease: "power2.out" }, "=.3" )
+    .to( ".hero .brand-intro path:nth-child(6)", { translateY: brandTransOut, duration: .4, ease: "power2.out" }, "-=.35" )
+    .to( ".hero .brand-intro path:nth-child(5)", { translateY: brandTransOut, duration: .4, ease: "power2.out" }, "-=.35" )
+    .to( ".hero .brand-intro path:nth-child(4)", { translateY: brandTransOut, duration: .4, ease: "power2.out" }, "-=.35" )
+    .to( ".hero .brand-intro path:nth-child(3)", { translateY: brandTransOut, duration: .4, ease: "power2.out" }, "-=.35" )
+    .to( ".hero .brand-intro path:nth-child(2)", { translateY: brandTransOut, duration: .4, ease: "power2.out" }, "-=.35" )
+    .to( ".hero .brand-intro path:nth-child(1)", { translateY: brandTransOut, duration: .4, ease: "power2.out" }, "-=.35" )
     .to( ".brand path:nth-child(7)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.4" )
     .to( ".brand path:nth-child(6)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )
     .to( ".brand path:nth-child(5)", {translateY: "0", duration: .4, ease: "power2.out" }, "-=.35" )

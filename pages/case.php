@@ -36,7 +36,7 @@ foreach ($cases as $item) {
               <div class="flex flex-col justify-between h-full">
 
                 <div class="text-content xg:w-[36rem] animate" data-anim="bottom">
-                  <h1 class="text-h1 font-title mb-2 leading-[1.25]">
+                  <h1 class="text-h1 font-title font-bold mb-2 leading-[1.25]">
                     <?= $title ?>
                   </h1>
                   <p>

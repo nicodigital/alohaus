@@ -71,7 +71,7 @@ function motion(page, device_data) {
           console.log("ONCE HOME");
           lenisScroll(next.container, clickedAnchor )
           globalFunctions(next.container)
-          brandIntro(next.container)
+          brandIntro(next.container, device_data ) 
           customSwiper(device_data.isDesktop)
           servicios(device_data)
           // caseCardAnim(next.container)

@@ -36,7 +36,7 @@
 }
 
 .hero-title {
-   @apply absolute bottom-1 left-0;
+   @apply absolute bottom-[20rem] xg:bottom-1 left-0;
 }
 
 .once .hero-title {

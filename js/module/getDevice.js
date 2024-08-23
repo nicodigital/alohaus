@@ -32,6 +32,10 @@ function getDevice() {
 		device = 'mobile';
 	}
 
+	function isIphone() {
+    return /iPhone/i.test(navigator.userAgent);
+  }
+
 	/* Set Device on HTML tag */
 	html.dataset.device = device;
 
@@ -46,11 +50,9 @@ function getDevice() {
 		isMobile: isMobile,
 		isBigTablet: isBigTablet,
 		isTablet: isTablet,
-		headerH: headerH
+		headerH: headerH,
+		isIphone: isIphone()
 	}
-
-	// get_position(header_brand);
-	// get_position(menu_brand);
 
 	return device_data;
 
