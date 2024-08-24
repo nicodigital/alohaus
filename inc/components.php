@@ -42,7 +42,7 @@
 function cardServ($num = "01", $slug = '', $title = '', $text = '')
 { ?>
 
-  <div class="card" data-serv="<?= $slug ?>" data-title="<?= $title ?>">
+  <div class="card-serv" data-serv="<?= $slug ?>" data-title="<?= $title ?>">
     <span class="xg:hidden"><?= $title ?>.</span>
     <span class="hidden xg:block"><?= $num ?>.</span>
     <p class="pointer-1x">
@@ -52,11 +52,11 @@ function cardServ($num = "01", $slug = '', $title = '', $text = '')
 
 <?php }
 
-/*////////////////////////////// CARD CASE ////////////////////////////////*/
+/*////////////////////////////// CARD PROJECT ////////////////////////////////*/
 
-function cardCase( $title, $link = '#', $img = '', $imgW = '', $imgH = '', $details = [])
+function cardProject( $title, $link = '#', $img = '', $imgW = '', $imgH = '', $details = [], $lang = 'es' )
 { ?>
-  <a href="case/<?= $link ?>" class="card pointer-arrow black">
+  <a href="<?= transPath( 'case/'. $link , $lang  ) ?>" class="card-project pointer-arrow black">
     <figure>
       <?= picture($img, $title, true, $imgW, $imgH) ?>
       <figcaption class="info">

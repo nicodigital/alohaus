@@ -14,8 +14,8 @@
     $x = 1;
     foreach ( $data["team"] as $t) { ?>
 
-      <figure class="card">
-        <?= picture( $t["foto"]["url"], $t["name"] , true, $t["foto"]["width"], $t["foto"]["height"], true  ) ?>
+      <figure class="card-team">
+        <?= picture( $t["foto"]["url"], $t["name"] , true, $t["foto"]["width"], $t["foto"]["height"], true, "pointer-2x"  ) ?>
         <figcaption>
           <h3><?= $t['name'] ?></h3>
           <h4><?= $t['role'] ?></h4>
@@ -42,7 +42,7 @@
   <div class="container mt-[25vh]">
     <hr class="text-grey-dark mb-1">
     <div class="row mb-[15vh] 3xl:mb-[25vh]">
-      <div class="xg:col-1-5 pt-1">
+      <div class="xg:col-1-5 pt-1 mb-2 xg:mb-0">
         <?= miniTitle( $i18n["words"]["clients"]) ?>
       </div>
       <div class="xg:col-5-8">

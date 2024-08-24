@@ -50,6 +50,9 @@ export function brandIntro( container, device_data ) {
 }
 
 export function animTitle( container ){
+  
+   // Limpiar las instancias previas de ScrollTrigger
+   ScrollTrigger.getAll().forEach(trigger => trigger.kill());
 
   const nosotros_title = container.querySelector( "#title-nosotros" );
   const proyectos_title = container.querySelector( "#title-proyectos" );
@@ -101,6 +104,8 @@ export function animTitle( container ){
   tl3.to( servicios_title , { color: "#EB671C", duration: 0.65, ease: "linear" } )
   tl4.to( team_title , { opacity: 1, duration: 0.65, ease: "linear" } )
 
+  ScrollTrigger.refresh();
+
 }
 
 export function pageOut( container ) {
@@ -125,10 +130,13 @@ export function homeBack( container ){
   const txtIntro = container.querySelector( ".txt-intro" );
   const sections = container.querySelectorAll( "section:not(.hero)" );
 
+  heroBack.play();
+
   gsap.timeline().to( heroBack, { opacity: 0.05, duration: 0.8, ease: "power4.out" } )
   .to( heroTitle, {autoAlpha: 1, translateY: "0", duration: 1, ease: "power4.out" }, "-=0.8" )
   .to( txtIntro, {autoAlpha: 1, translateY: "0", duration: 0.8, ease: "power4.out" }, "-=0.6" )
   .to( sections, { autoAlpha: 1, translateY: "0", duration: 0.8, ease: "power4.out" }, "-=0.8" )
+  
 
 }
 

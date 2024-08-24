@@ -14,5 +14,9 @@
 }
 
 .mini-title svg{
-  @apply w-[1.7rem] h-auto translate-y-[-.9rem] xg:translate-y-[-.3rem];
+  @apply w-[1.7rem] h-auto xg:translate-y-[-.3rem];
+}
+
+[data-device="mobile"][data-platform="ios"] .mini-title svg{
+  transform: translateY(-.5rem);
 }

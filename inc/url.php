@@ -179,39 +179,34 @@ function anchorTransPath( $hash, $echo = true) {
 /*/////////////////////////// SWITCH PATH ////////////////////////////////*/
 // Esta función fue explicitamente hecho para el switcher de idiomas
 
-function switchPath( $lang ){ 
-  
+function switchPath($lang) {
+
   $slug_path = $GLOBALS["site_slug"] . "/";
-  $request_path = str_replace( $slug_path , '' , $_SERVER['REQUEST_URI'] );
-  
-  // Si el código de idioma es 'es', devuelve la ruta original sin modificaciones
-  if ( $lang == 'es' ) { // ESPAÑOL
+  $request_path = str_replace($slug_path, '', $_SERVER['REQUEST_URI']);
 
-    if( $_SERVER['REQUEST_URI'] != "/" ){ // en caso de subdirectorio
-      
-      // Removemos el site_slug del REQUEST_URI para no tener conflicto con el switcher en caso de que el sitio se encuentre en un subdirectorio
-      $pathNoLangCode = removeLangCode( $request_path );
-      $switchPath =  "/". $GLOBALS["site_slug"] . $pathNoLangCode;
+  // Eliminar cualquier código de idioma existente en la ruta
+  $path_no_lang_code = removeLangCode($request_path);
 
-    }else{ // en caso de ROOT
+  // Si el idioma es español, devolvemos la ruta original sin prefijo de idioma
+  if ($lang == 'es') {
 
-      $pathNoLangCode = removeLangCode( $_SERVER['REQUEST_URI'] );
-      $switchPath = str_replace( $slug_path , '', $pathNoLangCode );
+      if ($_SERVER['REQUEST_URI'] != "/") { // en caso de subdirectorio
+          $switchPath = $GLOBALS["base_url"] . ltrim($path_no_lang_code, $path_no_lang_code[0]);
+      } else { // en caso de ROOT
+          $switchPath = str_replace($slug_path, '', $path_no_lang_code);
+      }
 
-    }
-    
-  } else {  // Si el código de idioma no es 'es', agrega el prefijo de idioma a la ruta
+  } else {
 
-    // Removemos el site_slug del REQUEST_URI para no tener conflicto con el switcher en caso de que el sitio se encuentre en un subdirectorio
-    
-    if( $_SERVER['REQUEST_URI'] != "/" ){ // en caso de subdirectorio
-      $switchPath = str_replace( $slug_path , '' , $slug_path . $lang . $request_path );
-    }else{ // en caso de ROOT
-      $switchPath =  $lang . $request_path;
-    }
+      // Si el idioma no es español, agregamos el prefijo de idioma a la ruta
+      if ($_SERVER['REQUEST_URI'] != "/") { // en caso de subdirectorio
+          $switchPath = $GLOBALS["base_url"] . $lang . $path_no_lang_code;
+      } else { // en caso de ROOT
+          $switchPath = $GLOBALS["base_url"] . $lang .  $path_no_lang_code;
+      }
 
   }
 
   return $switchPath;
-
+  
 }

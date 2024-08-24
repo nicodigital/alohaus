@@ -1,9 +1,9 @@
-function servicios(device_data) {
+function servicios(container, device_data) {
 
   if( device_data.isDesktop === true ) {
 
-    const SERVICIOS = document.querySelectorAll("#servicios .card");
-    const TITLE = document.querySelector("#servicios .big-title");
+    const SERVICIOS = container.querySelectorAll(".card-serv");
+    const TITLE = container.querySelector("#servicios .big-title");
 
     SERVICIOS.forEach(card => {
 

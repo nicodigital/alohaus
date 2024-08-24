@@ -2,6 +2,11 @@
 
 $i18n = array(
 
+  'seo' => [
+    "meta_title" => "AloHaus — Estudio de diseño y comunicación",
+    "meta_desc" => "Un estudio de diseño que comprende para luego comunicar. Comprometidos con los clientes, enfrentando desafíos con nuevas herramientas.",
+  ],
+
   'menu' => [
     ['Home','/'],
     ['Nosotros','#nosotros'],
@@ -19,6 +24,17 @@ $i18n = array(
     'clients'       => 'Clientes',
     'projects'      => 'Proyectos',
     'design_studio' => 'Estudio de diseño',
+    'all'           => 'Todos',
+  ],
+
+  "form"=> [
+    "name" => "Nombre",
+    "name_msg" => "Debes colocar tu nombre y apellido.",
+    "email" => "ejemplo@email.com",
+    "email_msg" => "Debes colocar un correo válido.",
+    "message" => "Mensaje",
+    "message_msg" => "Tu mensaje debe ser de mas de 16 caracteres.",
+    "send" => "Enviar",
   ],
 
 );

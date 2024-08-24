@@ -2,9 +2,9 @@
 $lang = $GLOBALS["lang"];
 ?>
 
-<section id="all-works" class="container mt-12 xg:mt-12 xg:mb-10 3xl:mt-16 3xl:mb-12">
+<section id="all-works" class="container my-12 xg:mt-12 xg:mb-10 3xl:mt-16 3xl:mb-12">
 
-  <div class="row filter ctr-pb">
+  <div class="row filter ctr-pb mb-2 xg:mb-0">
 
     <div class="xg:col-1-5 hidden xg:block animate" data-anim="bottom"  >
       <h1>
@@ -45,7 +45,7 @@ $lang = $GLOBALS["lang"];
 
          ?>
 
-      <a href="<?= transPath( 'case/'.$case["slug"] , $lang) ?>" class="card filter-item pointer-arrow " data-type="<?= $types_txt ?>" >
+      <a href="<?= transPath( 'case/'.$case["slug"] , $lang) ?>" class="card-case filter-item pointer-arrow " data-type="<?= $types_txt ?>" >
         <figure>
     
           <?= picture( $c["main_img"]["url"], $case["title"]["rendered"], true, $c["main_img"]["width"], $c["main_img"]["height"], true ) ?>

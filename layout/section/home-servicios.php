@@ -11,8 +11,7 @@
 
     <div class="row mb-2">
       <div class="xg:hidden">
-        <!-- <hr class="text-orange mb-1"> -->
-        <h2 class="big-title text-orange">
+        <h2 class="big-title text-orange mb-2">
           Servicios
         </h2>
       </div>
@@ -32,12 +31,10 @@
         $x++; } ?>
       </div>
 
-      <div class="xg:hidden accordion text-white">
-        <?php foreach ( $data["serv_list"] as $serv) { ?>
-          <acc-item title="<?= $serv['title'] ?>">
-            <?= $serv['text'] ?>
-          </acc-item>
-        <?php } ?>
+      <div class="xg:hidden accordion lined text-white">
+        <?php foreach ( $data["serv_list"] as $serv) {
+          accItem( $serv['title'], $serv['text'] );
+        } ?>
       </div>
 
     </div>

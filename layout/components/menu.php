@@ -30,8 +30,9 @@
 
 		<?php if(!$isDesktop){ ?>
 			<div class="flex xg:hidden justify-between mt-10 text-grey-dark">
-				<a href="">Español</a>
-				<a href="">English</a>
+				<a href="<?= switchPath( 'es') ?>">Español</a>
+				<a href="<?= switchPath( 'pt') ?>">Português</a>
+				<a href="<?= switchPath( 'en') ?>">English</a>
 			</div>
 		<?php } ?>
 

@@ -1,7 +1,10 @@
-<?php $types = [];
+<?php 
+$types = [];
 
 foreach ($GLOBALS["cases"] as $case) {
+
   foreach($case["acf"]["types"] as $type) {
+
       // Verifica si el slug ya existe en el array multidimensional $types
       $exists = false;
 
@@ -14,10 +17,12 @@ foreach ($GLOBALS["cases"] as $case) {
 
       // Si no existe, lo añadimos al array $types
       if (!$exists) {
+
           $types[] = [
-              $type["name"], 
+              checkTrans($type["name"], $i18n), 
               $type["slug"]
           ];
+
       }
   }
 }
@@ -25,15 +30,12 @@ foreach ($GLOBALS["cases"] as $case) {
 
 ?>
 
-<div class="grid filter grid-cols-2 xg:flex flex-col gap-[.5rem]">
+<div class="grid filter grid-cols-2 xg:flex flex-col gap-1 xg:gap-[.5rem]">
 
   <button class="filter-btn active" data-filter="all">
-    Todos
-
+    <?= $i18n["words"]["all"] ?>
   </button>
-  <?php foreach ($types as $type) { 
-
-    ?>
+  <?php foreach ($types as $type) { ?>
 
     <button class="filter-btn" data-filter="<?= $type[1] ?>">
       <?= $type[0] ?>

@@ -30,13 +30,14 @@
 
         if( @$acf["featured"] == 1 && $i <= 6 ){
 
-          cardCase( 
+          cardProject( 
               $case["title"]["rendered"], 
               $case["slug"], 
               $acf["main_img"]["url"], 
               $acf["main_img"]["width"], 
               $acf["main_img"]["height"], 
-              $acf["detalles_".$lang ]
+              $acf["detalles_".$lang ],
+              $lang
             );
 
         }

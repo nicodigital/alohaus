@@ -4,101 +4,106 @@
   --option-height: calc(var(--field-height) + var(--field-margin-bottom));
   --form-color: theme(colors.orange);
   --active-color: theme(colors.white);
-  --error-color: rgba(255,255,255, .2);
+  --error-color: white;
 }
 
-.form{
-   width: 100%;
+/* Form Line */
+.form{width: 100%} 
 
-  .field{position: relative}
+.form .field{
+  position: relative;
+  overflow: hidden;
+  margin-bottom: var(--field-margin-bottom);
+}
 
-  & input:not([type="submit"]), & textarea{
-    color: var(--form-color);
-    border-bottom: 1.5px solid theme(colors.orange); 
-    min-height: var(--field-height);
-    height: var(--field-height);
-    line-height: 1;
-    margin-bottom: var(--field-margin-bottom);
-    outline: none !important;
-    /* @apply debe ir abajo de las reglas normales */
-    @apply text-body w-full bg-transparent py-[1.5rem] pr-1 shadow-none placeholder-opacity-100;
-    
-    &:focus{
-      color: var(--active-color);
-      border-color: var(--active-color);
-      outline: none !important;
+.form input:not([type="submit"]), 
+.form textarea{
+  font-family: theme(fontFamily.sans);
+  width: 100%;
+  background: transparent;
+  color: var(--form-color);
+  border-bottom: var(--line-width) solid theme(colors.orange); 
+  min-height: var(--field-height);
+  height: var(--field-height);
+  padding: 2rem 2rem 2rem 0;
+  line-height: 1;
+  outline: none !important;
+  box-shadow: none;
+  border-radius: 0;
+  overflow: hidden;
+}
 
-      &::placeholder{
-        color: theme(colors.white)!important;
-        opacity: 1;
-      }
+.form textarea {
+  resize: none;
+  overflow: hidden;
+  min-height: auto;
+  vertical-align: bottom;
+  @apply h-auto border-b border-orange !important;
+}
 
-      & + .valid-msg{
-        @apply hidden !important;
-      }
+.form .field:before{
+  position: absolute;
+  display: block;
+  content: "";
+  width: 100%;
+  height: var(--line-width);
+  background-color: white;
+  left: 0;
+  bottom:0;
+  transform: translateX(-101%);
+  transition: all .4s ease-in-out;
+}
 
-    }
 
-    &.invalid{
+.form input:focus{
+  color: var(--active-color);
+  outline: none !important;
+}
 
-      border-color: var(--error-color) !important;
+.form .field:has(input:focus):before, 
+.form .field:has(textarea:focus):before{
+  transform: translateX(0);
+}
 
-      &:not(:focus){
-        @apply text-transparent !important;
-      }
+.form input:focus + .valid-msg{
+  display: none !important;
+}
 
-      & + .valid-msg{
-        @apply block;
-        color: var(--error-color);
-        border-color: var(--error-color) !important;
-      }
+.form input.invalid{
+  border-color: var(--error-color) !important;
+}
 
-      &::placeholder{
-        @apply opacity-0 !important;
-        color: theme(colors.white)!important;
-      }
+.form input.invalid:not(:focus){
+  color: transparent !important;
+}
 
-    }
+.form input.invalid + .valid-msg{
+  @apply block;
+  border-color: var(--error-color) !important;
+}
 
-  }
+.form input.invalid::placeholder{
+  @apply opacity-0 !important;
+}
 
-  textarea {
-    resize: none;
-    overflow: hidden;
-    box-sizing: padding-box;
-  }
+.form input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+}
 
-  input[type="checkbox"],
-  input[type="radio"] {
-    @apply w-auto;
-  }
-
-  input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
-  }
-
-  [type="submit"] {
-    @apply disabled:opacity-50;
-  }
-
-  /* El placeholder solo lo agarra aca */
-  input::placeholder, textarea::placeholder{
-    color: var(--orange)!important;
-    opacity: 1 !important;
-  }
-
-} /* Form */
+.form input[type="checkbox"],
+.form  input[type="radio"] {
+  @apply w-auto;
+}
 
 .valid-msg{
   @apply hidden absolute top-[2.2rem] left-0 font-[400] text-black text-right pointer-events-none;
 }
 
-/* El placeholder solo lo agarra aca */
+/* The placeholder only works here */
 input::placeholder, textarea::placeholder{
-  color: var(--form-color) !important;
+  color: theme(colors.orange) !important;
   opacity: 1 !important;
 }
-
 
 /* Loader */
 .loader {

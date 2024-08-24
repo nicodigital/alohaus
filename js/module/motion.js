@@ -56,8 +56,8 @@ function motion(page, device_data) {
   }
 
   barba.init({
-    // cacheFirstPage: true,
-    debug: true,
+    cacheFirstPage: true,
+    // debug: true,
     sync: true,
     timeout: 8000, // default is 2000ms
     transitions: [
@@ -68,12 +68,12 @@ function motion(page, device_data) {
           namespace: 'home',
         },
         once({ next }) {
-          console.log("ONCE HOME");
+          // console.log("ONCE HOME")
           lenisScroll(next.container, clickedAnchor )
           globalFunctions(next.container)
           brandIntro(next.container, device_data ) 
           customSwiper(device_data.isDesktop)
-          servicios(device_data)
+          servicios(next.container,device_data)
           // caseCardAnim(next.container)
 
           if (device_data.isDesktop === true) {
@@ -90,7 +90,7 @@ function motion(page, device_data) {
 
         },
         leave: ({ current, next }) => {
-          console.log("LEAVE HOME");
+          // console.log("LEAVE HOME")
           pageOut(current.container)
           return new Promise(resolve => {
             setTimeout(() => {
@@ -100,20 +100,21 @@ function motion(page, device_data) {
 
         },
         enter: ({ next }) => {
-          console.log("ENTER HOME");
-          // console.log(next.container )
+          // console.log("ENTER HOME")
+          
           lenisScroll(next.container, clickedAnchor )
           globalFunctions(next.container)
           homeLeave(next.container)
-         
+          
           customSwiper(device_data.isDesktop)
-          servicios(device_data)
+          servicios(next.container,device_data)
+          
           if (device_data.isDesktop === true) {
-            animTitle(next.container)
+            setTimeout( ()=>  animTitle(next.container) , 300 )
           }
 
-          setTimeout( ()=>  homeBack(next.container) , 100 )
-          // window.scrollTo(0, 0)
+          setTimeout( ()=> homeBack(next.container) , 200 )
+          window.scrollTo(0, 0)
         }
       },
       // PROYECTOS
@@ -123,13 +124,13 @@ function motion(page, device_data) {
           namespace: 'proyectos',
         },
         once({ next }) {
-          console.log("ONCE PROYECTOS")
+          // console.log("ONCE PROYECTOS")
           lenisScroll(next.container, clickedAnchor )
           globalFunctions(next.container)
           filters(next.container);
         },
         leave: ({ current }) => {
-          console.log("LEAVE PROYECTOS")
+          // console.log("LEAVE PROYECTOS")
           pageOut(current.container)
           heroBackOut(current.container)
           return new Promise(resolve => {
@@ -140,7 +141,7 @@ function motion(page, device_data) {
 
         },
         enter: ({ next }) => {
-          console.log("ENTER PROYECTOS");
+          // console.log("ENTER PROYECTOS")
           lenisScroll(next.container, clickedAnchor )
           globalFunctions(next.container)
           filters(next.container);
@@ -160,8 +161,7 @@ function motion(page, device_data) {
           caseToggle(next.container)
         },
         leave: ({ current }) => {
-          console.log("LEAVE CASE")
-          // globalFunctions(current.container)
+          // console.log("LEAVE CASE")
           pageOut(current.container)
           heroBackOut(current.container)
           return new Promise(resolve => {
@@ -175,7 +175,9 @@ function motion(page, device_data) {
           lenisScroll(next.container, clickedAnchor )
           globalFunctions(next.container)
           caseToggle(next.container)
-          window.scrollTo(0, 0)
+          
+          setTimeout( ()=> window.scrollTo(0, 0) , 100 )
+
         }
       },
     ]

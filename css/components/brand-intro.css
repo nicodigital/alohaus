@@ -18,4 +18,8 @@
   @apply scale-[33%] xg:scale-[100%];
 }
 
+.home-leave .brand-intro {
+  @apply hidden;
+}
+
 

@@ -1,16 +1,18 @@
-#proyectos .card{
+/* CARD PROJECT - ONLY HOME */
+
+.card-project{
     position: relative;
     display: block;
     aspect-ratio: var(--card-aspect);
     transition: all .8s ease-out;
 }
 
-#proyectos .card figure,
-#proyectos .card img{
+.card-project figure,
+.card-project img{
     @apply size-full object-cover;
 }
 
-#proyectos .card .info{
+.card-project .info{
     @apply absolute top-0 left-0 
     w-full h-full 
     flex flex-col justify-between
@@ -18,225 +20,186 @@
     p-2 z-10;
 }
 
-#proyectos .card .info > span{
+.card-project .info > span{
     @apply relative;
 }
 
-#proyectos .card .info > span:first-child{
+.card-project .info > span:first-child{
     @apply xg:w-50% text-h1 font-bold leading-[1];
     font-family: theme(fontFamily.title);
     letter-spacing: var(--letter-track-2);
 }
 
-#proyectos .card .info > span:last-child{
+.card-project .info > span:last-child{
     @apply flex justify-between;
     letter-spacing: var(--letter-track-2);
 }
 
-#proyectos .card:hover .info{
+.card-project:hover .info{
     @apply bg-transparent text-white;
 }
 
-#servicios{
+/* CARD SERVICIOS */
 
-    .card{ 
-
-        & span{
-            font-family: theme(fontFamily.title);
-            font-size: 1.8rem;
-        }
-
-        &:hover{
-
-            p{
-                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            }
-
-        }
-
-    }
-
-}
-
-#servicios .card{
+.card-serv{
     @apply relative min-h-[30vh] xg:border-t xg:border-white; 
 }
 
-#servicios .card p{
+.card-serv p{
     @apply xg:w-70% mt-1 pb-4 xg:pb-0
     transition-all duration-[400ms] ease-in-out;
 }
 
-#team{
-
-    .card{
-
-        & figcaption{
-
-            @apply min-h-[15rem] flex flex-col items-end text-right;
-
-            & h3{
-                font-family: theme(fontFamily.title);
-                font-size: var(--h3);
-                color: theme(colors.grey-dark);
-                line-height: 1;
-                letter-spacing: var(--letter-track-1);
-            }
-
-            & div{
-                @apply mt-1;
-                display: flex;
-                gap: 1rem;
-
-                a{
-                    @apply underline;
-                }
-
-            }
-
-        }
-
-        /* &:first-child img{
-            width: calc(100% + var(--container-gap)*2);
-        } */
-
-    }
+.card-serv span{
+    font-family: theme(fontFamily.title);
+    font-size: 1.8rem;
 }
 
-#team .card{
+.card-serv:hover p{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* CARD TEAM */
+.card-team{
     @apply flex flex-row-reverse xg:flex-col-reverse text-grey-dark;
 }
 
-#team .card img{
-    @apply w-50% xg:w-full translate-x-[2rem] xg:translate-x-0;
+.card-team picture{
+    @apply flex justify-end;
+}
+
+.card-team figcaption{
+    @apply w-50% xg:w-full min-h-[15rem] 
+    flex flex-col items-end 
+    text-right;
+}
+
+.card-team figcaption div{
+    @apply mt-1;
+    display: flex;
+    gap: 1rem;
+}
+
+.card-team figcaption a{
+    @apply underline;
+}
+
+.card-team h3{
+    font-family: theme(fontFamily.title);
+    font-size: var(--h3);
+    font-weight: bold;
+    color: theme(colors.grey-dark);
+    line-height: 1;
+    letter-spacing: var(--letter-track-1);
+}
+
+.card-team img{
+    @apply w-[15rem] xg:w-full
+    translate-x-[2rem] xg:translate-x-0
+    object-cover;
     filter: grayscale(100);
 }
 
-#all-works{
-
-    .card{
-        position: relative;
-        display: block;
-
-        &:before{
-            position: absolute;
-            content: "";
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 10;
-            background-color: var(--grey-dark);
-            pointer-events: none;
-            mix-blend-mode: color;
-            filter: grayscale(1);
-            opacity: 0;
-        }
-
-        & figcaption{
-            position:absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            z-index: 12;
-            color: #fff;
-            opacity: 0;
-            pointer-events: none;
-            @apply py-2 px-3;
-
-            & > span{
-                position: relative;
-                
-                
-                &:first-child{
-                    font-family: theme(fontFamily.title);
-                    font-size: var(--h1);
-                    letter-spacing: -0.05em;
-                    line-height: 1;
-                    width: 50%;
-                    display: none;
-                    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
-                    transition: all .4s ease;
-                }
-
-                &:last-child{
-                    display: flex;
-                    justify-content: space-between;
-                    letter-spacing: var(--letter-track-2);
-
-                    span{
-                        display: none;
-                        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
-                        transition: all .4s ease;
-                    }
-
-                }
-
-            }
-
-        }
-
-        & img{
-            object-fit: cover;
-            aspect-ratio: var(--card-aspect);
-            transition: all .4s ease;
-        }
-
-
-        &:hover{
-
-            &:before{
-                opacity: 1;
-            }
-
-            & figcaption{
-                opacity: 1;
-
-                & > span{
-
-                    &:first-child{
-                        display: block;
-                        animation: lineIn .4s ease-in-out forwards;
-                    }
-
-                    &:last-child{
-
-                        & span:first-child{
-                            display: block;
-                            animation: lineIn .4s ease-in-out forwards;
-                            animation-delay: .2s;
-                        }
-
-                        & span:last-child{
-                            display: block;
-                            animation: lineIn .4s ease-in-out forwards;
-                            animation-delay: .4s;
-                        }
-
-                    }
-
-                }
-
-            }
-
-            & img{
-                opacity: .2;
-            }
-
-        }
-
-        &[hidden]{
-            display: none;
-        }
-
-    }
-
+/* CARD CASE */
+.card-case{
+    position: relative;
+    display: block;
 }
 
+.card-case[hidden]{
+    display: none;
+}
+
+.card-case img{
+    object-fit: cover;
+    aspect-ratio: var(--card-aspect);
+    transition: all .4s ease;
+}
+
+.card-case figcaption{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 12;
+    color: #fff;
+    opacity: 0;
+    pointer-events: none;
+    @apply py-2 px-3;
+}
+
+
+.card-case figcaption & > span{
+    position: relative;
+}
+
+.card-case figcaption > span:first-child{
+    font-family: theme(fontFamily.title);
+    font-size: var(--h1);
+    letter-spacing: -0.05em;
+    line-height: 1;
+    width: 50%;
+    display: none;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+    transition: all .4s ease;
+}
+
+.card-case figcaption > span:last-child{
+    display: flex;
+    justify-content: space-between;
+    letter-spacing: var(--letter-track-2);
+}
+
+.card-case figcaption > span:last-child span{
+    display: none;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+    transition: all .4s ease;
+}
+
+.card-case:before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: var(--grey-dark);
+    pointer-events: none;
+    mix-blend-mode: color;
+    filter: grayscale(1);
+    opacity: 0;
+}
+
+.card-case:hover img{
+    opacity: .2;
+}
+
+.card-case:hover:before,
+.card-case:hover figcaption{
+    opacity: 1;
+}
+
+.card-case:hover figcaption > span:first-child{
+    display: block;
+    animation: lineIn .4s ease-in-out forwards;
+}
+
+.card-case:hover figcaption > span:last-child span:first-child{
+    display: block;
+    animation: lineIn .4s ease-in-out forwards;
+    animation-delay: .2s;
+}
+
+.card-case:hover figcaption > span:last-child span:last-child{
+    display: block;
+    animation: lineIn .4s ease-in-out forwards;
+    animation-delay: .4s;
+}
 
 /*//////////////////////////////////////////////////////////*/
 /*//////////////////////// 992px ///////////////////////////*/
@@ -244,7 +207,7 @@
 
 @media (min-width: theme("screens.xg")) {
 
-    #servicios .card p{
+    .card-serv p{
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     }
 
