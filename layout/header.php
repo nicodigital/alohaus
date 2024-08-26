@@ -50,6 +50,5 @@
 
   </header>
 
-  <?php //debug($_SERVER['REQUEST_URI']);
-  include 'layout/components/burger.php';
+<?php include 'layout/components/burger.php';
 

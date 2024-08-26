@@ -134,3 +134,5 @@ $recaptcha_key = "123";
 // }
 
 $htmlCache = new HTMLCache(MODE, $page);
+
+
