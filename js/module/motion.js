@@ -78,7 +78,7 @@ function motion(page, device_data) {
           if (device_data.isDesktop === true) {
             animTitle(next.container)
           } else {
-            accordion();
+            accordion()
           }
 
           window.scrollTo(0, 0)
@@ -107,6 +107,8 @@ function motion(page, device_data) {
           
           if (device_data.isDesktop === true) {
             setTimeout( ()=>  animTitle(next.container) , 300 )
+          }else {
+            accordion()
           }
 
           setTimeout( ()=> homeBack(next.container) , 200 )
