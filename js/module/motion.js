@@ -1,6 +1,6 @@
 import barba from '@barba/core';
 import barbaPrefetch from '@barba/prefetch';
-import { brandIntro, animTitle, pageOut, heroBackOut, homeBack, homeLeave } from './gsap.js'
+import { brandIntro, animTitle, pageOut, heroBackOut, homeBack, homeLeave, contactoIn, removeOnce } from './gsap.js'
 import lenisScroll from './lenisScroll.js';
 import cursor from './cursor.js';
 import menuMobile from './menuMobile.js';
@@ -57,7 +57,7 @@ function motion(page, device_data) {
 
   barba.init({
     cacheFirstPage: true,
-    // debug: true,
+    debug: true,
     sync: true,
     timeout: 8000, // default is 2000ms
     transitions: [
@@ -74,7 +74,6 @@ function motion(page, device_data) {
           brandIntro(next.container, device_data ) 
           customSwiper(device_data.isDesktop)
           servicios(next.container,device_data)
-          // caseCardAnim(next.container)
 
           if (device_data.isDesktop === true) {
             animTitle(next.container)
@@ -83,10 +82,7 @@ function motion(page, device_data) {
           }
 
           window.scrollTo(0, 0)
-
-          setTimeout(() => { // Removemos la clase first-load para que saber que ya se ha cargado el ONCE
-            document.querySelector('body').classList.remove('once');
-          },3000)
+          removeOnce();
 
         },
         leave: ({ current, next }) => {
@@ -127,7 +123,8 @@ function motion(page, device_data) {
           // console.log("ONCE PROYECTOS")
           lenisScroll(next.container, clickedAnchor )
           globalFunctions(next.container)
-          filters(next.container);
+          filters(next.container)
+          removeOnce()
         },
         leave: ({ current }) => {
           // console.log("LEAVE PROYECTOS")
@@ -178,6 +175,32 @@ function motion(page, device_data) {
           
           setTimeout( ()=> window.scrollTo(0, 0) , 100 )
 
+        }
+      },
+      // DEFAULT
+      {
+        name: 'Default',
+        once({ next }) {
+          // console.log("DEFAULT ONCE")
+          lenisScroll(next.container, clickedAnchor )
+          globalFunctions(next.container)
+          contactoIn(next.container)
+          removeOnce()
+        },
+        leave: ({ current }) => {
+          // console.log("DEFAULT LEAVE")
+          pageOut(current.container)
+          return new Promise(resolve => {
+            setTimeout(() => {
+              resolve();
+            }, 400);
+          });
+        },
+        enter: ({ next }) => {
+          // console.log("DEAFAULT ENTER")
+          lenisScroll(next.container, clickedAnchor )
+          globalFunctions(next.container)
+          contactoIn(next.container)
         }
       },
     ]

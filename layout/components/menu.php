@@ -23,9 +23,9 @@
 				<?= $i18n["menu"][3][0] ?>
 			</a>
 
-			<div href="#contacto" class="item pointer-1x togg anchor barba-ignore" data-barba-prevent="self" >
+			<a href="<?= transPath( 'contacto' , $lang) ?>" class="item pointer-1x togg" >
 				<?= $i18n["menu"][4][0] ?>
-			</div>
+			</a>
 		</nav>
 
 		<?php if(!$isDesktop){ ?>

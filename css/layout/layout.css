@@ -18,12 +18,6 @@ html {
    height: auto;
 }
 
-/* @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-} */
-
 body {
    @apply text-body bg-grey-dark text-ivory;
    -webkit-font-smoothing: antialiased;
@@ -75,6 +69,7 @@ img{
   transform: translateY(0);
 }
 
+
 /*//////////////////////////////////////////////////////////*/
 /*/////////////////////////// XS ///////////////////////////*/
 /*//////////////////////////////////////////////////////////*/
@@ -101,6 +96,11 @@ img{
       --container-gap: 2%;
       --header-height: 7.5rem;
    }
+
+  body:has([data-screen="fit"]){
+    overflow: hidden !important;
+  }
+  
 }
 
 /*//////////////////////////////////////////////////////////*/

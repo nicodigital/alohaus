@@ -12,7 +12,7 @@ $i18n = array(
     ['Nosotros','#nosotros'],
     ['Equipo','#equipo'],
     ['Proyectos','proyectos'],
-    ['Contacto','#contacto'],
+    ['Contacto','contacto'],
   ],
 
   'words' => [

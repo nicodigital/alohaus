@@ -1,8 +1,20 @@
-	<footer id="contacto" class="container flex flex-col justify-between min-h-screen text-orange">
+	<?php 
+		if( $page == "contacto" ){
+			$contact_padding = "pt-4 xg:pt-15";
+			$contact_cols = "xg:col-7-12";
+			$foot_height = "xg:h-screen";
+		}else{
+			$contact_padding = "pt-4 xg:pt-7 pb-10";
+			$contact_cols = "xg:col-6-11";
+			$foot_height = "";
+		}
+	?>
+	
+	<footer id="contacto" class="container flex flex-col justify-between min-h-screen text-orange <?= $foot_height ?>">
 
-		<div class="row pt-4 xg:pt-7 pb-10">
+		<div class="row <?= $contact_padding ?>">
 
-			<h2 class="big-title mb-12 xg:hidden">
+			<h2 class="big-title mb-12 xg:hidden mt-10">
 				<?= $i18n["words"]["contact"] ?>
 			</h2>
 
@@ -40,13 +52,15 @@
 				</div>
 			</div>
 
-			<div class="xg:col-6-11 order-2">
+			<div class="<?=$contact_cols ?> order-2">
 				<?php include 'layout/forms/contact-form.php' ?>
 			</div>
-
-			<div class="col-11-13 hidden xg:flex justify-end pt-7 xg:order-3">
-				<?php include 'layout/components/go-top.php' ?>
-			</div>
+		
+			<?php if( $page != "contacto" ){ ?>
+				<div class="col-11-13 hidden xg:flex justify-end pt-7 xg:order-3">
+					<?php include 'layout/components/go-top.php' ?>
+				</div>
+			<?php } ?>
 
 		</div>
 

@@ -144,12 +144,18 @@ export function homeLeave( container ) {
   container.classList.add("home-leave");
 }
 
-// export function homeEnter( container ) {
+export function contactoIn( container ) {
 
-//   container.classList.add("home-enter");
+  const row1 = container.querySelector( "#contacto .row:first-child" );
+  const row2 = container.querySelector( "#contacto .row:last-child" );
 
-//   setInterval(() => {
-//     container.classList.remove("home-enter");
-//   }, 3000)
+  gsap.timeline().fromTo( row1, {autoAlpha: 0, translateY: "2rem", duration: 0.6, ease: "power4.out" } , {autoAlpha: 1, translateY: "0", duration: 0.6, ease: "power4.out" } )
+  .fromTo( row2, {autoAlpha: 0, translateY: "2rem", duration: 0.6, ease: "power4.out" } , {autoAlpha: 1, translateY: "0", duration: 0.6, ease: "power4.out" } )
 
-// }
+}
+
+export function removeOnce( container ) {
+  setTimeout(() => { // Removemos la clase "once" para que saber que ya se ha cargado el ONCE
+    document.querySelector('body').classList.remove('once');
+  },2000)
+}
