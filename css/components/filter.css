@@ -20,7 +20,7 @@
       bottom: .55rem;
       right: 0;
       transform: translateX(calc( 100% + 1rem ));
-      background-image: url("img/icons/arrow-tilted-left-down-white.svg");
+      background-image: url("https://www.alohaus.uy/public/img/icons/arrow-tilted-left-down-white.svg");
       background-size: contain;
       background-repeat: no-repeat;
    }

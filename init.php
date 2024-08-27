@@ -22,7 +22,7 @@ $base_url -> Es la url absoluta del sitio
 $root_folder -> Es la carpeta donde se encuentra el proyecto
 */
 
-$protocol     = 'http';
+$protocol     = 'https';
 $root_url     = $protocol . "://$_SERVER[HTTP_HOST]";
 $domain       = $root_url;
 $assets_path  = "public/";
@@ -35,7 +35,7 @@ if ($_SERVER['SERVER_NAME'] == "localhost") { // <-- LOCALHOST
 
   $base_url     = $protocol . "://" . $site_slug . ".test/";
   
-} else if ($_SERVER['SERVER_NAME'] == "nicolook.com" || $_SERVER['SERVER_NAME'] == "testing.idmedia.uy") { //<-- TESTING
+} else if ( $_SERVER['SERVER_NAME'] == "nicolook.com" ) { //<-- TESTING
 
   $base_url     = 'https://' . "$_SERVER[HTTP_HOST]" . '/' . $site_slug . '/'; // <-- Tiene que tener slash al final
 

@@ -32,6 +32,11 @@
 </head>
 
 <body id="top" class="once" data-scroll="top" data-page="<?= $page ?>" data-barba="wrapper" >
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K585PZ4F"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
   <div class="<?= $page ?> menu-toggler" data-barba="container" data-barba-namespace="<?= ( !is_array($page_type) ) ? $page_type : 'case' ?>" data-screen="<?= $screen ?>"  >
   <div class="pointer"></div>
 

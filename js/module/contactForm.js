@@ -1,31 +1,54 @@
 function contactForm() {
 
-  const SPARK_ID = 'M56v2ysHS'; // ID DEL FORMULARIO ID
-  const FROM = "LIV";
-  const SUBJECT = "LIV - Consulta";
+  const SPARK_ID = 'CwUzyZDMs'; // ID DEL FORMULARIO ID
+  const FROM = "AloHaus";
+  const SUBJECT = "AloHaus - Consulta";
+  let notices;
 
   const protocolo = window.location.protocol;
-  const dominio = window.location.hostname;
-  const baseURL = protocolo+"//"+dominio;
+  const baseURL = "https://www.alohaus.uy/";
 
   const form = document.querySelector("#contact-form");
   const ajax_form_url = 'https://submit-form.com/'+SPARK_ID;
   const result = document.getElementById('result');
-  // const lang   = form.dataset.lang;  
 
   if (form) {
 
+    const lang = form.querySelector('[name=lang]');
     const name = form.querySelector('[name=name]');
     const email = form.querySelector('[type=email]');
-    // const phone = form.querySelector('[name=phone]');
     const message = form.querySelector('[name=message]');
     const btn_submit = form.querySelector('[type=submit]');
 
     const nameRegex = /^[A-Za-z]+ [A-Za-z]+$/;
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    // const phoneRegex = /^\+\d{0,3}(?:\s?\d{1,3}){1,4}$|^\d{8,9}$/;
     const messageRegex = /^.{16,}$/; // min 16 caracteres
 
+    /* ///////////////////// NOTICES ///////////////////////*/
+
+    /* Notices */
+    if( lang.value === "en" ){
+
+      notices = {
+        success: 'Thank you for contacting us. We will get back to you shortly.',
+        error: 'Error. Please try again.',
+      }
+
+    }else if( lang.value === "pt" ){
+
+      notices = {
+        success: 'Obrigado por entrar em contato conosco. Em breve retornaremos.',
+        error: 'Erro. Por favor, tente novamente.',
+      }
+
+    }else{
+
+      notices = {
+        success: 'Gracias por contactarnos. En breve nos pondremos en contacto.',
+        error: 'Error. Por favor, intenta de nuevo.',
+      }
+
+    }
 
     /* ////////////////// TEMPORIZADORES ///////////////////*/
     // Definir una variable para el temporizador de retraso
@@ -88,10 +111,6 @@ function contactForm() {
       handleInput(email, emailRegex);
     });
 
-    // phone.addEventListener('input', function() {
-    //   handleInput(phone, phoneRegex);
-    // });
-
     message.addEventListener('input', function() {
       handleInput(message, messageRegex);
     });
@@ -99,10 +118,6 @@ function contactForm() {
     form.onchange = () => {
       checkForm()
     }
-
-    // message.addEventListener('mouseleave', function() {
-    //  checkForm();
-    // })
 
     /* ////////////////// SUBMIT ///////////////////*/
 
@@ -114,15 +129,11 @@ function contactForm() {
 
       if (checkForm()) {
 
-        // const formData = new FormData(form);
-        // const object = Object.fromEntries(formData);
-
         const formData = {
           "name": name.value,
           "email": email.value,
-          // "phone": phone.value,
           "message": message.value,
-          "g-recaptcha-response": grecaptcha.getResponse()
+          // "g-recaptcha-response": grecaptcha.getResponse()
         };
 
         const json = JSON.stringify({
@@ -150,18 +161,19 @@ function contactForm() {
 
             if (response.status == 200) {
 
-              window.location.href = baseURL + "/gracias";
-              // result.innerHTML = json.message;
+              // window.location.href = baseURL + "/gracias";
+              loader.style = "display: none";
+              result.innerHTML = notices.success;
 
             } else {
               console.log(response);
-              // result.innerHTML = json.message;
+              result.innerHTML = notices.error;
             }
 
           }).catch(error => {
 
             console.log(error);
-            result.innerHTML = "😭 Algo no ha funcionado bien.";
+            result.innerHTML = notices.error;
 
           }).then(function () {
 

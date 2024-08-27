@@ -1,6 +1,7 @@
 <form id="contact-form" class="form translate-y-[-2.5rem]" action="" method="POST" accept-charset="utf-8">
 
     <input type="checkbox" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off"/>
+    <input type="hidden" name="lang" value="<?= $lang ?>" >
 
     <div class="field">
         <input type="text" name="name" placeholder="<?= $i18n["form"]["name"] ?>" pattern="^[A-Za-z]+ [A-Za-z]+$" required />
@@ -34,9 +35,11 @@
             </span>
         </button>
 
-        <div class="g-recaptcha" data-sitekey="<?= $GLOBALS['recaptcha_key'] ?>"></div>
+        <!-- <div class="g-recaptcha" data-sitekey="<?php //echo $GLOBALS['recaptcha_key'] ?>"></div> -->
 
-        <div id="result"></div>
+        <div class="flex items-end">
+            <div id="result"></div>
+        </div>
 
     </div>
     

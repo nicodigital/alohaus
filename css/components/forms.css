@@ -96,7 +96,7 @@
 }
 
 .valid-msg{
-  @apply hidden absolute top-[2.2rem] left-0 font-[400] text-black text-right pointer-events-none;
+  @apply hidden absolute top-[2.2rem] left-0 font-[400] text-white text-right pointer-events-none;
 }
 
 /* The placeholder only works here */
@@ -108,11 +108,11 @@ input::placeholder, textarea::placeholder{
 /* Loader */
 .loader {
   display: none;
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
-  border: 0.38rem solid;
-  border-color: rgba(255, 255, 255, 0.5);
+  border: 0.3rem solid;
+  border-color: var(--orange);
   border-right-color: rgba(0, 0, 0, 0.5);
   animation: s2 1s infinite linear;
 }

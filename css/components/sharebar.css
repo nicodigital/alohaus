@@ -25,7 +25,7 @@
     bottom: .55rem;
     left: 0;
     transform: translateX(calc( -1 * 100% - 1rem ));
-    background-image: url("img/icons/arrow-tilted-right-down-white.svg");
+    background-image: url("https://www.alohaus.uy/public/img/icons/arrow-tilted-right-down-white.svg");
     background-size: contain;
     background-repeat: no-repeat;
     opacity: 0;

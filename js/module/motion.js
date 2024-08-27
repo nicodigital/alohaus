@@ -57,7 +57,7 @@ function motion(page, device_data) {
 
   barba.init({
     cacheFirstPage: true,
-    debug: true,
+    // debug: true,
     sync: true,
     timeout: 8000, // default is 2000ms
     transitions: [
