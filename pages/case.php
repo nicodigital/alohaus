@@ -23,9 +23,9 @@ foreach ($cases as $item) {
 
 ?>
 
-    <section class="container my-14 xg:my-12 3xl:my-16">
+    <section class="container my-14 xg:my-12 3xl:my-16 xg:min-h-screen">
 
-      <div class="columns relative xg:min-h-[75vh]">
+      <div class="columns relative">
 
         <div class="flex flex-wrap xg:flex-nowrap gap-2">
 
@@ -78,7 +78,7 @@ foreach ($cases as $item) {
           </div>
 
           <!-- RIGHT -->
-          <div class="col-2 w-full xg:w-66% flex flex-col gap-2 animate force-anim" data-anim="bottom" data-delay="400">
+          <div class="col-2 w-full xg:w-66% flex flex-col gap-2 xg:min-h-screen animate force-anim" data-anim="bottom" data-delay="400">
 
             <?php foreach ($gallery as $item) {
 

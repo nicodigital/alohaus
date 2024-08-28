@@ -25,15 +25,13 @@
 							<?= $i18n["words"]["spain"] ?>
 						</span>
 						<span>
-							<?= $options["spain"]["tel"] ?> <br>
-							<?= $options["spain"]["correo_electronico"] ?>
+							<?= $options["spain"]["tel"] ?> 
 						</span>
 					</p>
 					<p class="contact-data mb-4 pointer-1x">
 						<span>Uruguay</span>
 						<span>
-							<?= $options["uruguay"]["tel"] ?> <br>
-							<?= $options["uruguay"]["correo_electronico"] ?>
+							<?= $options["uruguay"]["tel"] ?> 
 						</span>
 					</p>
 

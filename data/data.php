@@ -1,7 +1,7 @@
 <?php include 'inc/get-data.php';
 $data = "";
 
-$api_domain = "https://nicolook.com/alohaus/gestor";
+$api_domain = "https://www.alohaus.uy/gestor";
 $api_url        = $api_domain . "/wp-json/wp/v2";
 
 $options_url    = $api_domain . "/wp-json/acf/v3/options/options";
@@ -11,6 +11,7 @@ $options_url    = $api_domain . "/wp-json/acf/v3/options/options";
 // $get_data = get_cached_data($slug, $api_url, $cache_file, $cache_time);
 $get_options = get_data($options_url);
 $options = $get_options["acf"];
+
 $cases = get_postype( "cases", $api_url );
 
 /* Get Page Content */

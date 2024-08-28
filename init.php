@@ -95,7 +95,7 @@ if ($page == '' || $page == 'index.php' || $page == 'index') {
 
 /*/////////////////////////// CANONICAL URL /////////////////////////*/
 
-$canonical_url = str_replace('www.', '', $url);
+$canonical_url = $url;
 
 /*//////////////////////// MOBILE DETECT /////////////////////////////*/
 require 'inc/Mobile_Detect.php';
