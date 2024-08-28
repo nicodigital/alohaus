@@ -11,6 +11,7 @@ import servicios from './servicios.js';
 import filters from './filters.js';
 import caseToggle from './caseToggle.js';
 import animations from './animations.js';
+import contactForm from './contactForm.js';
 
 import alertRotateDevice from './alertRotateDevice.js';
 // import preventZoom from './module/preventZoom.js';
@@ -52,12 +53,13 @@ function motion(page, device_data) {
     menuMobile(device_data)
     animations(container)
     scrollMarkers(device_data.body, device_data.platform, device_data.isMobile, device_data.isDesktop, device_data.isTablet)
+    contactForm(container)
     alertRotateDevice(device_data.isDesktop, device_data.isBigTablet, device_data.isMobile)
   }
 
   barba.init({
     cacheFirstPage: true,
-    // debug: true,
+    debug: true,
     sync: true,
     timeout: 8000, // default is 2000ms
     transitions: [
@@ -154,7 +156,7 @@ function motion(page, device_data) {
           namespace: 'case',
         },
         once({ next }) {
-          console.log("ONCE CASE");
+          // console.log("ONCE CASE")
           lenisScroll(next.container, clickedAnchor )
           globalFunctions(next.container)
           caseToggle(next.container)
@@ -170,7 +172,7 @@ function motion(page, device_data) {
           });
         },
         enter: ({ next }) => {
-          console.log("ENTER CASE");
+          // console.log("ENTER CASE")
           lenisScroll(next.container, clickedAnchor )
           globalFunctions(next.container)
           caseToggle(next.container)

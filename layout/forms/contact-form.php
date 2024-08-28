@@ -45,8 +45,3 @@
     
 </form>
 
-<script type="module">
-    import contactForm from '<?= BASE_URL ?>js/module/contactForm.js';
-    contactForm();
-</script>
-

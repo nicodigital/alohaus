@@ -157,5 +157,5 @@ export function contactoIn( container ) {
 export function removeOnce( container ) {
   setTimeout(() => { // Removemos la clase "once" para que saber que ya se ha cargado el ONCE
     document.querySelector('body').classList.remove('once');
-  },2000)
+  },3000)
 }

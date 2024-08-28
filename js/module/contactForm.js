@@ -1,4 +1,4 @@
-function contactForm() {
+function contactForm( container ) {
 
   const SPARK_ID = 'CwUzyZDMs'; // ID DEL FORMULARIO ID
   const FROM = "AloHaus";
@@ -8,9 +8,9 @@ function contactForm() {
   const protocolo = window.location.protocol;
   const baseURL = "https://www.alohaus.uy/";
 
-  const form = document.querySelector("#contact-form");
+  const form = container.querySelector("#contact-form");
   const ajax_form_url = 'https://submit-form.com/'+SPARK_ID;
-  const result = document.getElementById('result');
+  const result = container.querySelector('#result');
 
   if (form) {
 
@@ -124,7 +124,7 @@ function contactForm() {
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      let loader = document.querySelector(".loader");
+      let loader = container.querySelector(".loader");
       loader.style.display = "block";
 
       if (checkForm()) {
