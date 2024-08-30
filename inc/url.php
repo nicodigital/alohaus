@@ -1,6 +1,7 @@
 <?php
 
 /*///////////////////////////////// GET URI ////////////////////////////////////*/
+
 /**
  * Obtiene los segmentos de la URL y devuelve información basada en ellos.
  *
@@ -10,10 +11,11 @@
  *               - El primero es el último segmento de la URL o 'home' si estamos en la raíz del sitio.
  *               - El segundo es el parámetro $single si el penúltimo segmento coincide con él, de lo contrario es una cadena vacía.
  */
-function get_uri( $lang = 'es', $single = '' )
-{
-
+function get_uri($lang = 'es', $single = '') {
   $uri = $_SERVER['REQUEST_URI'];
+
+  // Eliminar cualquier cosa después de un '?'
+  $uri = strtok($uri, '?');
 
   // Obtener los segmentos de la URL
   $parts = explode('/', rtrim($uri, '/'));
@@ -24,26 +26,23 @@ function get_uri( $lang = 'es', $single = '' )
   // Obtener el último segmento
   $last = end($parts);
 
-  // Revisamos si el ultimo segmento tiene un parámetro
-  $check_param = strpos($last, '?') !== false || strpos($last, '&') !== false;
-
   // Verificar si estamos en la raíz del sitio
-  if ( $last == "" || $last == $lang || $last == $GLOBALS['site_slug'] || $check_param ) {
-    return ['home', ''];
+  if ($last == "" || $last == $lang || $last == $GLOBALS['site_slug']) {
+      return ['home', ''];
   } else {
-
-    // Comprobar si el término anterior al último es igual al parámetro $single
-    if ($before_last === $single) {
-      return [ $last , $single ];
-    } else {
-      return [ $last, '' ];
-    }
+      // Comprobar si el término anterior al último es igual al parámetro $single
+      if ($before_last === $single) {
+          return [$last, $single];
+      } else {
+          return [$last, ''];
+      }
   }
-
 }
 
-// $uri = get_uri( $lang ); <-- Así devuelve [ 'ultimo termino', vacio ]
-// $uri = get_uri( 'film', $lang ); <-- Así devuelve [ 'ultimo termino', 'film' ]
+// Ejemplos de uso:
+// $uri = get_uri($lang); <-- Así devuelve [ 'ultimo termino', vacio ]
+// $uri = get_uri('film', $lang); <-- Así devuelve [ 'ultimo termino', 'film' ]
+
 
 /*/////////////////////////////// GET LANG /////////////////////////////////*/
 

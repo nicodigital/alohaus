@@ -20,7 +20,7 @@
         </p>
       </div>
 
-      <?php include 'data/works.php';
+      <?php 
       $i = 0;
       foreach ($GLOBALS["cases"] as $case) {
 

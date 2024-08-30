@@ -37,7 +37,7 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-  <div class="<?= $page ?> menu-toggler" data-barba="container" data-barba-namespace="<?= ( !is_array($page_type) ) ? $page_type : 'case' ?>" data-screen="<?= $screen ?>"  >
+  <div class="barba-container <?= $page ?> menu-toggler" data-barba="container" data-barba-namespace="<?= ( !is_array($page_type) ) ? $page_type : 'case' ?>" data-screen="<?= $screen ?>"  >
   <div class="pointer"></div>
 
   <header class="container">

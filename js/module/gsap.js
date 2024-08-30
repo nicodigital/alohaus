@@ -118,11 +118,6 @@ export function pageOut( container ) {
 
 }
 
-export function heroBackOut( container ) {
-  const heroBack = container.querySelector( ".hero-back" );
-  gsap.timeline().to( heroBack, {autoAlpha: 0, duration: 0.4, ease: "power4.out" } )
-}
-
 export function homeBack( container ){
 
   const heroBack = container.querySelector( ".hero-back" );

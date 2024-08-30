@@ -39,7 +39,7 @@ foreach ($cases as $item) {
                   <h1 class="text-h1 font-title font-bold mb-2 leading-[1.25]">
                     <?= $title ?>
                   </h1>
-                  <p>
+                  <p class="case-desc lenis lenis-smooth">
                     <?= $desc ?>
                   </p>
                   <p class="mt-6 grid grid-cols-2">

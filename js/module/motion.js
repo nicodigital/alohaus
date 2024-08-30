@@ -1,6 +1,6 @@
 import barba from '@barba/core';
 import barbaPrefetch from '@barba/prefetch';
-import { brandIntro, animTitle, pageOut, heroBackOut, homeBack, homeLeave, contactoIn, removeOnce } from './gsap.js'
+import { brandIntro, animTitle, pageOut, homeBack, homeLeave, contactoIn, removeOnce } from './gsap.js'
 import lenisScroll from './lenisScroll.js';
 import cursor from './cursor.js';
 import menuMobile from './menuMobile.js';
@@ -44,13 +44,11 @@ function motion(page, device_data) {
   
 
   function globalFunctions(container) {
-    // lenisScroll(container)
     cursor(container)
     menuMobile(device_data)
     animations(container)
     scrollMarkers(device_data.body, device_data.platform, device_data.isMobile, device_data.isDesktop, device_data.isTablet)
     contactForm(container)
-    // customSelect(container)
     alertRotateDevice(device_data.isDesktop, device_data.isBigTablet, device_data.isMobile)
   }
 
@@ -58,7 +56,7 @@ function motion(page, device_data) {
     cacheFirstPage: true,
     // debug: true,
     sync: true,
-    timeout: 8000, // default is 2000ms
+    timeout: 10000, // default is 2000ms
     transitions: [
       // HOME
       {
@@ -67,7 +65,7 @@ function motion(page, device_data) {
           namespace: 'home',
         },
         once({ next }) {
-          // console.log("ONCE HOME")
+          console.log("ONCE HOME")
           lenisScroll(next.container, clickedAnchor )
           globalFunctions(next.container)
           brandIntro(next.container, device_data ) 
@@ -81,11 +79,11 @@ function motion(page, device_data) {
           }
 
           window.scrollTo(0, 0)
-          removeOnce();
+          removeOnce()
 
         },
         leave: ({ current, next }) => {
-          // console.log("LEAVE HOME")
+          console.log("LEAVE HOME")
           pageOut(current.container)
           return new Promise(resolve => {
             setTimeout(() => {
@@ -95,7 +93,7 @@ function motion(page, device_data) {
 
         },
         enter: ({ next }) => {
-          // console.log("ENTER HOME")
+          console.log("ENTER HOME")
           
           lenisScroll(next.container, clickedAnchor )
           globalFunctions(next.container)
@@ -128,9 +126,9 @@ function motion(page, device_data) {
           removeOnce()
         },
         leave: ({ current }) => {
-          // console.log("LEAVE PROYECTOS")
+          console.log("LEAVE PROYECTOS")
           pageOut(current.container)
-          heroBackOut(current.container)
+          // heroBackOut(current.container)
           return new Promise(resolve => {
             setTimeout(() => {
               resolve();
@@ -139,7 +137,7 @@ function motion(page, device_data) {
 
         },
         enter: ({ next }) => {
-          // console.log("ENTER PROYECTOS")
+          console.log("ENTER PROYECTOS")
           lenisScroll(next.container, clickedAnchor )
           globalFunctions(next.container)
           filters(next.container);
@@ -157,23 +155,23 @@ function motion(page, device_data) {
           lenisScroll(next.container, clickedAnchor )
           globalFunctions(next.container)
           caseToggle(next.container)
+          removeOnce()
         },
         leave: ({ current }) => {
-          // console.log("LEAVE CASE")
+          console.log("LEAVE CASE")
           pageOut(current.container)
-          heroBackOut(current.container)
           return new Promise(resolve => {
             setTimeout(() => {
               resolve();
-            }, 400);
+            }, 400 ); 
           });
         },
         enter: ({ next }) => {
-          // console.log("ENTER CASE")
+          console.log("ENTER CASE")
           lenisScroll(next.container, clickedAnchor )
           globalFunctions(next.container)
           caseToggle(next.container)
-          setTimeout( ()=> window.scrollTo(0, 0) , 200 )
+          setTimeout( ()=> window.scrollTo(0, 0) , 300 )
         }
       },
       // DEFAULT

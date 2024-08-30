@@ -61,16 +61,8 @@ $bfe_slug       = isset($url_array[count($url_array) - 2]) ? $url_array[count($u
 
 /* Define mode site */
 define('MODE', "php" );
-// define('MODE', "html" );
-
 define('LAYOUT', 'layout/');
 define('CODEX', 'codex/');
-
-/* Comentar esto si queremos urls absolutas en modo html */
-// if( MODE == 'html' ){
-//   $base_url = "./";
-//   $assets_path = "";
-// }
 
 define('BASE_URL', $base_url );
 
@@ -105,12 +97,6 @@ $detect = new Mobile_Detect;
 $cache = '?v=' . time();
 // $cache = '';
 
-if ($cache != "") {
-  header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-  header("Cache-Control: post-check=0, pre-check=0", false);
-  header("Pragma: no-cache");
-}
-
 /* //////////////////////////// INCLUDES ///////////////////////////*/
 include 'inc/detect-platform.php';
 include 'inc/get-lang.php';
@@ -122,17 +108,6 @@ include 'inc/components.php';
 include 'inc/meta-tags.php';
 include_once 'inc/template.class.php';
 
-/* Data */
-include 'data/servicios.php';
-
 $recaptcha_key = "123";
-/*//////////////////////// CHECK FUNCTION MAIL ////////////////////////////*/
-// if ( function_exists( 'mail' ) ){
-//     echo 'mail() is available';
-// }else{
-//     echo 'mail() has been disabled';
-// }
-
-$htmlCache = new HTMLCache(MODE, $page);
 
 

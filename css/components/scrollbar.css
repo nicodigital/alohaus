@@ -17,3 +17,8 @@
   ::-webkit-scrollbar-thumb:hover {
   	background:  theme(colors.neutral.800);
   }
+
+  .case-desc::-webkit-scrollbar{
+    width: 0;
+    opacity: 0;
+  }
