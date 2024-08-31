@@ -2,15 +2,6 @@
 
 /*///////////////////////////////// GET URI ////////////////////////////////////*/
 
-/**
- * Obtiene los segmentos de la URL y devuelve información basada en ellos.
- *
- * @param string $single El término que se compara con el penúltimo segmento de la URL.
- * @param string $lang El idioma por defecto del sitio.
- * @return array Un array que contiene dos elementos:
- *               - El primero es el último segmento de la URL o 'home' si estamos en la raíz del sitio.
- *               - El segundo es el parámetro $single si el penúltimo segmento coincide con él, de lo contrario es una cadena vacía.
- */
 function get_uri($lang = 'es', $single = '') {
   $uri = $_SERVER['REQUEST_URI'];
 
@@ -20,9 +11,15 @@ function get_uri($lang = 'es', $single = '') {
   // Obtener los segmentos de la URL
   $parts = explode('/', rtrim($uri, '/'));
 
+  // Verificar si el primer segmento es "data"
+  if ( isset($parts[1]) && $parts[1] === 'data' ) {
+      // Devolver la URL completa o manejarla según sea necesario
+      return [$uri, ''];
+  }
+
   // Obtener el penúltimo segmento
   $before_last = isset($parts[count($parts) - 2]) ? $parts[count($parts) - 2] : '';
-  
+
   // Obtener el último segmento
   $last = end($parts);
 
@@ -42,6 +39,7 @@ function get_uri($lang = 'es', $single = '') {
 // Ejemplos de uso:
 // $uri = get_uri($lang); <-- Así devuelve [ 'ultimo termino', vacio ]
 // $uri = get_uri('film', $lang); <-- Así devuelve [ 'ultimo termino', 'film' ]
+
 
 
 /*/////////////////////////////// GET LANG /////////////////////////////////*/

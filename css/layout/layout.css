@@ -46,8 +46,13 @@ main{
   mix-blend-mode: lighten;
 }
 
+picture{
+  @apply block bg-[#ffffff08];
+  display: block; 
+}
+
 img{
-  @apply w-full;
+  @apply w-full object-cover;
 }
 
 .home main:before {

@@ -9,7 +9,8 @@
 
 .card-project figure,
 .card-project img{
-    @apply size-full object-cover;
+    @apply size-full;
+    aspect-ratio: var(--card-aspect);
 }
 
 .card-project .info{

@@ -176,29 +176,6 @@
    }
 }
 
-.img-load {
-   animation-name: imgLoad;
-   -webkit-animation-name: imgLoad;
-   animation-duration: 1s;
-   -webkit-animation-duration: 1s;
-   animation-iteration-count: infinite;
-   -webkit-animation-iteration-count: infinite;
 
-   img {
-      @extend .trans;
-   }
-}
 
-@keyframes imgLoad {
-   0% {
-      background: #eee;
-   }
 
-   50% {
-      background: #f2f2f2;
-   }
-
-   100% {
-      background: #eee;
-   }
-}

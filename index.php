@@ -1,27 +1,29 @@
 <?php include 'init.php';
 
+if ($bfe_slug != 'data') {
 
-if( $bfe_slug == 'case' ){ // CASO SINGLE
+	if ( $bfe_slug == 'case' ) { // CASO SINGLE
 
-	$uri = get_uri( $lang, 'case' ); 
-	// $uri[1] <-- Aqui esta el nombre del archivo del single correspondiente
+		$uri = get_uri($lang, 'case');
+		// $uri[1] <-- Aqui esta el nombre del archivo del single correspondiente
 
-	$content = new Template( 'pages/'.$uri[1].'.php', [
-		'base_url' => $base_url,
-		'i18n' => $i18n,
-		'case' => $uri[0],
-		'data' => $data,
-	] );
+		$content = new Template('pages/' . $uri[1] . '.php', [
+			'base_url' => $base_url,
+			'i18n' => $i18n,
+			'case' => $uri[0],
+			'data' => $data,
+		]);
+		
+	} else { // CASO NORMAL
 
-}else{ // CASO NORMAL
+		$uri = get_uri($lang);
 
-	$uri = get_uri( $lang ); 
-
-	$content = new Template( 'pages/'.$uri[0].'.php', [
-		'base_url' => $base_url,
-		'i18n' => $i18n,
-		'data' => $data
-	] );
+		$content = new Template('pages/' . $uri[0] . '.php', [
+			'base_url' => $base_url,
+			'i18n' => $i18n,
+			'data' => $data
+		]);
+	}
 
 }
 

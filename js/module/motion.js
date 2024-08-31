@@ -54,7 +54,7 @@ function motion(page, device_data) {
 
   barba.init({
     cacheFirstPage: true,
-    // debug: true,
+    debug: true,
     sync: true,
     timeout: 10000, // default is 2000ms
     transitions: [
@@ -171,7 +171,7 @@ function motion(page, device_data) {
           lenisScroll(next.container, clickedAnchor )
           globalFunctions(next.container)
           caseToggle(next.container)
-          setTimeout( ()=> window.scrollTo(0, 0) , 300 )
+          window.scrollTo(0, 0)
         }
       },
       // DEFAULT
