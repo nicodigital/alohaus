@@ -55,7 +55,8 @@
 }
 
 
-.form input:focus{
+.form input:focus,
+.form textarea:focus{
   color: var(--active-color);
   outline: none !important;
 }
@@ -65,24 +66,29 @@
   transform: translateX(0);
 }
 
-.form input:focus + .valid-msg{
+.form input:focus + .valid-msg,
+.form textarea:focus + .valid-msg{
   display: none !important;
 }
 
-.form input.invalid{
+.form input.invalid,
+.form textarea.invalid{
   border-color: var(--error-color) !important;
 }
 
-.form input.invalid:not(:focus){
+.form input.invalid:not(:focus),
+.form textarea.invalid:not(:focus){
   color: transparent !important;
 }
 
-.form input.invalid + .valid-msg{
+.form input.invalid + .valid-msg,
+.form textarea.invalid + .valid-msg{
   @apply block;
   border-color: var(--error-color) !important;
 }
 
-.form input.invalid::placeholder{
+.form input.invalid::placeholder,
+.form textarea.invalid::placeholder{
   @apply opacity-0 !important;
 }
 
