@@ -4,14 +4,14 @@
     <input type="hidden" name="lang" value="<?= $lang ?>">
 
     <div class="field">
-        <input type="text" name="name" placeholder="<?= $i18n["form"]["name"] ?>" pattern="^[A-Za-z]+ [A-Za-z]+$" required />
+        <input type="text" name="name" placeholder="<?= $i18n["form"]["name"] ?>" pattern="^[A-Za-z]+ [A-Za-z]+$" required autocomplete="off" />
         <div class="valid-msg">
-            <?= $i18n["form"]["name_msg"] ?>
+             <?= $i18n["form"]["name_msg"] ?>
         </div>
     </div>
 
     <div class="field">
-        <input type="email" name="email" placeholder="<?= $i18n["form"]["email"] ?>" required />
+        <input type="email" name="email" placeholder="<?= $i18n["form"]["email"] ?>" required autocomplete="off" />
         <div class="valid-msg">
             <?= $i18n["form"]["email_msg"] ?>
         </div>

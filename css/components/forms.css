@@ -4,7 +4,7 @@
   --option-height: calc(var(--field-height) + var(--field-margin-bottom));
   --form-color: theme(colors.orange);
   --active-color: theme(colors.white);
-  --error-color: white;
+  --error-color: red;
 }
 
 /* Form Line */
@@ -61,10 +61,15 @@
   outline: none !important;
 }
 
+.valid-msg{
+  @apply relative;
+}
+
 .form .field:has(input:focus):before, 
 .form .field:has(textarea:focus):before{
   transform: translateX(0);
 }
+
 
 .form input:focus + .valid-msg,
 .form textarea:focus + .valid-msg{
@@ -81,19 +86,30 @@
   color: transparent !important;
 }
 
+.valid-msg:before{
+  @apply size-[1.75rem];
+  content: "";
+  background-image: url(public/img/icons/alert-red.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .form input.invalid + .valid-msg,
 .form textarea.invalid + .valid-msg{
-  @apply block;
+  @apply flex items-center gap-1;
   border-color: var(--error-color) !important;
+  color: var(--error-color) !important;
 }
 
 .form input.invalid::placeholder,
 .form textarea.invalid::placeholder{
   @apply opacity-0 !important;
+  color: var(--error-color) !important;
 }
 
 .form input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  -webkit-box-shadow: 0 0 0px 1000px var(--grey-dark) inset;
+  color: #fff !important
 }
 
 .form input[type="checkbox"],

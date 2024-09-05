@@ -1,5 +1,13 @@
 RewriteEngine On
 
+# Redirección de http a https
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Redirección de sin www a con www
+RewriteCond %{HTTP_HOST} ^alohaus\.uy [NC]
+RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 

@@ -2,6 +2,12 @@
 $cases = $GLOBALS["cases"];
 $lang = $GLOBALS["lang"];
 
+// Redirige a home.php si la página no existe
+if (!in_all_array( $case, $cases) ) {
+   header('Location: /');
+   exit;
+}
+
 foreach ($cases as $item) {
 
   $title = $item["title"]["rendered"];
@@ -108,5 +114,6 @@ foreach ($cases as $item) {
 
     </section>
 
-<?php }
+<?php } 
+
 }

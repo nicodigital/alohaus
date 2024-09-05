@@ -4,6 +4,12 @@ class Template{
 
   public function __construct( $path, $layout = [] ){
 
+    if (!file_exists($path)) {
+      // Redirige a home.php si la página no existe
+      header('Location: /');
+      exit;
+    }
+
     extract($layout);
 
     ob_start();

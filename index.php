@@ -1,6 +1,6 @@
 <?php include 'init.php';
 
-if ($bfe_slug != 'data') {
+if ( $bfe_slug != 'data' ) {
 
 	if ( $bfe_slug == 'case' ) { // CASO SINGLE
 
