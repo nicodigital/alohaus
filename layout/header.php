@@ -33,7 +33,7 @@
 
 <body id="top" class="once" data-scroll="top" data-page="<?= $page ?>" data-barba="wrapper" >
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K585PZ4F"
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8FMT6WX"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
